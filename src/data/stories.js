@@ -1175,6 +1175,10 @@ const onggojibVisualOverrides = Object.fromEntries([
       'fake-route-18e',
       'fake-route-18f',
       'fake-route-18g',
+      'fake-route-18h',
+      'fake-route-18i',
+      'fake-route-18j',
+      'fake-route-18k',
     ],
     'ong-exiled-mirror-cg',
   ),
@@ -1203,6 +1207,9 @@ const onggojibVisualOverrides = Object.fromEntries([
       'b-final-7b',
       'b-final-8',
       'b-final-8a',
+      'b-final-8aa',
+      'b-final-8ab',
+      'b-final-8ac',
       'b-final-8b',
       'b-final-9',
       'b-final-10',
@@ -1383,6 +1390,8 @@ function normalizeOnggojibChoice(sourceChoice) {
       helps: option.helps || [],
       hurts: option.hurts || [],
       lingeringEmotion: option.lingeringEmotion,
+      disabled: Boolean(option.disabled),
+      disabledReason: option.disabledReason || null,
     })),
   };
 }
@@ -1557,7 +1566,7 @@ function buildOnggojibStory() {
       '가족을 지키기 위해 진실을 숨길 수 있는가?',
       '가족이란 혈연인가, 행동인가?',
       '상처를 준 사람이 용서를 요구하지 않고 기다릴 수 있는가?',
-      '거짓으로 시작한 다정함도 진심으로 바뀔 수 있는가?',
+      '남에게 받은 대접을 떠올리는 일도 진짜 변화의 시작이 될 수 있는가?',
     ],
     choiceWeight: 'relationship < dilemma',
     choiceType: ['relationship', 'dilemma'],
@@ -1576,12 +1585,11 @@ function buildOnggojibStory() {
       .map((route) => route.choice)
       .filter(Boolean),
     endings: {
-      'a-final-acts': routes['a-final-acts'].ending,
       'b-final-acts': routes['b-final-acts'].ending,
     },
     reflectionQuestions: [
       '부인은 왜 진실과 가족의 안전 사이에서 흔들렸을까?',
-      '또 다른 옹고집이 보여준 다정함은 옹고집에게 어떤 책임을 남겼을까?',
+      '또 다른 옹고집이 건넨 죽과 겉옷은 옹고집에게 어떤 변화를 남겼을까?',
       '옹고집의 변화는 어느 장면에서 가장 분명하게 드러났을까?',
       '내가 부인이었다면 관아에서 어떤 대답을 했을까?',
     ],

@@ -1,102 +1,23 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import {
+  createSaveData,
+  getHasSavedGame,
+  getSavedPositionLabel,
+  getSaveSlotLabel,
+  formatSavedAt,
+  readSavedGame,
+  readSaveSlots,
+  roleLabels,
+  SAVE_SLOT_AUTO,
+  SAVE_SLOT_MANUAL,
+  writeSavedGame,
+} from '../lib/saveSlots.js';
 
-const roleLabels = {
-  narration: '해설',
-  dialogue: '대사',
-  thought: '속생각',
-  action: '지문',
-};
-
-const SAVE_VERSION = 1;
-const SAVE_SLOT_MANUAL = 'manual';
-const SAVE_SLOT_AUTO = 'auto-1';
-const SAVE_SLOTS = [
-  { id: SAVE_SLOT_MANUAL, label: '기본 저장' },
-  { id: SAVE_SLOT_AUTO, label: '자동 저장 1' },
-];
 const TEXT_SCALE_KEY = 'if-library-text-scale';
 const TEXT_SCALE_MIN = 0.92;
 const TEXT_SCALE_MAX = 1.18;
 const TEXT_SCALE_STEP = 0.08;
 const SCENE_INTRO_MS = 680;
-
-function getSaveKey(storyId, slotId = SAVE_SLOT_MANUAL) {
-  if (slotId === SAVE_SLOT_MANUAL) {
-    return `if-library-save:${storyId}`;
-  }
-
-  return `if-library-save:${storyId}:${slotId}`;
-}
-
-function createSaveData({ storyId, routeKey, beatIndex, history, slotId, protagonistName }) {
-  return {
-    version: SAVE_VERSION,
-    storyId,
-    slotId,
-    routeKey,
-    beatIndex,
-    history,
-    protagonistName: protagonistName?.trim() || '자라',
-    savedAt: new Date().toISOString(),
-  };
-}
-
-function writeSavedGame(storyId, slotId, saveData) {
-  if (typeof window === 'undefined') return;
-
-  window.localStorage.setItem(getSaveKey(storyId, slotId), JSON.stringify(saveData));
-}
-
-function readSavedGame(storyId, slotId = SAVE_SLOT_MANUAL) {
-  if (typeof window === 'undefined') return null;
-
-  try {
-    const value = window.localStorage.getItem(getSaveKey(storyId, slotId));
-    if (!value) return null;
-
-    const savedGame = JSON.parse(value);
-    if (
-      savedGame?.version !== SAVE_VERSION ||
-      savedGame?.storyId !== storyId ||
-      typeof savedGame?.routeKey !== 'string'
-    ) {
-      return null;
-    }
-
-    return savedGame;
-  } catch {
-    return null;
-  }
-}
-
-function readSaveSlots(storyId) {
-  return SAVE_SLOTS.map((slot) => ({
-    ...slot,
-    savedGame: readSavedGame(storyId, slot.id),
-  }));
-}
-
-function getHasSavedGame(saveSlots) {
-  return saveSlots.some((slot) => Boolean(slot.savedGame));
-}
-
-function formatSavedAt(value) {
-  if (!value) return '저장 없음';
-
-  const savedAt = new Date(value);
-  if (Number.isNaN(savedAt.getTime())) return '저장됨';
-
-  return new Intl.DateTimeFormat('ko-KR', {
-    month: 'numeric',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  }).format(savedAt);
-}
-
-function getSaveSlotLabel(slotId) {
-  return SAVE_SLOTS.find((slot) => slot.id === slotId)?.label || '저장';
-}
 
 function hasFinalConsonant(value) {
   const lastChar = Array.from(value).at(-1);
@@ -133,19 +54,6 @@ function personalizeText(text, protagonistName) {
   return text
     .replaceAll('자라 선생', `${name} 선생`)
     .replaceAll('자라야', getProtagonistVocative(name));
-}
-
-function getSavedPositionLabel(savedGame, story, protagonistName) {
-  const route = story.routes[savedGame?.routeKey];
-  if (!route) return '이야기 위치';
-
-  const beatIndex = Number(savedGame.beatIndex);
-  if (!Number.isFinite(beatIndex) || beatIndex >= route.beats.length) {
-    return route.choice ? '선택 앞' : '결말 앞';
-  }
-
-  const beat = route.beats[Math.max(0, Math.trunc(beatIndex))];
-  return getDisplaySpeaker(beat?.speaker, protagonistName) || roleLabels[beat?.role] || '장면';
 }
 
 function clampTextScale(value) {
@@ -425,12 +333,17 @@ function ChoicePanel({ choice, onChoose, onOpenHistory, onPrevious, canOpenHisto
             className={[
               'choice-card',
               'is-simple-choice',
+              option.disabled ? 'is-disabled-choice' : '',
             ].join(' ')}
             type="button"
             key={option.id}
+            disabled={option.disabled}
             onClick={() => onChoose(option)}
           >
             <span className="choice-title">{option.shortText || option.text}</span>
+            {option.disabledReason ? (
+              <span className="choice-disabled-reason">{option.disabledReason}</span>
+            ) : null}
           </button>
         ))}
       </div>
@@ -609,11 +522,34 @@ function buildEndingBeat(route) {
   };
 }
 
-export function VnPlayer({ story, onExit, protagonistName: initialProtagonistName = '자라' }) {
-  const [routeKey, setRouteKey] = useState(story.startRoute);
-  const [beatIndex, setBeatIndex] = useState(0);
-  const [history, setHistory] = useState([]);
-  const [protagonistName, setProtagonistName] = useState(initialProtagonistName);
+function getValidInitialSave(story, initialSave) {
+  if (!initialSave || !story.routes[initialSave.routeKey]) return null;
+  return initialSave;
+}
+
+function getInitialBeatIndex(story, initialSave) {
+  const route = story.routes[initialSave?.routeKey];
+  const savedBeatIndex = Number(initialSave?.beatIndex);
+
+  if (!route || !Number.isFinite(savedBeatIndex)) return 0;
+  return Math.min(Math.max(0, Math.trunc(savedBeatIndex)), route.beats.length);
+}
+
+export function VnPlayer({
+  story,
+  onExit,
+  protagonistName: initialProtagonistName = '자라',
+  initialSave = null,
+}) {
+  const validInitialSave = getValidInitialSave(story, initialSave);
+  const [routeKey, setRouteKey] = useState(validInitialSave?.routeKey || story.startRoute);
+  const [beatIndex, setBeatIndex] = useState(() => getInitialBeatIndex(story, validInitialSave));
+  const [history, setHistory] = useState(() =>
+    Array.isArray(validInitialSave?.history) ? validInitialSave.history : [],
+  );
+  const [protagonistName, setProtagonistName] = useState(
+    validInitialSave?.protagonistName || initialProtagonistName,
+  );
   const [showHistory, setShowHistory] = useState(false);
   const [showLoadPanel, setShowLoadPanel] = useState(false);
   const [showReflection, setShowReflection] = useState(false);
@@ -762,7 +698,12 @@ export function VnPlayer({ story, onExit, protagonistName: initialProtagonistNam
       return;
     }
 
-    handleNext();
+    const tapX = Number.isFinite(event.clientX) ? event.clientX : window.innerWidth;
+    if (tapX >= window.innerWidth / 2) {
+      handleNext();
+    } else {
+      handlePrevious();
+    }
   }
 
   function handlePrevious() {
@@ -860,6 +801,7 @@ export function VnPlayer({ story, onExit, protagonistName: initialProtagonistNam
 
   function handleChoice(option) {
     if (!activeChoice) return;
+    if (option.disabled) return;
     const nextRoute = story.routes[option.nextRoute];
     const selectedText = option.shortText || option.text;
     let nextHistory = appendHistoryEntry(history, {

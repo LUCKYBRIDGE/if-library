@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { stories } from './data/stories.js';
 import { SingleStoryStart, StorySelector } from './components/StorySelector.jsx';
 import { VnPlayer } from './components/VnPlayer.jsx';
+import { createSaveData, SAVE_SLOT_AUTO, writeSavedGame } from './lib/saveSlots.js';
 
 const DEFAULT_DIRECT_STORY_ID = 'review-main-002';
 const DIRECT_STORY_PATHS = {
@@ -44,15 +45,49 @@ export default function App() {
     return null;
   });
   const [protagonistName, setProtagonistName] = useState(() => getDefaultProtagonistName(directStory));
+  const [initialSave, setInitialSave] = useState(null);
   const selectedStory = stories.find((story) => story.id === selectedStoryId);
+
+  function startStory(story, nextProtagonistName) {
+    const nextName = nextProtagonistName || getDefaultProtagonistName(story);
+
+    try {
+      writeSavedGame(
+        story.id,
+        SAVE_SLOT_AUTO,
+        createSaveData({
+          storyId: story.id,
+          routeKey: story.startRoute,
+          beatIndex: 0,
+          history: [],
+          slotId: SAVE_SLOT_AUTO,
+          protagonistName: nextName,
+        }),
+      );
+    } catch {
+      // Starting the story should still work if local storage is unavailable.
+    }
+
+    setInitialSave(null);
+    setProtagonistName(nextName);
+    setSelectedStoryId(story.id);
+  }
+
+  function loadStory(story, savedGame) {
+    setInitialSave(savedGame);
+    setProtagonistName(savedGame?.protagonistName || getDefaultProtagonistName(story));
+    setSelectedStoryId(story.id);
+  }
 
   if (selectedStory) {
     return (
       <VnPlayer
         story={selectedStory}
         protagonistName={protagonistName}
+        initialSave={initialSave}
         onExit={() => {
           setSelectedStoryId(null);
+          setInitialSave(null);
           setProtagonistName(getDefaultProtagonistName(directStory));
         }}
       />
@@ -64,9 +99,9 @@ export default function App() {
       <SingleStoryStart
         story={directStory}
         onStart={(nextProtagonistName) => {
-          setProtagonistName(nextProtagonistName || getDefaultProtagonistName(directStory));
-          setSelectedStoryId(directStory.id);
+          startStory(directStory, nextProtagonistName);
         }}
+        onLoad={(savedGame) => loadStory(directStory, savedGame)}
       />
     );
   }
@@ -75,8 +110,9 @@ export default function App() {
     <StorySelector
       stories={stories.filter((story) => story.playable)}
       onSelect={(storyId, nextProtagonistName) => {
-        setProtagonistName(nextProtagonistName || '자라');
-        setSelectedStoryId(storyId);
+        const story = stories.find((item) => item.id === storyId);
+        if (!story) return;
+        startStory(story, nextProtagonistName);
       }}
     />
   );

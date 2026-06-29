@@ -1,4 +1,10 @@
 import { useState } from 'react';
+import {
+  formatSavedAt,
+  getHasSavedGame,
+  getSavedPositionLabel,
+  readSaveSlots,
+} from '../lib/saveSlots.js';
 
 function normalizeProtagonistName(value) {
   return Array.from(value.replace(/\s/g, '')).slice(0, 4).join('');
@@ -178,45 +184,109 @@ export function StorySelector({ stories, onSelect }) {
   );
 }
 
-export function SingleStoryStart({ story, onStart }) {
+export function SingleStoryStart({ story, onStart, onLoad }) {
   const [protagonistName, setProtagonistName] = useState(() => getDefaultProtagonistName(story));
   const canCustomizeName = usesCustomProtagonistName(story);
   const canStart = protagonistName.length > 0;
+  const saveSlots = readSaveSlots(story.id);
+  const hasSavedGame = getHasSavedGame(saveSlots);
 
   return (
     <main
       className="library-screen single-story-screen"
       style={{ backgroundImage: `linear-gradient(rgba(21, 23, 26, 0.62), rgba(21, 23, 26, 0.88)), url(${story.thumbnail})` }}
     >
-      <section className="single-story-start" aria-labelledby="single-story-title">
-        <span className="role-pill">인터랙티브 소설</span>
-        <h1 id="single-story-title">{story.title}</h1>
-        <p>{story.description}</p>
-        {canCustomizeName ? (
-          <>
-            <label className="name-start-field">
-              <span>주인공 이름</span>
+      {hasSavedGame ? (
+        <section
+          className="single-story-start resume-start-panel"
+          aria-labelledby="single-story-title"
+        >
+          <span className="role-pill">저장된 기록</span>
+          <h1 id="single-story-title">{story.title}</h1>
+          <p>저장된 진행을 불러오거나, 새 이름으로 처음부터 다시 시작할 수 있습니다.</p>
+          <div className="resume-slot-list">
+            {saveSlots.map((slot) => (
+              <button
+                className="save-slot-button resume-slot-button"
+                type="button"
+                key={slot.id}
+                onClick={() => slot.savedGame && onLoad?.(slot.savedGame)}
+                disabled={!slot.savedGame || !onLoad}
+              >
+                <strong>{slot.label}</strong>
+                <span>
+                  {slot.savedGame
+                    ? `${formatSavedAt(slot.savedGame.savedAt)} · ${getSavedPositionLabel(
+                        slot.savedGame,
+                        story,
+                        slot.savedGame.protagonistName,
+                      )}에서 이어하기`
+                    : '저장 없음'}
+                </span>
+              </button>
+            ))}
+          </div>
+          {canCustomizeName ? (
+            <label className="name-start-field resume-name-field">
+              <span>처음부터 시작할 이름</span>
               <input
-                autoFocus
                 maxLength={4}
                 value={protagonistName}
-                onChange={(event) => setProtagonistName(normalizeProtagonistName(event.target.value))}
+                onChange={(event) =>
+                  setProtagonistName(normalizeProtagonistName(event.target.value))
+                }
                 placeholder="4글자까지"
                 aria-describedby="single-story-help"
               />
             </label>
-            <p id="single-story-help">{getNameStartHelp(story)}</p>
-          </>
-        ) : null}
-        <button
-          className="primary-button"
-          type="button"
-          disabled={canCustomizeName && !canStart}
-          onClick={() => onStart(canCustomizeName ? protagonistName : getDefaultProtagonistName(story))}
-        >
-          시작
-        </button>
-      </section>
+          ) : null}
+          <p id="single-story-help">처음부터 시작하면 자동 저장 1은 새 진행으로 갱신됩니다.</p>
+          <button
+            className="primary-button"
+            type="button"
+            disabled={canCustomizeName && !canStart}
+            onClick={() =>
+              onStart(canCustomizeName ? protagonistName : getDefaultProtagonistName(story))
+            }
+          >
+            처음부터
+          </button>
+        </section>
+      ) : (
+        <section className="single-story-start" aria-labelledby="single-story-title">
+          <span className="role-pill">인터랙티브 소설</span>
+          <h1 id="single-story-title">{story.title}</h1>
+          <p>{story.description}</p>
+          {canCustomizeName ? (
+            <>
+              <label className="name-start-field">
+                <span>주인공 이름</span>
+                <input
+                  autoFocus
+                  maxLength={4}
+                  value={protagonistName}
+                  onChange={(event) =>
+                    setProtagonistName(normalizeProtagonistName(event.target.value))
+                  }
+                  placeholder="4글자까지"
+                  aria-describedby="single-story-help"
+                />
+              </label>
+              <p id="single-story-help">{getNameStartHelp(story)}</p>
+            </>
+          ) : null}
+          <button
+            className="primary-button"
+            type="button"
+            disabled={canCustomizeName && !canStart}
+            onClick={() =>
+              onStart(canCustomizeName ? protagonistName : getDefaultProtagonistName(story))
+            }
+          >
+            시작
+          </button>
+        </section>
+      )}
     </main>
   );
 }

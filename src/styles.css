@@ -79,6 +79,27 @@ button:focus-visible {
   line-height: 1.62;
 }
 
+.resume-start-panel {
+  gap: 12px;
+}
+
+.resume-slot-list {
+  display: grid;
+  gap: 8px;
+}
+
+.resume-slot-button {
+  min-height: 58px;
+}
+
+.resume-name-field {
+  margin-top: 2px;
+}
+
+.resume-start-panel .primary-button {
+  margin-top: 0;
+}
+
 .library-header {
   display: grid;
   grid-template-columns: minmax(220px, 0.7fr) minmax(260px, 1fr);
@@ -620,11 +641,11 @@ h1 {
 }
 
 .character-left {
-  left: clamp(12px, 6vw, 80px);
+  left: clamp(-64px, -4vw, -24px);
 }
 
 .character-right {
-  right: clamp(12px, 6vw, 80px);
+  right: clamp(-64px, -4vw, -24px);
 }
 
 .character-sprite.is-mirrored {
@@ -1101,6 +1122,29 @@ h1 {
 
 .choice-overlay .choice-card.is-simple-choice .choice-title {
   text-align: center;
+}
+
+.choice-overlay .choice-card.is-disabled-choice {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.choice-overlay .choice-card.is-disabled-choice:hover,
+.choice-overlay .choice-card.is-disabled-choice:focus-visible {
+  border-color: rgba(244, 239, 228, 0.2);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 10px 20px rgba(0, 0, 0, 0.24);
+  transform: none;
+}
+
+.choice-overlay .choice-disabled-reason {
+  display: block;
+  margin-top: 6px;
+  color: rgba(244, 239, 228, 0.72);
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1.35;
 }
 
 .choice-overlay .choice-card::before,
@@ -1857,5 +1901,257 @@ h1 {
 
   .story-card-actions {
     grid-template-columns: minmax(78px, 0.42fr) minmax(120px, 0.58fr);
+  }
+}
+
+@media (max-height: 620px) {
+  .single-story-screen {
+    align-items: start;
+    overflow: auto;
+    padding-top: max(96px, calc(env(safe-area-inset-top) + 96px));
+    padding-bottom: max(18px, env(safe-area-inset-bottom));
+  }
+
+  .single-story-start {
+    width: min(460px, calc(100vw - 24px));
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .single-story-start h1 {
+    font-size: clamp(1.45rem, 5vw, 2.1rem);
+  }
+
+  .single-story-start p {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .name-start-field input {
+    min-height: 40px;
+  }
+
+  .resume-slot-button {
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 760px) {
+  .character-left {
+    left: clamp(-58px, -7vw, -28px);
+  }
+
+  .character-right {
+    right: clamp(-58px, -7vw, -28px);
+  }
+}
+
+@media (max-width: 640px) {
+  .single-story-screen {
+    align-items: start;
+    overflow: auto;
+    padding-top: max(96px, calc(env(safe-area-inset-top) + 96px));
+    padding-bottom: max(18px, env(safe-area-inset-bottom));
+  }
+
+  .single-story-start {
+    width: min(460px, calc(100vw - 24px));
+  }
+
+  .choice-overlay .choice-panel {
+    max-height: calc(100dvh - 32px);
+    padding: 24px 14px 18px;
+  }
+
+  .choice-overlay .choice-header-actions {
+    position: static;
+    justify-content: center;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vn-stage {
+    --vn-character-bottom: calc(var(--vn-dialogue-bottom) + var(--vn-dialogue-height) - 70px);
+    --vn-character-sink: clamp(8px, 2dvh, 18px);
+  }
+
+  .character-layer {
+    height: min(52dvh, 390px);
+  }
+
+  .character-sprite {
+    max-width: 58vw;
+    max-height: 100%;
+    object-position: bottom center;
+  }
+
+  .character-left {
+    left: clamp(-48px, -10vw, -30px);
+  }
+
+  .character-right {
+    right: clamp(-48px, -10vw, -30px);
+  }
+
+  .dialogue-footer {
+    position: relative;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 3px;
+    min-width: 0;
+  }
+
+  .dialogue-save-actions {
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    gap: 3px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .dialogue-actions {
+    flex: 0 0 auto;
+    gap: 3px;
+    min-width: 0;
+  }
+
+  .dialogue-save-actions .vn-mini-button,
+  .dialogue-actions .vn-mini-button {
+    min-width: 0;
+    min-height: 22px;
+    padding: 0 4px;
+    font-size: 0.55rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .dialogue-save-actions .text-scale-button {
+    flex: 0 0 25px;
+    width: 25px;
+    min-width: 25px;
+    padding: 0 2px;
+  }
+
+  .dialogue-actions .ghost-button {
+    min-width: 30px;
+  }
+
+  .dialogue-actions .next-button {
+    min-width: 32px;
+  }
+
+  .save-notice {
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 0;
+    max-width: 58vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.58rem;
+  }
+}
+
+@media (max-height: 520px) {
+  .single-story-screen {
+    padding-top: max(88px, calc(env(safe-area-inset-top) + 88px));
+  }
+
+  .resume-start-panel {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 1fr);
+    align-items: start;
+    width: min(560px, calc(100vw - 16px));
+    gap: 8px 12px;
+    padding: 12px;
+  }
+
+  .resume-start-panel .role-pill,
+  .resume-start-panel h1,
+  .resume-start-panel > p,
+  .resume-name-field {
+    grid-column: 1;
+  }
+
+  .resume-start-panel h1 {
+    font-size: clamp(1.26rem, 4vw, 1.55rem);
+  }
+
+  .resume-start-panel > p {
+    font-size: 0.72rem;
+    line-height: 1.34;
+  }
+
+  .resume-slot-list {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    align-self: stretch;
+  }
+
+  .resume-name-field {
+    gap: 5px;
+  }
+
+  .resume-name-field input {
+    min-height: 34px;
+    font-size: 0.95rem;
+  }
+
+  .resume-start-panel .primary-button {
+    grid-column: 2;
+    align-self: end;
+    min-height: 36px;
+  }
+
+  .resume-slot-button {
+    min-height: 42px;
+    padding: 7px 9px;
+  }
+
+  .resume-slot-button span {
+    font-size: 0.66rem;
+  }
+
+  .save-load-panel {
+    position: fixed;
+    top: max(92px, calc(env(safe-area-inset-top) + 92px));
+    right: max(8px, env(safe-area-inset-right));
+    bottom: auto;
+    left: max(8px, env(safe-area-inset-left));
+    width: auto;
+    max-height: calc(100dvh - 104px);
+    overflow: auto;
+  }
+
+  .reflection-overlay,
+  .choice-overlay {
+    padding: 10px;
+  }
+
+  .reflection-modal {
+    max-height: calc(100dvh - 20px);
+  }
+}
+
+@media (max-width: 360px) {
+  .dialogue-box {
+    padding-right: 9px;
+    padding-left: 9px;
+  }
+
+  .dialogue-save-actions,
+  .dialogue-actions {
+    gap: 2px;
+  }
+
+  .dialogue-save-actions .vn-mini-button,
+  .dialogue-actions .vn-mini-button {
+    padding: 0 3px;
+    font-size: 0.5rem;
+  }
+
+  .dialogue-save-actions .text-scale-button {
+    flex-basis: 23px;
+    width: 23px;
+    min-width: 23px;
   }
 }
