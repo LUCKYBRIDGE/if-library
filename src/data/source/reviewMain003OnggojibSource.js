@@ -2294,7 +2294,7 @@ export const reviewMain003OnggojibSource = {
       scenePlace: '관아 마당',
       sceneTime: '판결 직후',
       defaultBg: 'ong-magistrate-yard',
-      recordSummary: '부인은 아이를 지켜 준 남편을 지아비라 말했다. 옹고집은 눈길에서 밥을 빌고, 장작을 패고, 짚신도 얻지 못했다.',
+      recordSummary: '부인은 아이를 지켜 준 남편을 지아비라 말했다. 옹고집은 떠돌다 낯익은 대문 앞에서 자신이 남에게 했던 일을 그대로 겪었다.',
       scenes: [
         {
           id: 'fake-route-1',
@@ -2355,11 +2355,35 @@ export const reviewMain003OnggojibSource = {
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
+          id: 'fake-route-3a',
+          type: 'narration',
+          speaker: '해설',
+          bg: 'ong-snow-road',
+          text: '그 뒤로 얼마나 지났는지 옹고집은 알지 못했다. 주막 행랑에서도, 남의 헛간 처마 아래에서도 오래 머물지 못했다.',
+          characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
+        },
+        {
+          id: 'fake-route-3b',
+          type: 'narration',
+          speaker: '해설',
+          bg: 'ong-snow-road',
+          text: '배고픔과 추위가 뒤늦게 몰려왔다. 더 걸을 힘이 떨어졌을 때 낯익은 기와지붕과 큰 대문이 눈 속에서 나타났다.',
+          characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
+        },
+        {
+          id: 'fake-route-3c',
+          type: 'thought',
+          speaker: '옹고집',
+          bg: 'ong-snow-road',
+          text: '어디서 본 집인지 따질 기운도 없었다. 지금은 밥 한 그릇이 먼저였다.',
+          characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true }],
+        },
+        {
           id: 'fake-route-4',
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '얼마나 걸었는지 몰랐다. 등잔불 하나가 흔들리는 대문 앞에서 옹고집은 기침부터 새어 나왔다.',
+          text: '대문 안쪽에서 등잔불 하나가 흔들렸다. 옹고집은 문설주를 붙잡고 겨우 목소리를 냈다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -2375,7 +2399,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '문 안의 사내',
           bg: 'ong-snow-road',
-          text: '밥을 청하러 왔느냐. 돌아가라.',
+          text: '내 집 문전에서 밥을 청해? 썩 물러가라.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -2391,7 +2415,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '문 안의 사내',
           bg: 'ong-snow-road',
-          text: '문을 열어 주면 내일도 모레도 같은 자들이 몰려올 것이다.',
+          text: '그 손이 터진 게 내 탓이오? 문을 열면 이런 자들이 줄을 설 것이오.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -2407,7 +2431,7 @@ export const reviewMain003OnggojibSource = {
           type: 'thought',
           speaker: '옹고집',
           bg: 'ong-snow-road',
-          text: '저 안의 놈이 나를 부려먹겠다는 건가.',
+          text: '어디선가 들어 본 말이었다. 그러나 배가 고파 더 생각하지 못했다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true }],
         },
         {
@@ -2415,7 +2439,7 @@ export const reviewMain003OnggojibSource = {
           type: 'action',
           speaker: '지문',
           bg: 'ong-snow-road',
-          text: '그는 문을 걷어차려다 휘청였다. 허기는 분노보다 빨랐다. 결국 차가운 도끼자루를 집었다.',
+          text: '그는 대답하려다 그만두었다. 결국 대문 옆에 세워 둔 도끼자루를 집었다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true }],
         },
         {
@@ -2423,7 +2447,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '밤이 깊자 그는 장작더미 앞에 서 있었다. 차가운 도끼자루가 손바닥을 파고들었다.',
+          text: '밤이 깊도록 도끼질이 이어졌다. 젖은 장작은 쉽게 갈라지지 않았다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true }],
         },
         {
@@ -2439,7 +2463,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '문 안의 사내',
           bg: 'ong-snow-road',
-          text: '나무가 죄다 젖었구나. 온전한 삯은 못 주겠다. 반만 받아 가라.',
+          text: '젖은 나무를 이렇게 패 놓고 온전한 삯을 바라느냐. 반만 받고 물러가라.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -2447,7 +2471,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '마루 끝에 던져진 엽전 몇 닢은 눈 위로 굴러 떨어졌다. 옹고집은 손을 제대로 펴지 못한 채 그것을 주웠다.',
+          text: '마루 끝에 던져진 엽전 몇 닢은 눈 위로 굴러 떨어졌다. 옹고집은 한참 뒤에야 그것을 주웠다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -2455,7 +2479,7 @@ export const reviewMain003OnggojibSource = {
           type: 'thought',
           speaker: '옹고집',
           bg: 'ong-snow-road',
-          text: '이 돈으로는 밥도, 신발도, 하룻밤 묵을 곳도 못 구한다.',
+          text: '이 말도 낯설지 않았다. 그러나 누구에게 따질 힘이 남아 있지 않았다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true }],
         },
         {
@@ -2471,7 +2495,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '새벽녘, 찢어진 짚신은 더는 발을 감싸지 못했다. 헛간 처마 아래 헤진 짚신 한 켤레가 보였다.',
+          text: '새벽녘에도 옹고집은 그 집을 떠나지 못했다. 찢어진 짚신은 더는 발을 감싸지 못했다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -2479,7 +2503,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-snow-road',
-          text: '저 짚신, 버리는 것이라면 신어도 되겠습니까.',
+          text: '헛간의 낡은 짚신이라도 좋습니다. 눈길을 걸을 것만 주십시오.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true }],
         },
         {
@@ -2495,7 +2519,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '문 안의 사내',
           bg: 'ong-snow-road',
-          text: '버릴 물건도 내 허락 없이 가져가지 마라. 손대지 말고 가라.',
+          text: '낡은 것도 내 집 물건이오. 가난도 병이다. 내 대문 앞에 붙어 있지 말고 썩 가라.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -2511,7 +2535,7 @@ export const reviewMain003OnggojibSource = {
           type: 'thought',
           speaker: '옹고집',
           bg: 'ong-snow-road',
-          text: '짚신 한 켤레가 없다는 게 이렇게 사람을 작게 만드는 일이었나.',
+          text: '내가 남에게 한 그대로구나. 누굴 욕하겠느냐.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true }],
         },
         {
@@ -2519,7 +2543,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '옹고집은 다시 눈길로 밀려났다. 뒤에서는 대문 안쪽의 발소리만 들렸다.',
+          text: '옹고집은 대문에서 몇 걸음 못 가 눈길에 주저앉았다. 뒤에서는 빗장 걸리는 소리만 들렸다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -2527,7 +2551,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '헛간 처마 아래 무너져 앉았을 때, 누군가 그의 앞에 죽 한 그릇과 마른 짚신을 내려놓았다.',
+          text: '더는 일어나지 못하고 있을 때, 누군가 그의 앞에 죽 한 그릇과 마른 짚신을 내려놓았다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
