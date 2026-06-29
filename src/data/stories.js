@@ -1374,7 +1374,7 @@ const onggojibCharacterAssets = {
   아이: {
     side: 'right',
     facing: 'left',
-    scale: 0.76,
+    scale: 1,
     alt: '옹고집의 아이',
     variants: {
       default: onggojibChildSprite,
@@ -1383,7 +1383,7 @@ const onggojibCharacterAssets = {
   막내: {
     side: 'right',
     facing: 'left',
-    scale: 0.76,
+    scale: 1,
     alt: '옹고집의 막내',
     variants: {
       default: onggojibChildSprite,
