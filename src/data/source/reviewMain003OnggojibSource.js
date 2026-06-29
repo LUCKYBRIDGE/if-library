@@ -2359,7 +2359,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '그 뒤로 얼마나 지났는지 옹고집은 알지 못했다. 주막 행랑에서도, 남의 헛간 처마 아래에서도 오래 머물지 못했다.',
+          text: '그 뒤로 얼마나 지났는지 옹고집은 알지 못했다. 주막 행랑에도, 남의 헛간 처마 아래에도 몸을 녹일 자리는 없었다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -2367,7 +2367,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '배고픔과 추위가 뒤늦게 몰려왔다. 더 걸을 힘이 떨어졌을 때 낯익은 기와지붕과 큰 대문이 눈 속에서 나타났다.',
+          text: '사람 있는 곳을 찾아 헤맸지만, 어느 문 앞에서도 오래 서 있을 수 없었다. 더 걸을 힘이 떨어졌을 때 낯익은 기와지붕과 큰 대문이 눈 속에서 나타났다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
