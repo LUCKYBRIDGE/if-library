@@ -831,7 +831,7 @@ export const reviewMain003OnggojibSource = {
           id: 'real-route-1a',
           type: 'dialogue',
           speaker: '부인',
-          text: '다만 오늘 아이들을 저 사람 앞으로 보내지는 못하겠습니다.',
+          text: '다만 오늘은 아이들을 서방님 곁으로 보내지 못하겠습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
