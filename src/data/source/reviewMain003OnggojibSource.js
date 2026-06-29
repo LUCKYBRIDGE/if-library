@@ -829,9 +829,9 @@ export const reviewMain003OnggojibSource = {
         },
         {
           id: 'real-route-1a',
-          type: 'dialogue',
-          speaker: '부인',
-          text: '다만 오늘은 아이들을 서방님 곁으로 보내지 못하겠습니다.',
+          type: 'narration',
+          speaker: '해설',
+          text: '부인은 판결이 끝날 때까지 아이들을 제 곁에 두었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -841,7 +841,7 @@ export const reviewMain003OnggojibSource = {
           id: 'real-route-1b',
           type: 'narration',
           speaker: '해설',
-          text: '사또가 고개를 끄덕였다. 막내는 부인의 치맛자락 뒤로 더 숨었고, 옹고집은 제 이름이 돌아왔는데도 아이 쪽으로 다가가지 못했다.',
+          text: '사또가 고개를 끄덕였다. 옹고집은 제 이름이 돌아왔는데도, 가족에게 바로 다가가지 못했다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
