@@ -641,11 +641,11 @@ h1 {
 }
 
 .character-left {
-  left: clamp(-64px, -4vw, -24px);
+  left: clamp(12px, 3vw, 44px);
 }
 
 .character-right {
-  right: clamp(-64px, -4vw, -24px);
+  right: clamp(12px, 3vw, 44px);
 }
 
 .character-sprite.is-mirrored {
@@ -1938,11 +1938,11 @@ h1 {
 
 @media (max-width: 760px) {
   .character-left {
-    left: clamp(-58px, -7vw, -28px);
+    left: clamp(4px, 2vw, 20px);
   }
 
   .character-right {
-    right: clamp(-58px, -7vw, -28px);
+    right: clamp(4px, 2vw, 20px);
   }
 }
 
@@ -1987,11 +1987,11 @@ h1 {
   }
 
   .character-left {
-    left: clamp(-48px, -10vw, -30px);
+    left: clamp(2px, 1.5vw, 10px);
   }
 
   .character-right {
-    right: clamp(-48px, -10vw, -30px);
+    right: clamp(2px, 1.5vw, 10px);
   }
 
   .dialogue-footer {
