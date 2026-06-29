@@ -59,7 +59,29 @@ export const reviewMain003OnggojibSource = {
       type: 'dialogue',
       speaker: '옹고집',
       bg: 'ong-warm-room',
-      text: '밥상에서 밥알 흘리는 버릇부터 고쳐라. 쌀이 저절로 곳간에 쌓이는 줄 아느냐.',
+      text: '그 몇 톨도 네가 벌어 온 것이냐. 상 위에 떨어진 밥알까지 다 주워라.',
+      characters: [
+        { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+        { name: '부인', side: 'right', active: false },
+      ],
+    },
+    {
+      id: 'ong-open-1b-2a',
+      type: 'dialogue',
+      speaker: '부인',
+      bg: 'ong-warm-room',
+      text: '서방님, 아이가 놀랐습니다. 제가 치우겠습니다.',
+      characters: [
+        { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+        { name: '부인', side: 'right', active: true },
+      ],
+    },
+    {
+      id: 'ong-open-1b-2b',
+      type: 'dialogue',
+      speaker: '옹고집',
+      bg: 'ong-warm-room',
+      text: '감싸니 저 모양이지. 내 집 밥을 먹으면 밥 귀한 줄부터 알아야 하오.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
         { name: '부인', side: 'right', active: false },
@@ -77,11 +99,33 @@ export const reviewMain003OnggojibSource = {
       ],
     },
     {
+      id: 'ong-open-1b-3a',
+      type: 'dialogue',
+      speaker: '옹고집',
+      bg: 'ong-warm-room',
+      text: '숯 하나도 제대로 못 들이면 품삯에서 빼겠다. 데였으면 더 조심했어야지.',
+      characters: [
+        { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+        { name: '부인', side: 'right', active: false },
+      ],
+    },
+    {
+      id: 'ong-open-1b-3b',
+      type: 'narration',
+      speaker: '해설',
+      bg: 'ong-warm-room',
+      text: '하인은 데인 자리를 소매 안으로 감추고 다시 숯을 집었다.',
+      characters: [
+        { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+        { name: '부인', side: 'right', active: true },
+      ],
+    },
+    {
       id: 'ong-open-1b-4',
       type: 'thought',
       speaker: '부인',
       bg: 'ong-warm-room',
-      text: '아이들은 제 밥그릇보다 아버지의 젓가락 끝을 먼저 살피고 있었다.',
+      text: '밥상에는 국 식는 소리만 남았다. 아이들은 숟가락을 다시 들지 못했다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '부인', side: 'right', active: true },
@@ -492,7 +536,7 @@ export const reviewMain003OnggojibSource = {
       type: 'thought',
       speaker: '부인',
       bg: 'ong-warm-room',
-      text: '묻고 싶은 말이 목까지 올라왔다. 그러나 아이가 겨우 잠들자, 부인은 등잔 심지만 더 낮췄다.',
+      text: '묻고 싶었지만, 아이가 겨우 잠들자 부인은 등잔 심지만 더 낮췄다.',
       characters: [
         { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
         { name: '부인', side: 'right', active: true },
@@ -2256,7 +2300,7 @@ export const reviewMain003OnggojibSource = {
           id: 'fake-route-1',
           type: 'dialogue',
           speaker: '부인',
-          text: '저 사람이 제 지아비입니다.',
+          text: '아이 곁에 선 저 사람이 제 지아비입니다.',
           characters: [
             { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -2546,7 +2590,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '처음엔 웃지 못했소.',
+          text: '처음엔 밥상에서 말소리도 나지 않았소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -2557,7 +2601,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '다만, 누가 그 웃음을 막고 있었는지는 알게 되었소.',
+          text: '며칠이 지나서야 아이들이 먼저 이야기를 꺼냈소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
