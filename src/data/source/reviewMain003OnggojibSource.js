@@ -2664,7 +2664,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '옹고집은 닫힌 대문 앞에 한참 서 있었다. 안쪽에서 빗장이 풀리는 소리와 아이가 누군가를 찾는 작은 목소리가 흘러나왔다.',
+          text: '옹고집은 닫힌 대문 앞에서 손을 올리지 못했다. 안쪽에서 빗장이 풀리고, 아이가 누군가를 찾는 목소리가 흘러나왔다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false }],
         },
         {
@@ -2680,7 +2680,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-warm-room',
-          text: '안방 앞에 이르자, 막내 곁에 앉아 있던 사람은 보이지 않았다.',
+          text: '마루 끝에서 작은 발소리가 멈췄다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -2702,7 +2702,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-warm-room',
-          text: '막내는 마루 끝까지 달려오다 한 번 멈칫했다. 부인이 고개를 끄덕이자, 아이는 그의 곁에 섰다.',
+          text: '아이는 달려오다 멈췄다. 부인이 낮게 괜찮다고 말하자, 그제야 한 걸음 다가섰다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -2713,7 +2713,7 @@ export const reviewMain003OnggojibSource = {
           type: 'thought',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '막내가 아주 작게 아버지라고 다시 불렀다. 나는 그 한마디에 대답할 말을 한참 찾았다.',
+          text: '막내가 아주 작게 아버지라고 다시 불렀다. 나는 그래, 하고 대답하려다 목이 메었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -2724,7 +2724,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-warm-room',
-          text: '부인은 그의 젖은 신과 갈라진 손을 먼저 보았다. 아이가 한 걸음 더 다가서자, 부인은 그 사이를 막지 않았다.',
+          text: '부인은 화로 곁 방석을 끌어다 놓았다. 아이가 한 걸음 더 다가서도 말리지 않았다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -2735,7 +2735,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '부인',
           bg: 'ong-warm-room',
-          text: '먼저 불부터 쬐십시오, 서방님. 이야기는 나중에 듣겠습니다.',
+          text: '이쪽에 앉으세요, 서방님. 몸부터 녹이고... 이야기는 그 뒤에 하십시다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -2757,7 +2757,7 @@ export const reviewMain003OnggojibSource = {
           type: 'thought',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '서방님이라는 말이 낯설었다. 그 말이 반가우면서도, 부인이 아직 안심하지 못한다는 것을 알았다.',
+          text: '나는 화로 앞에 앉았다. 막내가 곁에 앉아도 밀어내지 않았다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -2808,7 +2808,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-meal-act-1',
           type: 'thought',
           speaker: '옹고집',
-          text: '입에는 맞지 않았다. 그래도 아이는 내가 첫마디를 꺼내기만 기다렸다.',
+          text: '입에는 맞지 않았다. 예전 같으면 그 말부터 나갔을 것이다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -2886,7 +2886,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-meal-slip-4',
           type: 'thought',
           speaker: '옹고집',
-          text: '들킬까 두려워 말을 고쳤다. 그런데 더 두려운 것은 방금처럼 부인이 다시 말을 잃는 일이었다.',
+          text: '말을 고치자 막내가 다시 숟가락을 들었다. 그제야 내가 방금 무엇을 할 뻔했는지 알았다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -2905,7 +2905,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-after-meal-1',
           type: 'narration',
           speaker: '해설',
-          text: '다음 저녁, 국이 조금 식어 있었다. 아이는 숟가락을 든 채 옹고집이 무슨 말을 할지 기다렸다.',
+          text: '다음 저녁, 국이 조금 식어 있었다. 예전 같으면 상머리부터 시끄러워질 일이었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -2915,7 +2915,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-after-meal-2',
           type: 'narration',
           speaker: '해설',
-          text: '옹고집은 불평 대신 물을 한 모금 마셨다. 부인이 국그릇을 다시 데우려 들자 조용히 고개를 저었다.',
+          text: '옹고집은 불평 대신 물을 한 모금 마셨다. 부인이 국그릇을 다시 데우려 했다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true }],
         },
         {
@@ -2929,7 +2929,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-after-meal-4',
           type: 'narration',
           speaker: '해설',
-          text: '부인은 국그릇을 든 채 잠시 기다렸다가 천천히 앉았다. 막내가 그제야 반찬 한 조각을 집었다.',
+          text: '부인이 국그릇을 다시 들지 않자, 막내가 반찬 한 조각을 집었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -2939,7 +2939,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-after-meal-5',
           type: 'thought',
           speaker: '옹고집',
-          text: '막내가 다시 밥을 뜨자, 나는 먼저 숟가락을 들고 천천히 먹었다.',
+          text: '나도 말없이 국을 떠먹었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -2958,7 +2958,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-child-scene-1',
           type: 'narration',
           speaker: '해설',
-          text: '며칠 뒤, 막내가 마당의 미끄러운 눈길에 넘어졌다. 아이는 부인을 찾다가, 한 걸음 가까이에 선 옹고집을 보고 멈췄다.',
+          text: '며칠 뒤, 막내가 마당의 미끄러운 눈길에 넘어졌다. 아이는 부인을 찾다가, 한 걸음 가까이에 선 옹고집 앞에서 멈췄다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false }],
         },
         {
@@ -2979,7 +2979,7 @@ export const reviewMain003OnggojibSource = {
       choice: {
         id: 'confession-child',
         label: '젖은 손',
-        prompt: '아이는 흙 묻은 손을 내밀지 못한 채 옹고집을 올려다보았다. 옹고집은 먼저 조심했어야 한다고 꾸짖으려 했다.',
+        prompt: '아이는 흙 묻은 손을 내밀지 못했다. 옹고집은 먼저 조심했어야 한다고 꾸짖으려 했다.',
         choiceType: 'relationship',
         choiceWeight: 'medium',
         systemCue: '아이를 대하는 방식 선택',
@@ -3046,7 +3046,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-child-flinch-2',
           type: 'narration',
           speaker: '해설',
-          text: '아이는 말끝을 기다렸다. 부인은 아이 곁에 선 채 옹고집을 보았다.',
+          text: '아이는 꾸중이 이어질 줄 알고 어깨를 움츠렸다. 부인은 아이 곁에 그대로 섰다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true }],
         },
         {
@@ -3069,7 +3069,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-house-days-1',
           type: 'narration',
           speaker: '해설',
-          text: '그날 저녁, 둘째가 마당 귀퉁이에 얼음 무늬가 생겼다고 말했다. 막내가 그 모양을 흉내 내자 옹고집은 뒤늦게 고개를 끄덕였다.',
+          text: '그날 저녁, 둘째가 마당 귀퉁이에 얼음 무늬가 생겼다고 말했다. 막내가 그 모양을 흉내 내자 옹고집은 무슨 모양이었느냐고 물었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3103,7 +3103,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-house-days-3b',
           type: 'narration',
           speaker: '해설',
-          text: '하인은 대답을 듣고도 바로 움직이지 못했다. 옹고집이 다시 고개를 끄덕이자 그제야 물동이를 내려놓았다.',
+          text: '하인은 대답을 듣고도 바로 움직이지 못했다. 옹고집이 한 번 더 괜찮다고 하자 물동이를 내려놓았다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -3179,7 +3179,7 @@ export const reviewMain003OnggojibSource = {
       choice: {
         id: 'confession-vase',
         label: '엎질러진 등잔',
-        prompt: '하인은 다친 팔을 감춘 채 벌을 기다렸다. 부인은 하인 곁에 멈춰 선 채, 옹고집이 입을 열기를 기다렸다.',
+        prompt: '하인은 다친 팔을 감춘 채 바닥에 엎드렸다. 부인은 약상자를 들고 하인 곁에 섰다.',
         choiceType: 'relationship',
         choiceWeight: 'medium',
         systemCue: '고백 루트 물건과 사람 선택',
@@ -3230,7 +3230,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-vase-care-2',
           type: 'narration',
           speaker: '해설',
-          text: '하인이 한참 뒤에야 다친 팔을 내놓자 옹고집은 약상자를 끌어당겼다. 피를 닦는 동안 하인은 끝내 고개를 들지 못했다.',
+          text: '하인이 다친 팔을 내놓자 옹고집은 약상자를 끌어당겼다. 피를 닦는 동안에도 하인은 무릎을 편히 펴지 못했다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3284,7 +3284,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-before-confession-2',
           type: 'narration',
           speaker: '해설',
-          text: '아이들은 그에게 더 자주 말을 걸었다. 부인은 아이들 곁에서 웃다가도, 그가 말을 고르는 동안에는 조용히 기다렸다.',
+          text: '아이들은 그에게 더 자주 말을 걸었다. 부인은 아이들 곁에서 웃다가도, 옹고집의 목소리가 높아지면 먼저 아이들 쪽으로 몸을 돌렸다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -3294,7 +3294,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-before-confession-3',
           type: 'thought',
           speaker: '옹고집',
-          text: '아이가 웃으며 아버지라 부를 때마다, 옹고집은 그 말이 정말 제게 온 것인지 알 수 없었다. 그래도 외면하지 않았다.',
+          text: '아이가 웃으며 아버지라 부를 때마다, 옹고집은 대답을 늦추지 않으려 애썼다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3411,7 +3411,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-final-3a',
           type: 'narration',
           speaker: '해설',
-          text: '부인은 옹고집이 손을 내미는 것을 보고 잠시 멈췄다. 곧 아무 말 없이 등잔을 건넸다.',
+          text: '부인은 등잔을 그의 손에 맡겼다. 불빛이 흔들리자 옹고집은 두 손으로 등잔을 받쳤다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -3486,7 +3486,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-spring-room',
-          text: '부인은 그릇이 왜 거기 놓였는지 묻지 않았다. 옹고집은 한참 서 있다가 자리에 앉았다.',
+          text: '부인은 그릇이 왜 거기 놓였는지 묻지 않았다. 옹고집은 자리에 앉아 부인을 불렀다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3596,7 +3596,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '부인',
           bg: 'ong-spring-room',
-          text: '그래도 아이 앞에서 목소리를 낮추는 모습을 보았습니다. 그 모습이 반갑고도 걱정스러워서, 차마 그 자리에서 묻지 못했습니다.',
+          text: '그래도 아이 앞에서 목소리를 낮추셨지요. 반가웠지만, 또 무너질까 봐 그 자리에서는 묻지 못했습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
