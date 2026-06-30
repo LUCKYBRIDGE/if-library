@@ -336,7 +336,7 @@ export const reviewMain003OnggojibSource = {
       type: 'thought',
       speaker: '부인',
       bg: 'ong-warm-room',
-      text: '처음 보는 사람이었다. 그런데도 죽 한 그릇을 내밀지 못한 일과 사람을 그렇게 세워 둔 남편의 말이 쉬이 잊히지 않았다.',
+      text: '낯선 사내였다. 그런데도 죽 한 그릇 내밀지 못한 일과 그를 눈발 속에 세워 둔 남편의 말이 쉬이 잊히지 않았다.',
       characters: [{ name: '부인', side: 'right', active: true }],
     },
     {
