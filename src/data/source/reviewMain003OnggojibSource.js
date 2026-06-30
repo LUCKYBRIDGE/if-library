@@ -558,7 +558,7 @@ export const reviewMain003OnggojibSource = {
       type: 'thought',
       speaker: '부인',
       bg: 'ong-warm-room',
-      text: '집안이 편안해질수록 부인은 더 자주 대문 밖 사내를 떠올렸다. 갑자기 달라진 서방님도 그냥 지나간 일처럼 덮을 수는 없었다.',
+      text: '그날 죽 한 그릇 내주지 못한 일이 다시 마음에 걸렸다. 갑자기 달라진 서방님도 그냥 넘길 수는 없었다.',
       characters: [
         { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
         { name: '부인', side: 'right', active: true },
