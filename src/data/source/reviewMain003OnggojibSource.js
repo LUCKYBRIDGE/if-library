@@ -624,7 +624,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-magistrate-yard',
-      text: '두 옹고집은 관아 마당으로 끌려갔다. 사또 앞에서도 둘의 얼굴과 목소리는 구별하기 어려울 만큼 같았다.',
+      text: '관아 마당에 두 옹고집이 나란히 섰다. 포졸들도 어느 쪽을 붙잡아야 할지 잠시 손을 멈췄다.',
       characters: [
         { name: '사또', side: 'left', variant: 'command', active: false },
         { name: '포졸', side: 'right', active: false },
@@ -635,7 +635,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-magistrate-yard',
-      text: '사또는 집안 살림과 오래된 버릇을 차례로 물었다. 두 사람은 번번이 같은 답을 했다.',
+      text: '사또는 집안 살림과 오래된 버릇을 차례로 물었다. 두 사람의 대답은 번번이 어긋나지 않았다.',
       characters: [
         { name: '사또', side: 'left', variant: 'command', active: true },
         { name: '포졸', side: 'right', active: false },
@@ -646,7 +646,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-magistrate-yard',
-      text: '막내는 두 옹고집 사이에서 발끝만 꼼지락거릴 뿐, 어느 쪽으로도 나서지 못했다.',
+      text: '말이 길어질수록 분노한 옹고집의 목소리가 먼저 높아졌다. 막내는 부인의 치맛자락 뒤로 물러섰다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
@@ -657,7 +657,7 @@ export const reviewMain003OnggojibSource = {
       type: 'dialogue',
       speaker: '사또',
       bg: 'ong-magistrate-yard',
-      text: '소란 피우지 마라. 아이가 놀라지 않게 물러서라.',
+      text: '관아 마당에서 아이를 겁주지 마라. 한 걸음 물러서라.',
       characters: [
         { name: '사또', side: 'left', variant: 'command', active: true },
         { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -668,7 +668,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-magistrate-yard',
-      text: '말이 오가는 동안 막내는 아이들 앞에 섰던 옹고집 쪽으로 몸을 붙였다. 분노한 옹고집이 부르자 아이는 그 옷자락을 더 세게 쥐었다.',
+      text: '포졸들이 둘 사이를 벌리자, 막내는 아이들 앞에 섰던 옹고집 쪽으로 몸을 붙였다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
@@ -679,7 +679,7 @@ export const reviewMain003OnggojibSource = {
       type: 'dialogue',
       speaker: '분노한 옹고집',
       bg: 'ong-magistrate-yard',
-      text: '아비도 몰라보고 저놈에게 붙다니. 당장 이리 오지 못하느냐.',
+      text: '내 자식이 저놈에게 붙다니. 이리 오지 못하느냐.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
         { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
@@ -690,7 +690,7 @@ export const reviewMain003OnggojibSource = {
       type: 'dialogue',
       speaker: '아이 곁의 옹고집',
       bg: 'ong-magistrate-yard',
-      text: '아이가 무슨 죄가 있소. 화가 나거든 나를 치시오.',
+      text: '아이를 윽박지르지 마시오. 화가 나거든 나에게 하시오.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -701,7 +701,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-magistrate-yard',
-      text: '막내는 한 발도 앞으로 나오지 못했다.',
+      text: '조용한 옹고집은 아이를 붙잡지 않고, 그 앞에만 서 있었다.',
       characters: [
         { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
         { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -712,7 +712,7 @@ export const reviewMain003OnggojibSource = {
       type: 'thought',
       speaker: '부인',
       bg: 'ong-magistrate-yard',
-      text: '막내는 어른들의 말을 이해한 얼굴이 아니었다. 그저 제 앞을 막아선 사람 곁에서 떨어지지 못하고 있었다.',
+      text: '막내는 판결이 무엇인지 알지 못했다. 그저 큰소리를 내지 않는 쪽에 붙어 있었다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -734,7 +734,7 @@ export const reviewMain003OnggojibSource = {
       type: 'thought',
       speaker: '부인',
       bg: 'ong-magistrate-yard',
-      text: '평생 함께 산 남편이었다. 말버릇도, 화를 참지 못하는 성질도 모를 리 없었다. 대답하려는 순간, 막내가 그 사람 뒤로 한 걸음 더 숨어 들었다.',
+      text: '평생 함께 산 남편이었다. 말버릇도, 화를 참지 못하는 성질도 모를 리 없었다. 그런데 막내는 아직 그 옷자락을 놓지 못하고 있었다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '부인', side: 'right', variant: 'resolved', active: true },
