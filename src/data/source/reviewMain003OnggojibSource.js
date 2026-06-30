@@ -429,7 +429,7 @@ export const reviewMain003OnggojibSource = {
       type: 'dialogue',
       speaker: '옹고집',
       bg: 'ong-warm-room',
-      text: '그릇은 다시 구하면 된다. 손은 베이지 않았느냐.',
+      text: '그릇은 다시 구하면 된다. 손부터 보아라. 다쳤으면 약부터 바르거라.',
       characters: [
         { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: true },
         { name: '부인', side: 'right', active: false },
@@ -440,7 +440,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-warm-room',
-      text: '하인은 고개를 숙인 채 깨진 조각을 치우기 시작했다.',
+      text: '하인은 고개를 숙인 채 한참 서 있다가, 조심스럽게 소매를 걷었다.',
       characters: [
         { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
         { name: '부인', side: 'right', active: true },
