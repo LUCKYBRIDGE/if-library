@@ -1176,7 +1176,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '분노한 옹고집',
           bg: 'ong-winter-courtyard',
-          text: '또냐! 지난번에 부인이 내 이름을 말하지 않았느냐!',
+          text: '또 너냐! 내가 진짜 옹고집이다! 부인도 지난번에 나를 지아비라 했단 말이다!',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
@@ -2579,7 +2579,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-snow-road',
-          text: '내가 없는 동안... 아내는, 아이들은 잘 지냈소?',
+          text: '내가 없는 동안... 아내와 아이들은 잘 지냈소?',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
@@ -2590,7 +2590,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '처음엔 밥상에서 말소리도 나지 않았소.',
+          text: '처음엔 밥상에서 아무도 말을 꺼내지 못했소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -2601,7 +2601,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '며칠이 지나서야 아이들이 먼저 이야기를 꺼냈소.',
+          text: '그러다 어느 저녁, 둘째가 마당 이야기를 끝까지 했소. 막내도 따라 웃었소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -2612,7 +2612,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-snow-road',
-          text: '그럼 나는... 어디로 가야 하오.',
+          text: '그럼 나는... 이제 어찌하면 좋소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
@@ -2623,7 +2623,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '또 다른 옹고집은 대답하지 않았다. 다만 겉옷을 벗어 그의 어깨에 걸쳐 주었다.',
+          text: '또 다른 옹고집은 대답하지 않았다. 다만 자기 겉옷을 벗어 그의 어깨에 걸쳐 주었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -2656,7 +2656,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '옹고집이 뒤따라 대문 밖으로 나섰을 때, 발자국은 문 앞에서 끊겨 있었다.',
+          text: '옹고집이 뒤따라 눈길로 몇 걸음 나섰을 때, 발자국은 대문 앞에서 끊겨 있었다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'borrowed', active: false }],
         },
         {
