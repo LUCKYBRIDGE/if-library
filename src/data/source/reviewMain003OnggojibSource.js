@@ -103,7 +103,7 @@ export const reviewMain003OnggojibSource = {
       type: 'dialogue',
       speaker: '옹고집',
       bg: 'ong-warm-room',
-      text: '숯 하나도 제대로 못 들이면 품삯에서 빼겠다. 데였으면 더 조심했어야지.',
+      text: '숯 하나도 제대로 못 들이면 품삯에서 빼겠다. 데였느냐? 조심했어야지.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
         { name: '부인', side: 'right', active: false },
