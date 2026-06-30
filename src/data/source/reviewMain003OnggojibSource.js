@@ -448,7 +448,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-warm-room',
-      text: '하인은 벌을 기다리듯 고개를 숙였다가, 아무 일도 일어나지 않자 조심스럽게 깨진 조각을 치우기 시작했다.',
+      text: '하인은 고개를 숙인 채 깨진 조각을 치우기 시작했다.',
       characters: [
         { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
         { name: '부인', side: 'right', active: true },
@@ -459,7 +459,7 @@ export const reviewMain003OnggojibSource = {
       type: 'thought',
       speaker: '부인',
       bg: 'ong-warm-room',
-      text: '하인은 한동안 조심스럽게 깨진 조각을 치웠다. 꾸중이 이어지지 않자 그제야 어깨를 폈다.',
+      text: '한참 뒤에야 하인의 어깨가 조금 풀렸다.',
       characters: [
         { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
         { name: '부인', side: 'right', active: true },
@@ -514,7 +514,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-warm-room',
-      text: '아이는 숟가락을 든 채 다음 꾸중을 기다렸다.',
+      text: '상 위가 잠깐 조용해졌다.',
       characters: [
         { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
         { name: '부인', side: 'right', active: false },
@@ -558,7 +558,7 @@ export const reviewMain003OnggojibSource = {
       type: 'thought',
       speaker: '부인',
       bg: 'ong-warm-room',
-      text: '그날 죽 한 그릇 내주지 못한 일이 다시 마음에 걸렸다. 갑자기 달라진 서방님도 그냥 넘길 수는 없었다.',
+      text: '이상하다. 분명 내 서방님이 맞는데... 그래도 아이들은 편해 보인다.',
       characters: [
         { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
         { name: '부인', side: 'right', active: true },
@@ -665,7 +665,7 @@ export const reviewMain003OnggojibSource = {
       type: 'dialogue',
       speaker: '사또',
       bg: 'ong-magistrate-yard',
-      text: '아이를 억지로 끌지는 마라. 어느 쪽으로 몸이 가는지만 보겠다.',
+      text: '소란 피우지 마라. 아이가 놀라지 않게 물러서라.',
       characters: [
         { name: '사또', side: 'left', variant: 'command', active: true },
         { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -676,7 +676,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-magistrate-yard',
-      text: '막내는 한참 망설이다가, 며칠 밤 곁에 앉아 주던 옹고집 쪽으로 몸을 붙였다. 분노한 옹고집이 부르자 아이는 그 옷자락을 더 세게 쥐었다.',
+      text: '말이 오가는 동안 막내는 아이들 앞에 섰던 옹고집 쪽으로 몸을 붙였다. 분노한 옹고집이 부르자 아이는 그 옷자락을 더 세게 쥐었다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
@@ -731,7 +731,7 @@ export const reviewMain003OnggojibSource = {
       type: 'dialogue',
       speaker: '사또',
       bg: 'ong-magistrate-yard',
-      text: '부인, 평생을 함께 산 당신만이 알 것이다. 어느 쪽이 당신의 지아비인가.',
+      text: '부인, 대답하라. 어느 쪽이 네 지아비냐.',
       characters: [
         { name: '사또', side: 'left', variant: 'command', active: true },
         { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -765,10 +765,10 @@ export const reviewMain003OnggojibSource = {
     options: [
       {
         id: 'point-real',
-        text: '오래 함께 산 남편을 말한다',
-        shortText: '오래 함께 산 남편을 말한다',
+        text: '분을 삭이지 못하는 남편을 말한다',
+        shortText: '분을 삭이지 못하는 남편을 말한다',
         nextStep: 'real-route',
-        reason: '막내가 숨어 있어도, 평생 함께 산 남편을 가리킨다.',
+        reason: '그가 어떤 사람인지 알면서도, 평생 함께 산 남편을 가리킨다.',
         cost: '그가 집으로 돌아오면 아이들의 말소리가 다시 밥상에서 끊길 수 있다.',
         helps: ['진실', '옹고집의 책임'],
         hurts: ['부인과 아이들의 안전감', '조용한 옹고집'],
@@ -776,8 +776,8 @@ export const reviewMain003OnggojibSource = {
       },
       {
         id: 'point-double',
-        text: '아이를 지켜 준 남편을 말한다',
-        shortText: '아이를 지켜 준 남편을 말한다',
+        text: '아이들 앞에 선 남편을 말한다',
+        shortText: '아이들 앞에 선 남편을 말한다',
         nextStep: 'fake-route',
         reason: '막내는 그 옷자락을 놓지 않았고, 아이들은 그 앞에서 말을 끝까지 할 수 있었다.',
         cost: '눈발 속으로 밀려날 사람도 제 남편이라는 것을 안다.',
@@ -1251,21 +1251,21 @@ export const reviewMain003OnggojibSource = {
         options: [
           {
             id: 'point-real-locked',
-            text: '오래 함께 산 남편을 말한다',
-            shortText: '오래 함께 산 남편을 말한다',
+            text: '분을 삭이지 못하는 남편을 말한다',
+            shortText: '분을 삭이지 못하는 남편을 말한다',
             nextStep: 'real-loop-testimony',
             disabled: true,
             disabledReason: '아이가 다시 물러섰다. 부인은 같은 말을 다시 할 수 없었다.',
-            reason: '오래 함께 산 남편을 다시 가리킨다.',
-            cost: '아이들이 같은 밤으로 돌아간다.',
+            reason: '그가 어떤 사람인지 알면서도, 평생 함께 산 남편을 다시 가리킨다.',
+            cost: '아이들의 말소리가 다시 밥상에서 끊긴다.',
             helps: ['진실', '옹고집의 이름'],
             hurts: ['부인과 아이들의 안전감'],
             lingeringEmotion: '대답할 차례가 와도 말은 나오지 않는다.',
           },
           {
             id: 'point-double-repeat',
-            text: '아이를 지켜 준 남편을 말한다',
-            shortText: '아이를 지켜 준 남편을 말한다',
+            text: '아이들 앞에 선 남편을 말한다',
+            shortText: '아이들 앞에 선 남편을 말한다',
             nextStep: 'fake-route',
             reason: '막내는 그 옷자락을 붙잡고 있고, 아이들은 다시 말끝을 삼키지 않았다.',
             cost: '눈발 속으로 밀려날 사람도 제 남편이라는 것을 안다.',
