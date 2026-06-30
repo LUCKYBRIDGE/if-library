@@ -306,7 +306,7 @@ export const reviewMain003OnggojibSource = {
       type: 'thought',
       speaker: '부인',
       bg: 'ong-winter-courtyard',
-      text: '헛간 문틈에는 낡은 짚신 한 켤레가 있었다. 그것조차 내주지 못하는 이 집이 부끄러웠다.',
+      text: '헛간 문틈에는 낡은 짚신 한 켤레가 있었다. 부인은 그쪽을 보고도 더 말하지 못했다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '부인', side: 'right', active: true },
@@ -336,16 +336,8 @@ export const reviewMain003OnggojibSource = {
       type: 'thought',
       speaker: '부인',
       bg: 'ong-warm-room',
-      text: '죽 한 그릇 내줄 여유도 없는 집은 아니었다. 그렇게 지치고 힘겨워 보이는 사람을 빈손으로 돌려보낸 일이 부끄러웠다.',
+      text: '죽 한 그릇 내줄 여유도 없는 집은 아니었다.',
       characters: [{ name: '부인', side: 'right', active: true }],
-    },
-    {
-      id: 'ong-open-3f-3',
-      type: 'narration',
-      speaker: '해설',
-      bg: 'ong-warm-room',
-      text: '그 뒤 며칠, 부인은 대문 곁을 지날 때마다 발을 늦췄다. 사내 이야기는 끝내 입 밖으로 나오지 않았다.',
-      characters: [{ name: '부인', side: 'right', active: false }],
     },
     {
       id: 'ong-open-4',
