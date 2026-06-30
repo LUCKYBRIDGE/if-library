@@ -336,7 +336,7 @@ export const reviewMain003OnggojibSource = {
       type: 'thought',
       speaker: '부인',
       bg: 'ong-warm-room',
-      text: '낯선 사내였다. 그런데도 죽 한 그릇 내밀지 못한 일과 그를 눈발 속에 세워 둔 남편의 말이 쉬이 잊히지 않았다.',
+      text: '죽 한 그릇 내줄 여유도 없는 집은 아니었다. 그렇게 지치고 힘겨워 보이는 사람을 빈손으로 돌려보낸 일이 부끄러웠다.',
       characters: [{ name: '부인', side: 'right', active: true }],
     },
     {
