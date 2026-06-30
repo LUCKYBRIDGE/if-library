@@ -1188,7 +1188,7 @@ const onggojibVisualOverrides = Object.fromEntries([
   ...makeOnggojibSpriteOverrides(
     ['fake-route-18k', 'fake-route-18l'],
     'ong-winter-courtyard',
-    [{ name: '진짜 옹고집', side: 'left', variant: 'borrowed', active: false }],
+    [{ name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false }],
   ),
   ...makeOnggojibSpriteOverrides(
     [
@@ -1245,7 +1245,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     ],
     'ong-warm-room',
     [
-      { name: '진짜 옹고집', side: 'left', variant: 'borrowed', active: true },
+      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
       { name: '하인', side: 'right', active: false },
     ],
   ),
@@ -1280,7 +1280,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     ],
     'ong-winter-courtyard',
     [
-      { name: '진짜 옹고집', side: 'left', variant: 'borrowed', active: true },
+      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
       { name: '막내', side: 'right', active: false },
     ],
   ),
@@ -1288,7 +1288,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     ['b-final-5', 'b-final-6', 'b-final-6a', 'b-final-6b', 'b-final-6c'],
     'ong-winter-courtyard',
     [
-      { name: '진짜 옹고집', side: 'left', variant: 'borrowed', active: true },
+      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
       { name: '낯선 사내', side: 'right', active: false },
     ],
   ),
@@ -1310,7 +1310,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     ],
     'ong-spring-room',
     [
-      { name: '진짜 옹고집', side: 'left', variant: 'borrowed', active: true },
+      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
       { name: '부인', side: 'right', variant: 'resolved', active: false },
     ],
   ),
@@ -1722,7 +1722,7 @@ function buildOnggojibStory() {
     },
     reflectionQuestions: [
       '부인은 왜 진실과 가족의 안전 사이에서 흔들렸을까?',
-      '또 다른 옹고집이 건넨 죽과 겉옷은 옹고집에게 어떤 변화를 남겼을까?',
+      '또 다른 옹고집이 건넨 죽과 짚신은 옹고집에게 어떤 변화를 남겼을까?',
       '옹고집의 변화는 어느 장면에서 가장 분명하게 드러났을까?',
       '내가 부인이었다면 관아에서 어떤 대답을 했을까?',
     ],
