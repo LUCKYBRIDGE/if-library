@@ -1699,7 +1699,7 @@ function buildOnggojibStory() {
       '가족을 지키기 위해 진실을 숨길 수 있는가?',
       '가족이란 혈연인가, 행동인가?',
       '상처를 준 사람이 용서를 요구하지 않고 기다릴 수 있는가?',
-      '남에게 받은 대접을 떠올리는 일도 진짜 변화의 시작이 될 수 있는가?',
+      '옹고집은 왜 그날 받은 죽과 짚신을 오래 잊지 못했을까?',
     ],
     choiceWeight: 'relationship < dilemma',
     choiceType: ['relationship', 'dilemma'],
