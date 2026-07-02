@@ -1194,9 +1194,17 @@ const onggojibVisualOverrides = Object.fromEntries([
     ],
   ),
   ...makeOnggojibSpriteOverrides(
-    ['fake-route-18k', 'fake-route-18l'],
+    ['fake-route-18k'],
     'ong-winter-courtyard',
-    [{ name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false }],
+    [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['fake-route-18l'],
+    'ong-winter-courtyard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
+      { name: '부인', side: 'right', variant: 'resolved', active: true },
+    ],
   ),
   ...makeOnggojibSpriteOverrides(
     [
