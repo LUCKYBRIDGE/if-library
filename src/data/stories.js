@@ -1324,7 +1324,7 @@ const onggojibVisualOverrides = Object.fromEntries([
       'b-final-10',
       'b-final-11',
     ],
-    'ong-spring-room',
+    'ong-warm-room',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
       { name: '부인', side: 'right', variant: 'resolved', active: false },
