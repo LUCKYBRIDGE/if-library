@@ -1109,7 +1109,6 @@ const onggojibVisualOverrides = Object.fromEntries([
       'ong-open-8-2',
       'ong-open-8c',
       'ong-open-8c-1',
-      'ong-open-8c-2',
       'ong-open-8c-3',
       'ong-open-8c-4',
       'ong-open-8e',
@@ -1121,7 +1120,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     ],
   ),
   ...makeOnggojibSpriteOverrides(
-    ['ong-open-8a', 'ong-open-8b', 'ong-open-8b-1', 'ong-open-8b-2'],
+    ['ong-open-8a', 'ong-open-8b', 'ong-open-8b-1'],
     'ong-warm-room',
     [
       { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: true },
@@ -1142,7 +1141,6 @@ const onggojibVisualOverrides = Object.fromEntries([
       'fake-route-9',
       'fake-route-10',
       'fake-route-10a',
-      'fake-route-10b',
       'fake-route-11',
       'fake-route-12',
       'fake-route-13',
@@ -1252,7 +1250,6 @@ const onggojibVisualOverrides = Object.fromEntries([
   ...makeOnggojibSpriteOverrides(
     [
       'b-servant-scene-1',
-      'b-servant-scene-2',
       'confession-vase-before',
       'b-vase-care-1',
       'b-vase-care-2',
@@ -1286,7 +1283,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     [
       'b-child-scene-1',
       'b-child-scene-2',
-      'b-child-scene-3',
       'confession-child-before',
       'b-child-carry-1',
       'b-child-carry-2',
@@ -1311,7 +1307,6 @@ const onggojibVisualOverrides = Object.fromEntries([
   ...makeOnggojibSpriteOverrides(
     [
       'b-final-7',
-      'b-final-7a',
       'b-final-7b',
       'b-final-8',
       'b-final-8a',
