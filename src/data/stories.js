@@ -1320,9 +1320,6 @@ const onggojibVisualOverrides = Object.fromEntries([
       'b-final-8ac',
       'b-final-8b',
       'b-final-8c',
-      'b-final-9',
-      'b-final-10',
-      'b-final-11',
     ],
     'ong-warm-room',
     [
