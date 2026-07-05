@@ -1174,20 +1174,44 @@ const onggojibVisualOverrides = Object.fromEntries([
   ),
   ...makeOnggojibSpriteOverrides(
     [
-      'fake-route-18a',
       'fake-route-18b',
       'fake-route-18c',
-      'fake-route-18d',
-      'fake-route-18e',
       'fake-route-18f',
-      'fake-route-18g',
-      'fake-route-18h',
-      'fake-route-18i',
-      'fake-route-18j',
+      'fake-route-18g-1',
+      'fake-route-18g-4',
+      'fake-route-18g-6',
     ],
     'ong-winter-courtyard',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true },
+      { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    [
+      'fake-route-18d',
+      'fake-route-18e',
+      'fake-route-18g',
+      'fake-route-18g-2',
+      'fake-route-18g-3',
+      'fake-route-18g-5',
+      'fake-route-18i',
+    ],
+    'ong-winter-courtyard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
+      { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    [
+      'fake-route-18a',
+      'fake-route-18h',
+      'fake-route-18j',
+    ],
+    'ong-winter-courtyard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
       { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
     ],
   ),
