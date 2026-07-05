@@ -1283,7 +1283,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-warm-room',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-      { name: '하인', side: 'right', active: false },
+      { name: '부인', side: 'right', variant: 'resolved', active: false },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
@@ -1314,10 +1314,10 @@ const onggojibVisualOverrides = Object.fromEntries([
       'b-child-flinch-2',
       'b-child-flinch-3',
     ],
-    'ong-winter-courtyard',
+    'ong-warm-room',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-      { name: '막내', side: 'right', active: false },
+      { name: '둘째', side: 'right', active: false },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
