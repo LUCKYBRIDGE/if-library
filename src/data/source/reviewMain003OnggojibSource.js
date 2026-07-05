@@ -3505,7 +3505,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '집을 비운 동안, 나는 내가 남에게 하던 모진 말을 그대로 들었소.',
+          text: '내가 집을 비운 일주일 동안, 내게는 참 많은 일이 있었소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3516,7 +3516,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '내가 시키던 일을 하고도 삯을 깎였고, 낡은 짚신 한 켤레도 얻지 못했소.',
+          text: '말로는 다 설명하기 어려운 기이한 일들이었소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3527,7 +3527,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '가장 지쳤을 때 누군가 죽과 짚신을 내어 주었소. 그 호의가 없었다면 다시 일어나지 못했을 거요.',
+          text: '그 일을 겪고 나서야 내가 얼마나 몹쓸 사람이었는지 알았소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3538,7 +3538,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '나는 집안을 먹여 살렸으니 내 뜻대로 해도 되는 줄 알았소.',
+          text: '가족에게도, 하인들에게도, 어려운 처지로 찾아온 사람들에게도 모질게 굴었소. 이제 생각하니 참으로 부끄럽소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3549,7 +3549,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '아이들이 내 앞에서 말을 못 하고, 당신이 늘 아이들부터 지켜야 했던 것도 내 탓이었소.',
+          text: '아이들이 내 눈치를 보고, 당신이 그 아이들을 감싸야 했던 것도 모두 나 때문이었소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3560,7 +3560,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '난 아주 덕이 부족한 사람이오. 미안하오.',
+          text: '미안하오.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3571,7 +3571,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '단번에 사람이 달라졌다고 말하지는 않겠소. 그래도 바뀌고 싶소.',
+          text: '당장 달라졌다고 믿어 달라는 말은 하지 않겠소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3582,7 +3582,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '가족에게도, 하인에게도, 대문 밖 사람에게도 너그럽게 살고 싶소. 가진 것을 아끼기보다 필요한 사람에게 내어 주는 사람이 되고 싶소.',
+          text: '다만 앞으로는 가족뿐 아니라 내 주변을 돌아보고, 어려운 사람에게 베풀 줄 아는 사람이 되고 싶소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
