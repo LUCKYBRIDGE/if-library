@@ -2926,7 +2926,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-warm-room',
-          text: '아이는 달려오다 멈췄다. 부인은 아이를 재촉하지 않고 그 곁에 남았다.',
+          text: '아이는 달려오다 멈췄다. 부인은 아이를 재촉하지 않았다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -2937,7 +2937,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-warm-room',
-          text: '부인은 옹고집을 화로 곁에 앉히고 죽을 데우러 갔다. 막내는 곁에 남았다.',
+          text: '부인은 옹고집을 화로 옆에 앉히고 죽을 데우러 갔다. 막내는 방 안에 그대로 있었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -3026,21 +3026,21 @@ export const reviewMain003OnggojibSource = {
         options: [
           {
             id: 'act-kind',
-            text: '곁에 앉혀 무슨 일이었는지 묻는다',
+            text: '앉으라 하고 무슨 일이었는지 묻는다',
             shortText: '무슨 일이었는지 묻는다',
             nextStep: 'b-meal-act',
-            reason: '둘째를 곁에 앉히고 까치 이야기를 듣는다.',
+            reason: '둘째를 앉히고 까치 이야기를 듣는다.',
             cost: '쉬던 일을 잠시 멈추고 아이에게 시간을 내준다.',
-            lingeringEmotion: '막내도 곁으로 와 제 이야기를 보탠다.',
+            lingeringEmotion: '막내도 제 이야기를 보탠다.',
           },
           {
             id: 'voice-rises',
-            text: '쓸데없는 이야기라며 내보낸다',
-            shortText: '쓸데없다며 내보낸다',
+            text: '쓸데없는 이야기라며 말을 끊는다',
+            shortText: '쓸데없다며 끊는다',
             nextStep: 'b-meal-slip',
             reason: '예전 버릇대로 아이의 이야기를 하찮게 여긴다.',
-            cost: '둘째는 하던 말을 멈추고 방을 나간다.',
-            lingeringEmotion: '옹고집은 잠시 뒤 아이를 다시 부른다.',
+            cost: '둘째는 더 말하지 못한다.',
+            lingeringEmotion: '옹고집은 곧 말을 고친다.',
           },
         ],
       },
@@ -3064,7 +3064,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-meal-act-2',
           type: 'narration',
           speaker: '해설',
-          text: '둘째가 낮에 본 까치 이야기를 시작하자 막내도 곁으로 와 제 이야기를 보탰다.',
+          text: '둘째가 낮에 본 까치 이야기를 시작하자 막내도 제 이야기를 보탰다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '둘째', side: 'right', active: true },
@@ -3082,7 +3082,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-meal-slip-1',
           type: 'dialogue',
           speaker: '옹고집',
-          text: '그런 일로 사람을 귀찮게 하지 마라. 어서 나가거라.',
+          text: '그런 시시한 일로 사람을 붙잡느냐. 그만해라.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '둘째', side: 'right', active: false },
@@ -3092,7 +3092,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-meal-slip-2',
           type: 'narration',
           speaker: '해설',
-          text: '둘째는 하던 말을 멈추고 방을 나갔다.',
+          text: '둘째는 더 말하지 못했다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '둘째', side: 'right', active: false },
@@ -3102,7 +3102,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-meal-slip-3',
           type: 'dialogue',
           speaker: '옹고집',
-          text: '둘째야. 아까 그 까치가 어찌 되었다고 했느냐.',
+          text: '아니다. 아까 하려던 말이 무엇이냐.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '둘째', side: 'right', active: false },
@@ -3596,7 +3596,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '부인',
           bg: 'ong-warm-room',
-          text: '장사길이 길어져 무슨 일이 생긴 것은 아닌지 걱정했습니다.',
+          text: '돌아오신 뒤로 벌써 한 달이 지났습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -3607,7 +3607,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '부인',
           bg: 'ong-warm-room',
-          text: '돌아오신 뒤에도 다시 예전처럼 되실까 두려웠습니다. 아이들을 지켜야 한다는 생각부터 했습니다.',
+          text: '서방님이 달라지려고 애쓰시는 것도, 그 마음이 진심이라는 것도 압니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -3618,7 +3618,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '부인',
           bg: 'ong-warm-room',
-          text: '서방님이 달라지려 애쓰는 동안에도 하루아침에 마음을 놓을 수는 없었습니다.',
+          text: '하지만 저는 아직 서방님이 두렵습니다. 다시 예전으로 돌아가실까 봐, 마음을 다 놓지는 못하겠습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
