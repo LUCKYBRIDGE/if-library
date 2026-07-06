@@ -567,6 +567,7 @@ export function VnPlayer({
   const endingBeat = useMemo(() => buildEndingBeat(route), [route]);
   const stageBeat = currentBeat || endingBeat || lastBeat;
   const isFlashback = stageBeat?.visualMode === 'flashback';
+  const isRealityCrack = stageBeat?.transition === 'reality-crack';
   const displayedScenePlace = stageBeat?.scenePlace || route.scenePlace;
   const activeChoice = isRouteComplete ? route.choice : null;
   const activeEnding = isRouteComplete && !route.choice ? route.ending : null;
@@ -839,6 +840,7 @@ export function VnPlayer({
         className={[
           'vn-stage',
           isFlashback ? 'is-flashback' : '',
+          isRealityCrack ? 'is-reality-crack' : '',
           isSceneIntro ? 'is-scene-intro' : '',
         ].join(' ')}
         onClick={handleStageTap}

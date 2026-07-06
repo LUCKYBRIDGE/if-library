@@ -1273,21 +1273,6 @@ const onggojibVisualOverrides = Object.fromEntries([
   ),
   ...makeOnggojibSpriteOverrides(
     [
-      'b-servant-scene-1',
-      'confession-vase-before',
-      'b-vase-care-1',
-      'b-vase-care-2',
-      'b-vase-stick-1',
-      'b-vase-stick-2',
-    ],
-    'ong-warm-room',
-    [
-      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-      { name: '부인', side: 'right', variant: 'resolved', active: false },
-    ],
-  ),
-  ...makeOnggojibSpriteOverrides(
-    [
       'a-final-1',
       'a-final-2',
       'a-final-3',
@@ -1304,23 +1289,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     ],
   ),
   ...makeOnggojibSpriteOverrides(
-    [
-      'b-child-scene-1',
-      'b-child-scene-2',
-      'confession-child-before',
-      'b-child-carry-1',
-      'b-child-carry-2',
-      'b-child-flinch-1',
-      'b-child-flinch-2',
-      'b-child-flinch-3',
-    ],
-    'ong-warm-room',
-    [
-      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-      { name: '둘째', side: 'right', active: false },
-    ],
-  ),
-  ...makeOnggojibSpriteOverrides(
     ['b-final-6', 'b-final-6a', 'b-final-6b'],
     'ong-winter-courtyard',
     [
@@ -1330,8 +1298,7 @@ const onggojibVisualOverrides = Object.fromEntries([
   ),
   ...makeOnggojibSpriteOverrides(
     [
-      'b-final-7',
-      'b-final-7b',
+      'b-final-7c',
       'b-final-8',
       'b-final-8a',
       'b-final-8aa',
@@ -1339,6 +1306,7 @@ const onggojibVisualOverrides = Object.fromEntries([
       'b-final-8ac',
       'b-final-8b',
       'b-final-8c',
+      'b-final-8d',
     ],
     'ong-warm-room',
     [
@@ -1420,6 +1388,15 @@ const onggojibCharacterAssets = {
     facing: 'left',
     scale: 1,
     alt: '옹고집의 막내',
+    variants: {
+      default: onggojibChildSprite,
+    },
+  },
+  둘째: {
+    side: 'right',
+    facing: 'left',
+    scale: 1,
+    alt: '옹고집의 둘째',
     variants: {
       default: onggojibChildSprite,
     },
