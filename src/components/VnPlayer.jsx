@@ -855,14 +855,88 @@ export function VnPlayer({
         <div className="stage-scrim" />
         <div className="reality-crack-overlay" aria-hidden="true">
           <span className="crack-flash" />
-          <span className="crack-line crack-line-main" />
-          <span className="crack-line crack-line-branch-a" />
-          <span className="crack-line crack-line-branch-b" />
-          <span className="crack-line crack-line-branch-c" />
-          <span className="crack-line crack-line-branch-d" />
-          <span className="crack-shard crack-shard-a" />
-          <span className="crack-shard crack-shard-b" />
-          <span className="crack-shard crack-shard-c" />
+          <svg
+            className="crack-map"
+            viewBox="0 0 100 56.25"
+            preserveAspectRatio="none"
+            focusable="false"
+          >
+            <defs>
+              <path
+                id="crack-main"
+                d="M -4 30 L 7 28 L 13 30.5 L 22 26.8 L 30 29.6 L 39 27.1 L 47 29.3 L 55 25.7 L 64 28.6 L 73 25.9 L 82 28.1 L 92 24.9 L 104 26.4"
+              />
+              <path
+                id="crack-up"
+                d="M 52 27 L 50 21 L 54 15 L 51 9 L 55 3 L 53 -4"
+              />
+              <path
+                id="crack-down"
+                d="M 52 27 L 56 33 L 53 39 L 59 47 L 56 60"
+              />
+              <path
+                id="crack-left-up"
+                d="M 39 28 L 32 23 L 24 19 L 17 12 L 9 8 L -3 -2"
+              />
+              <path
+                id="crack-left-down"
+                d="M 22 27 L 15 34 L 8 39 L 2 47 L -4 55"
+              />
+              <path
+                id="crack-right-up"
+                d="M 65 28 L 70 20 L 78 16 L 84 9 L 92 4 L 103 -3"
+              />
+              <path
+                id="crack-right-down"
+                d="M 61 28 L 69 34 L 75 40 L 84 45 L 93 52 L 104 60"
+              />
+              <path
+                id="crack-small-a"
+                d="M 73 26 L 78 29 L 83 28 L 88 31"
+              />
+              <path
+                id="crack-small-b"
+                d="M 31 28 L 27 32 L 21 33 L 17 37"
+              />
+            </defs>
+            <g className="crack-glow">
+              <use href="#crack-main" />
+              <use href="#crack-up" />
+              <use href="#crack-down" />
+              <use href="#crack-left-up" />
+              <use href="#crack-left-down" />
+              <use href="#crack-right-up" />
+              <use href="#crack-right-down" />
+              <use href="#crack-small-a" />
+              <use href="#crack-small-b" />
+            </g>
+            <g className="crack-gaps">
+              <polygon points="51.1,26.2 54.4,27.1 51.9,29.2" />
+              <polygon points="36.9,27.3 39.8,27.9 37.5,29.5" />
+              <polygon points="72.8,25.6 76.4,26.4 73.5,28.7" />
+              <polygon points="52.4,38.5 55.2,40.3 52.8,42.6" />
+              <polygon points="15.8,33.2 18.7,32.5 17.3,35.8" />
+              <polygon points="85.2,28.2 89.1,29.4 86.3,31.1" />
+            </g>
+            <g className="crack-core">
+              <use href="#crack-main" />
+              <use href="#crack-up" />
+              <use href="#crack-down" />
+              <use href="#crack-left-up" />
+              <use href="#crack-left-down" />
+              <use href="#crack-right-up" />
+              <use href="#crack-right-down" />
+              <use href="#crack-small-a" />
+              <use href="#crack-small-b" />
+            </g>
+            <g className="crack-panels">
+              <polygon points="38,0 53,27 32,23 10,0" />
+              <polygon points="53,27 76,0 104,0 82,28" />
+              <polygon points="0,31 22,27 17,56 0,56" />
+              <polygon points="53,27 104,27 104,56 76,40" />
+              <polygon points="22,27 53,27 56,56 17,56" />
+            </g>
+          </svg>
         </div>
         <header className="vn-topbar">
           <button
