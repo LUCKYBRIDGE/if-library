@@ -853,6 +853,17 @@ export function VnPlayer({
           style={{ backgroundImage: `url(${stageBeat?.bgImage})` }}
         />
         <div className="stage-scrim" />
+        <div className="reality-crack-overlay" aria-hidden="true">
+          <span className="crack-flash" />
+          <span className="crack-line crack-line-main" />
+          <span className="crack-line crack-line-branch-a" />
+          <span className="crack-line crack-line-branch-b" />
+          <span className="crack-line crack-line-branch-c" />
+          <span className="crack-line crack-line-branch-d" />
+          <span className="crack-shard crack-shard-a" />
+          <span className="crack-shard crack-shard-b" />
+          <span className="crack-shard crack-shard-c" />
+        </div>
         <header className="vn-topbar">
           <button
             className="ghost-button fullscreen-button"
