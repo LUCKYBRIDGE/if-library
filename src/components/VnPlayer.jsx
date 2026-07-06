@@ -476,8 +476,21 @@ function SaveLoadPanel({ story, saveSlots, onLoadSlot, onClose, protagonistName 
 }
 
 function HistoryPanel({ history, onClose }) {
+  const panelRef = useRef(null);
+
+  useEffect(() => {
+    const panel = panelRef.current;
+    if (!panel) return undefined;
+
+    const frameId = window.requestAnimationFrame(() => {
+      panel.scrollTop = panel.scrollHeight;
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, [history]);
+
   return (
-    <aside className="history-panel" aria-label="지난 기록">
+    <aside className="history-panel" aria-label="지난 기록" ref={panelRef}>
       <div className="history-header">
         <h2>지난 기록</h2>
         <button
@@ -693,18 +706,13 @@ export function VnPlayer({
     if (!(target instanceof Element)) return;
     if (
       target.closest(
-        'button, a, input, textarea, select, .dialogue-footer, .save-load-panel, .history-panel',
+        'button, a, input, textarea, select, .save-load-panel, .history-panel',
       )
     ) {
       return;
     }
 
-    const tapX = Number.isFinite(event.clientX) ? event.clientX : window.innerWidth;
-    if (tapX >= window.innerWidth / 2) {
-      handleNext();
-    } else {
-      handlePrevious();
-    }
+    handleNext();
   }
 
   function handlePrevious() {
