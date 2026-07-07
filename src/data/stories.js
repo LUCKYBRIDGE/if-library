@@ -1365,8 +1365,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-warm-room',
     [
       { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: true },
-      { name: '둘째', side: 'center', scale: 0.9, active: false },
-      { name: '막내', side: 'right', scale: 0.92, active: false },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
@@ -1390,8 +1388,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-warm-room',
     [
       { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
-      { name: '둘째', side: 'center', scale: 0.9, active: true },
-      { name: '막내', side: 'right', scale: 0.92, active: false },
+      { name: '둘째', side: 'right', active: true },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
@@ -1399,7 +1396,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-warm-room',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
-      { name: '막내', side: 'center', scale: 0.92, active: false },
       { name: '부인', side: 'right', active: true },
     ],
   ),
@@ -1408,7 +1404,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-magistrate-yard',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
-      { name: '막내', side: 'center', scale: 0.92, active: false },
       { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
     ],
   ),
@@ -1417,7 +1412,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-magistrate-yard',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
-      { name: '막내', side: 'center', scale: 0.92, active: false },
       { name: '부인', side: 'right', variant: 'resolved', active: true },
     ],
   ),
@@ -1426,7 +1420,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-magistrate-yard',
     [
       { name: '사또', side: 'left', variant: 'command', active: true },
-      { name: '막내', side: 'right', scale: 0.92, active: false },
+      { name: '부인', side: 'right', variant: 'resolved', active: false },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
@@ -1434,8 +1428,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-magistrate-yard',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
-      { name: '포졸', side: 'center', scale: 0.9, active: true },
-      { name: '막내', side: 'right', scale: 0.92, active: false },
+      { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
@@ -1443,7 +1436,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-magistrate-yard',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
-      { name: '막내', side: 'center', scale: 0.92, active: false },
       { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
     ],
   ),
@@ -1452,7 +1444,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-magistrate-yard',
     [
       { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: true },
-      { name: '막내', side: 'center', scale: 0.92, active: false },
       { name: '부인', side: 'right', variant: 'resolved', active: false },
     ],
   ),
@@ -1461,7 +1452,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-warm-room',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
-      { name: '막내', side: 'right', scale: 0.92, active: false },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
@@ -1485,7 +1475,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-warm-room',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
-      { name: '막내', side: 'center', scale: 0.92, active: false },
       { name: '부인', side: 'right', variant: 'resolved', active: true },
     ],
   ),
@@ -1493,8 +1482,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     ['real-loop-8a'],
     'ong-warm-room',
     [
-      { name: '둘째', side: 'center', scale: 0.9, active: true },
-      { name: '막내', side: 'right', scale: 0.92, active: false },
+      { name: '둘째', side: 'right', active: true },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
@@ -1502,8 +1490,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-warm-room',
     [
       { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: true },
-      { name: '둘째', side: 'center', scale: 0.9, active: false },
-      { name: '막내', side: 'right', scale: 0.92, active: false },
+      { name: '둘째', side: 'right', active: false },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
@@ -1511,7 +1498,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-warm-room',
     [
       { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
-      { name: '막내', side: 'center', scale: 0.92, active: false },
       { name: '부인', side: 'right', variant: 'resolved', active: true },
     ],
   ),
@@ -1528,7 +1514,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-warm-room',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-      { name: '막내', side: 'center', scale: 0.92, active: false },
       { name: '부인', side: 'right', variant: 'resolved', active: true },
     ],
   ),
@@ -1537,8 +1522,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-warm-room',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-      { name: '둘째', side: 'center', scale: 0.9, active: true },
-      { name: '막내', side: 'right', scale: 0.92, active: false },
+      { name: '둘째', side: 'right', active: true },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
@@ -1546,8 +1530,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-warm-room',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-      { name: '둘째', side: 'center', scale: 0.9, active: true },
-      { name: '막내', side: 'right', scale: 0.92, active: false },
+      { name: '둘째', side: 'right', active: true },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
@@ -1555,7 +1538,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-warm-room',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-      { name: '둘째', side: 'center', scale: 0.9, active: false },
       { name: '부인', side: 'right', variant: 'resolved', active: true },
     ],
   ),
@@ -1572,7 +1554,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-winter-courtyard',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
-      { name: '막내', side: 'center', scale: 0.92, active: false },
       { name: '부인', side: 'right', active: true },
     ],
   ),
@@ -1581,7 +1562,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-winter-courtyard',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
-      { name: '막내', side: 'center', scale: 0.92, active: false },
       { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
     ],
   ),
@@ -1590,7 +1570,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-magistrate-yard',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
-      { name: '막내', side: 'center', scale: 0.92, active: false },
       { name: '부인', side: 'right', variant: 'resolved', active: true },
     ],
   ),
@@ -1599,7 +1578,6 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-magistrate-yard',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
-      { name: '막내', side: 'center', scale: 0.92, active: false },
       { name: '부인', side: 'right', variant: 'resolved', active: true },
     ],
   ),
