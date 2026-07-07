@@ -243,7 +243,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-winter-courtyard',
-      text: '부인은 남은 죽을 그릇에 담았다. 그러나 옹고집이 지켜보는 앞에서 대문 밖으로 가져갈 수는 없었다.',
+      text: '부인은 남은 죽을 그릇에 담았다. 그러나 옹고집이 지켜보는 앞에서는 대문 밖으로 가져갈 수 없었다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '부인', side: 'right', active: true },
@@ -328,7 +328,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-winter-courtyard',
-      text: '옹고집이 안방으로 들어간 뒤, 부인은 남은 죽과 낡은 짚신을 대문 밖 처마 밑에 내놓았다. 사내를 따로 부르지는 않았다.',
+      text: '옹고집이 안방으로 들어간 뒤, 부인은 남편 몰래 남은 죽과 낡은 짚신을 대문 밖 처마 밑에 내놓았다. 사내를 따로 부르지는 않았다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '부인', side: 'right', active: true },
@@ -1585,7 +1585,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '문틈 사이로 안쪽 마루 끝에 놓인 식은 죽 한 그릇이 보였다. 빗장이 걸리자 그릇도 함께 멀어졌다.',
+          text: '문 안쪽에서 그릇 놓이는 소리가 났다. 곧 빗장이 걸렸고, 마당은 다시 조용해졌다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -1712,7 +1712,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '당신이 지나온 그 밤, 부인이 대문 밖에 내놓은 것이오. 나는 가져왔을 뿐이오.',
+          text: '당신이 지나온 그 밤, 부인이 남편 몰래 대문 밖에 내놓은 것이오. 나는 가져왔을 뿐이오.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -1756,7 +1756,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '당신의 부인과 아이들에게는 당신이 일주일 만에 돌아온 일이 될 것이오.',
+          text: '집으로 돌아가면, 부인과 아이들에게는 당신이 일주일 만에 돌아온 일이 될 것이오.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -1767,7 +1767,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '하지만 당신이 떠돈 시간은 반 년이 넘는 고된 시간이었을 것이오.',
+          text: '하지만 당신이 떠돈 길은 반 년이 넘는 고된 시간이었을 것이오.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -2694,7 +2694,7 @@ export const reviewMain003OnggojibSource = {
     'b-final-acts': {
       decisionTitle: '옹고집의 고백',
       decisions: [
-        '부인은 정체를 알 수 없는 사내를 위해 죽과 낡은 짚신을 대문 밖에 내놓았다.',
+        '부인은 정체를 알 수 없는 사내를 위해 남편 몰래 죽과 낡은 짚신을 대문 밖에 내놓았다.',
         '가짜 옹고집과 관아에서 있었던 일은 옹고집에게만 남았고, 현실의 아내와 아이들은 일주일 동안 그를 기다리고 있었다.',
         '옹고집은 자신이 남에게 했던 문전박대와 모욕을 그대로 겪은 뒤, 가족과 주변 사람들에게 너그럽게 살고 싶다고 고백했다.',
       ],
