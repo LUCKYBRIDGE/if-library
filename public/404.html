@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IF Library</title>
+    <script>
+      (function () {
+        var basePath = "/if-library/";
+        var directStories = {
+          ifstory01: "review-main-002",
+          onggojib: "review-main-003"
+        };
+        var parts = window.location.pathname.split("/").filter(Boolean);
+        var pathKey = parts[parts.length - 1];
+        var params = new URLSearchParams(window.location.search);
+
+        if (parts[0] === "if-library" && directStories[pathKey]) {
+          params.set("story", directStories[pathKey]);
+        }
+
+        var query = params.toString();
+        window.location.replace(basePath + (query ? "?" + query : "") + window.location.hash);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>페이지를 여는 중입니다.</p>
+  </body>
+</html>
