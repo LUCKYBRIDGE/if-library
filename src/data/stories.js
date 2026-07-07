@@ -1729,6 +1729,7 @@ function buildOnggojibStory() {
       .filter(Boolean),
     endings: {
       'b-final-acts': routes['b-final-acts'].ending,
+      'b-fake-warning': routes['b-fake-warning'].ending,
     },
     reflectionQuestions: [
       '부인은 왜 진실과 가족의 안전 사이에서 흔들렸을까?',

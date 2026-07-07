@@ -2680,7 +2680,7 @@ export const reviewMain003OnggojibSource = {
       ],
       ending: {
         title: '함께 여는 대문',
-        location: '봄 햇살이 비추는 안방',
+        location: '봄 햇살이 드는 대문 앞',
         bg: 'ong-spring-room',
         text: '봄날 아침, 대문 밖에서 밥을 청하는 소리가 났다. 옹고집이 문을 열었고, 부인은 밥 한 그릇을 더 담았다. 아이들은 그릇과 수저를 가져왔다.',
         characters: [

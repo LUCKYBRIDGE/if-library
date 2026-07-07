@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { stories } from './data/stories.js';
-import { SingleStoryStart, StorySelector } from './components/StorySelector.jsx';
+import {
+  EndingCollection,
+  SingleStoryStart,
+  StorySelector,
+} from './components/StorySelector.jsx';
 import { VnPlayer } from './components/VnPlayer.jsx';
 import { createSaveData, SAVE_SLOT_AUTO, writeSavedGame } from './lib/saveSlots.js';
 
@@ -34,11 +38,26 @@ function shouldAutoplayDirectStory() {
   return params.get('play') === '1' || params.get('autoplay') === '1';
 }
 
+function shouldOpenEndingCollection() {
+  if (typeof window === 'undefined') return false;
+
+  const params = new URLSearchParams(window.location.search);
+  return params.get('endings') === '1';
+}
+
 export default function App() {
   const [directStoryId] = useState(getInitialDirectStoryId);
   const directStory = stories.find((story) => story.id === (directStoryId || DEFAULT_DIRECT_STORY_ID));
+  const [endingStoryId, setEndingStoryId] = useState(() =>
+    directStoryId && directStory && shouldOpenEndingCollection() ? directStory.id : null,
+  );
   const [selectedStoryId, setSelectedStoryId] = useState(() => {
-    if (directStoryId && shouldAutoplayDirectStory() && directStory?.playable) {
+    if (
+      directStoryId &&
+      shouldAutoplayDirectStory() &&
+      !shouldOpenEndingCollection() &&
+      directStory?.playable
+    ) {
       return directStory.id;
     }
 
@@ -47,6 +66,39 @@ export default function App() {
   const [protagonistName, setProtagonistName] = useState(() => getDefaultProtagonistName(directStory));
   const [initialSave, setInitialSave] = useState(null);
   const selectedStory = stories.find((story) => story.id === selectedStoryId);
+  const endingStory = stories.find((story) => story.id === endingStoryId);
+
+  function replaceEndingsParam(shouldShow, story) {
+    if (typeof window === 'undefined') return;
+
+    const url = new URL(window.location.href);
+    if (!directStoryId && story?.id) {
+      url.searchParams.set('story', story.id);
+    }
+
+    if (shouldShow) {
+      url.searchParams.set('endings', '1');
+      url.searchParams.delete('play');
+      url.searchParams.delete('autoplay');
+    } else {
+      url.searchParams.delete('endings');
+    }
+
+    window.history.pushState(null, '', `${url.pathname}${url.search}${url.hash}`);
+  }
+
+  function openEndings(story) {
+    if (!story) return;
+    setSelectedStoryId(null);
+    setInitialSave(null);
+    setEndingStoryId(story.id);
+    replaceEndingsParam(true, story);
+  }
+
+  function closeEndings() {
+    setEndingStoryId(null);
+    replaceEndingsParam(false, endingStory);
+  }
 
   function startStory(story, nextProtagonistName) {
     const nextName = nextProtagonistName || getDefaultProtagonistName(story);
@@ -70,6 +122,8 @@ export default function App() {
 
     setInitialSave(null);
     setProtagonistName(nextName);
+    setEndingStoryId(null);
+    replaceEndingsParam(false, story);
     setSelectedStoryId(story.id);
   }
 
@@ -94,6 +148,16 @@ export default function App() {
     );
   }
 
+  if (endingStory) {
+    return (
+      <EndingCollection
+        story={endingStory}
+        onBack={closeEndings}
+        onStart={() => startStory(endingStory, getDefaultProtagonistName(endingStory))}
+      />
+    );
+  }
+
   if (directStoryId && directStory) {
     return (
       <SingleStoryStart
@@ -102,6 +166,7 @@ export default function App() {
           startStory(directStory, nextProtagonistName);
         }}
         onLoad={(savedGame) => loadStory(directStory, savedGame)}
+        onOpenEndings={() => openEndings(directStory)}
       />
     );
   }
@@ -114,6 +179,7 @@ export default function App() {
         if (!story) return;
         startStory(story, nextProtagonistName);
       }}
+      onOpenEndings={openEndings}
     />
   );
 }

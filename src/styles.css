@@ -100,6 +100,22 @@ button:focus-visible {
   margin-top: 0;
 }
 
+.single-story-actions {
+  display: grid;
+  grid-template-columns: minmax(112px, 0.42fr) minmax(140px, 0.58fr);
+  gap: 8px;
+  align-items: center;
+}
+
+.single-story-actions .primary-button {
+  margin-top: 0;
+}
+
+.single-story-actions .ghost-button {
+  min-height: 42px;
+  border-radius: 8px;
+}
+
 .library-header {
   display: grid;
   grid-template-columns: minmax(220px, 0.7fr) minmax(260px, 1fr);
@@ -304,7 +320,7 @@ h1 {
 
 .story-card-actions {
   display: grid;
-  grid-template-columns: auto minmax(116px, 1fr);
+  grid-template-columns: auto minmax(92px, 0.8fr) minmax(116px, 1fr);
   gap: 8px;
   align-items: center;
   margin-top: auto;
@@ -319,6 +335,115 @@ h1 {
 .story-card-actions .primary-button {
   min-height: 38px;
   margin-top: 0;
+}
+
+.story-ending-button {
+  min-height: 38px;
+  border-radius: 8px;
+}
+
+.ending-collection-screen {
+  display: block;
+}
+
+.ending-collection-header {
+  align-items: center;
+}
+
+.ending-collection-actions {
+  display: grid;
+  grid-template-columns: minmax(112px, 0.42fr) minmax(140px, 0.58fr);
+  gap: 8px;
+  justify-self: end;
+  width: min(320px, 100%);
+}
+
+.ending-collection-actions .primary-button {
+  margin-top: 0;
+}
+
+.ending-collection-actions .ghost-button {
+  min-height: 42px;
+  border-radius: 8px;
+}
+
+.ending-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.ending-card {
+  display: grid;
+  grid-template-rows: minmax(170px, 0.62fr) auto;
+  overflow: hidden;
+  border: 1px solid rgba(244, 239, 228, 0.16);
+  border-radius: 8px;
+  background: rgba(13, 17, 24, 0.94);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
+}
+
+.ending-card-media {
+  min-height: 170px;
+  border-bottom: 1px solid rgba(244, 239, 228, 0.14);
+  background-position: center;
+  background-size: cover;
+}
+
+.ending-card-body {
+  display: grid;
+  gap: 9px;
+  padding: 16px;
+}
+
+.ending-card-body h2 {
+  margin: 0;
+  color: #fff4df;
+  font-size: 1.28rem;
+}
+
+.ending-card-location,
+.ending-card-text {
+  margin: 0;
+  color: #e8decd;
+  line-height: 1.62;
+}
+
+.ending-card-location {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.ending-card-text {
+  font-size: 0.94rem;
+}
+
+.ending-question-block {
+  display: grid;
+  gap: 7px;
+  padding: 10px;
+  border: 1px solid rgba(141, 184, 148, 0.24);
+  border-radius: 8px;
+  background: rgba(141, 184, 148, 0.1);
+}
+
+.ending-question-block > span {
+  color: #cfe8d2;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.ending-question-block ul {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding-left: 18px;
+  color: #edf4ea;
+  font-size: 0.82rem;
+  line-height: 1.48;
 }
 
 .primary-button,
@@ -2197,7 +2322,24 @@ h1 {
   }
 
   .story-card-actions {
-    grid-template-columns: minmax(78px, 0.42fr) minmax(120px, 0.58fr);
+    grid-template-columns: minmax(78px, 0.36fr) minmax(104px, 0.32fr) minmax(108px, 0.32fr);
+  }
+
+  .single-story-actions,
+  .ending-collection-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .ending-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ending-card {
+    grid-template-rows: minmax(138px, auto) auto;
+  }
+
+  .ending-card-media {
+    min-height: 138px;
   }
 }
 

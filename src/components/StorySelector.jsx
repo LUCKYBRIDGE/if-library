@@ -34,6 +34,10 @@ function DilemmaList({ items }) {
   );
 }
 
+function getStoryEndings(story) {
+  return Object.entries(story.endings || {}).filter(([, ending]) => Boolean(ending));
+}
+
 function NameStartModal({ story, name, onChangeName, onCancel, onStart }) {
   const canStart = name.length > 0;
 
@@ -77,7 +81,58 @@ function NameStartModal({ story, name, onChangeName, onCancel, onStart }) {
   );
 }
 
-export function StorySelector({ stories, onSelect }) {
+export function EndingCollection({ story, onBack, onStart }) {
+  const endings = getStoryEndings(story);
+
+  return (
+    <main className="library-screen ending-collection-screen">
+      <section className="library-header ending-collection-header" aria-labelledby="ending-list-title">
+        <div>
+          <p className="eyebrow">엔딩 모음</p>
+          <h1 id="ending-list-title">{story.title}</h1>
+        </div>
+        <div className="ending-collection-actions">
+          <button className="ghost-button" type="button" onClick={onBack}>
+            돌아가기
+          </button>
+          <button className="primary-button" type="button" onClick={onStart}>
+            처음부터
+          </button>
+        </div>
+      </section>
+
+      <section className="ending-grid" aria-label="엔딩 목록">
+        {endings.map(([key, ending], index) => (
+          <article className="ending-card" key={key}>
+            <div
+              className="ending-card-media"
+              style={{ backgroundImage: `url(${ending.bgImage || story.thumbnail})` }}
+              aria-hidden="true"
+            />
+            <div className="ending-card-body">
+              <span className="role-pill">END {index + 1}</span>
+              <h2>{ending.title}</h2>
+              <p className="ending-card-location">{ending.location}</p>
+              <p className="ending-card-text">{ending.text}</p>
+              {ending.reflection?.questions?.length ? (
+                <div className="ending-question-block">
+                  <span>되돌아볼 질문</span>
+                  <ul>
+                    {ending.reflection.questions.slice(0, 2).map((question) => (
+                      <li key={question}>{question}</li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
+          </article>
+        ))}
+      </section>
+    </main>
+  );
+}
+
+export function StorySelector({ stories, onSelect, onOpenEndings }) {
   const [expandedStoryId, setExpandedStoryId] = useState(null);
   const [pendingStory, setPendingStory] = useState(null);
   const [protagonistName, setProtagonistName] = useState('자라');
@@ -148,6 +203,15 @@ export function StorySelector({ stories, onSelect }) {
                   >
                     {isExpanded ? '접기' : '자세히'}
                   </button>
+                  {getStoryEndings(story).length ? (
+                    <button
+                      className="ghost-button story-ending-button"
+                      type="button"
+                      onClick={() => onOpenEndings?.(story)}
+                    >
+                      엔딩 모음
+                    </button>
+                  ) : null}
                   <button
                     className="primary-button"
                     type="button"
@@ -184,12 +248,14 @@ export function StorySelector({ stories, onSelect }) {
   );
 }
 
-export function SingleStoryStart({ story, onStart, onLoad }) {
+export function SingleStoryStart({ story, onStart, onLoad, onOpenEndings }) {
   const [protagonistName, setProtagonistName] = useState(() => getDefaultProtagonistName(story));
   const canCustomizeName = usesCustomProtagonistName(story);
   const canStart = protagonistName.length > 0;
   const saveSlots = readSaveSlots(story.id);
   const hasSavedGame = getHasSavedGame(saveSlots);
+  const hasEndings = getStoryEndings(story).length > 0;
+  const startName = canCustomizeName ? protagonistName : getDefaultProtagonistName(story);
 
   return (
     <main
@@ -241,16 +307,21 @@ export function SingleStoryStart({ story, onStart, onLoad }) {
             </label>
           ) : null}
           <p id="single-story-help">처음부터 시작하면 자동 저장 1은 새 진행으로 갱신됩니다.</p>
-          <button
-            className="primary-button"
-            type="button"
-            disabled={canCustomizeName && !canStart}
-            onClick={() =>
-              onStart(canCustomizeName ? protagonistName : getDefaultProtagonistName(story))
-            }
-          >
-            처음부터
-          </button>
+          <div className="single-story-actions">
+            {hasEndings ? (
+              <button className="ghost-button" type="button" onClick={onOpenEndings}>
+                엔딩 모음
+              </button>
+            ) : null}
+            <button
+              className="primary-button"
+              type="button"
+              disabled={canCustomizeName && !canStart}
+              onClick={() => onStart(startName)}
+            >
+              처음부터
+            </button>
+          </div>
         </section>
       ) : (
         <section className="single-story-start" aria-labelledby="single-story-title">
@@ -275,16 +346,21 @@ export function SingleStoryStart({ story, onStart, onLoad }) {
               <p id="single-story-help">{getNameStartHelp(story)}</p>
             </>
           ) : null}
-          <button
-            className="primary-button"
-            type="button"
-            disabled={canCustomizeName && !canStart}
-            onClick={() =>
-              onStart(canCustomizeName ? protagonistName : getDefaultProtagonistName(story))
-            }
-          >
-            시작
-          </button>
+          <div className="single-story-actions">
+            {hasEndings ? (
+              <button className="ghost-button" type="button" onClick={onOpenEndings}>
+                엔딩 모음
+              </button>
+            ) : null}
+            <button
+              className="primary-button"
+              type="button"
+              disabled={canCustomizeName && !canStart}
+              onClick={() => onStart(startName)}
+            >
+              시작
+            </button>
+          </div>
         </section>
       )}
     </main>
