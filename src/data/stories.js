@@ -33,7 +33,10 @@ const onggojibMagistrateCommandSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_magi
 const onggojibPosolSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_posol_pixel.png`;
 const onggojibStrangerHiddenSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_stranger_hidden_pixel.png`;
 const onggojibChildSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_child_pixel.png`;
-const onggojibServantSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_servant_pixel.png`;
+const onggojibSecondChildSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_second_child_pixel.png`;
+const onggojibYoungestChildSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_youngest_child_pixel.png`;
+const onggojibHouseholdServantSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_servant_household_pixel.png`;
+const onggojibWorkerSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_worker_woodcutter_pixel.png`;
 
 const backgroundAssets = {
   'palace-hall-dim': `${IMAGE_ROOT}backgrounds/adventure_rabbit_turtle_bg_palace_welcome.png`,
@@ -1013,6 +1016,7 @@ const onggojibBackgroundAssets = {
   'ong-magistrate-yard': `${ONGGOJIB_BACKGROUND_ROOT}onggojib_magistrate_yard_pixel.png`,
   'ong-snow-road': `${ONGGOJIB_BACKGROUND_ROOT}onggojib_snow_village_road_pixel.png`,
   'ong-spring-room': `${ONGGOJIB_BACKGROUND_ROOT}onggojib_spring_room_pixel.png`,
+  'ong-spring-courtyard': `${ONGGOJIB_BACKGROUND_ROOT}onggojib_spring_courtyard_pixel.png`,
   'ong-reconciliation-blue-cg': `${ONGGOJIB_BACKGROUND_ROOT}onggojib_reconciliation_blue_cg_pixel.png`,
   'ong-reconciliation-borrowed-cg': `${ONGGOJIB_BACKGROUND_ROOT}onggojib_reconciliation_borrowed_cg_pixel.png`,
   'ong-gate-stranger-cg': `${ONGGOJIB_BACKGROUND_ROOT}onggojib_gate_stranger_cg_pixel.png`,
@@ -1036,6 +1040,7 @@ const onggojibScenePlaceByBg = {
   'ong-magistrate-yard': '관아 마당',
   'ong-snow-road': '눈 내리는 관아 밖',
   'ong-spring-room': '봄 아침 안방',
+  'ong-spring-courtyard': '봄 햇살이 드는 대문 앞',
   'ong-reconciliation-blue-cg': '봄 아침 안방',
   'ong-reconciliation-borrowed-cg': '봄 아침 안방',
   'ong-gate-stranger-cg': '옹고집 저택 대문',
@@ -1389,7 +1394,7 @@ const onggojibCharacterAssets = {
     scale: 1,
     alt: '옹고집의 막내',
     variants: {
-      default: onggojibChildSprite,
+      default: onggojibYoungestChildSprite,
     },
   },
   둘째: {
@@ -1398,16 +1403,25 @@ const onggojibCharacterAssets = {
     scale: 1,
     alt: '옹고집의 둘째',
     variants: {
-      default: onggojibChildSprite,
+      default: onggojibSecondChildSprite,
     },
   },
   하인: {
     side: 'right',
     facing: 'left',
-    scale: 0.9,
+    scale: 0.92,
     alt: '옹고집 집의 하인',
     variants: {
-      default: onggojibServantSprite,
+      default: onggojibHouseholdServantSprite,
+    },
+  },
+  일꾼: {
+    side: 'right',
+    facing: 'left',
+    scale: 0.94,
+    alt: '장작을 패러 온 일꾼',
+    variants: {
+      default: onggojibWorkerSprite,
     },
   },
 };

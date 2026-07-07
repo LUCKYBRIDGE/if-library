@@ -2127,7 +2127,7 @@ export const reviewMain003OnggojibSource = {
           text: '몸이 어느 정도 나은 뒤, 옹고집은 다시 집안일을 살피기 시작했다. 어느 날 장작을 패러 온 일꾼들이 약속한 스무 단을 모두 마쳤다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-            { name: '하인', side: 'right', active: false },
+            { name: '일꾼', side: 'right', active: false },
           ],
         },
         {
@@ -2137,7 +2137,7 @@ export const reviewMain003OnggojibSource = {
           text: '나리, 장작 스무 단을 모두 팼습니다. 약속한 삯을 내주면 되겠습니까?',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '하인', side: 'right', active: true },
+            { name: '일꾼', side: 'right', active: true },
           ],
         },
       ],
@@ -2152,7 +2152,7 @@ export const reviewMain003OnggojibSource = {
         scenePlace: '옹고집 저택 마당',
         characters: [
           { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-          { name: '하인', side: 'right', active: false },
+          { name: '일꾼', side: 'right', active: false },
         ],
         options: [
           {
@@ -2189,7 +2189,7 @@ export const reviewMain003OnggojibSource = {
           text: '몸이 어느 정도 나은 뒤, 옹고집은 다시 집안일을 살피기 시작했다. 어느 날 장작을 패러 온 일꾼들이 약속한 스무 단을 모두 마쳤다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-            { name: '하인', side: 'right', active: false },
+            { name: '일꾼', side: 'right', active: false },
           ],
         },
         {
@@ -2199,7 +2199,7 @@ export const reviewMain003OnggojibSource = {
           text: '나리, 장작 스무 단을 모두 팼습니다. 약속한 삯을 내주면 되겠습니까?',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '하인', side: 'right', active: true },
+            { name: '일꾼', side: 'right', active: true },
           ],
         },
       ],
@@ -2214,7 +2214,7 @@ export const reviewMain003OnggojibSource = {
         scenePlace: '옹고집 저택 마당',
         characters: [
           { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-          { name: '하인', side: 'right', active: false },
+          { name: '일꾼', side: 'right', active: false },
         ],
         options: [
           {
@@ -2250,7 +2250,7 @@ export const reviewMain003OnggojibSource = {
           text: '약속한 대로 모두 주어라.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-            { name: '하인', side: 'right', active: false },
+            { name: '일꾼', side: 'right', active: false },
           ],
         },
         {
@@ -2260,7 +2260,7 @@ export const reviewMain003OnggojibSource = {
           text: '일꾼들은 처음 약속한 삯을 모두 받아 돌아갔다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '하인', side: 'right', active: true },
+            { name: '일꾼', side: 'right', active: true },
           ],
         },
       ],
@@ -2278,7 +2278,7 @@ export const reviewMain003OnggojibSource = {
           text: '패기만 하면 일인 줄 알았느냐? 쌓은 모양이 엉망이다. 삯은 반만 줘라.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-            { name: '하인', side: 'right', active: false },
+            { name: '일꾼', side: 'right', active: false },
           ],
         },
         {
@@ -2288,7 +2288,7 @@ export const reviewMain003OnggojibSource = {
           text: '잠깐. 방금 말은 내가 잘못했다. 처음 약속한 대로 모두 주어라.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-            { name: '하인', side: 'right', active: false },
+            { name: '일꾼', side: 'right', active: false },
           ],
         },
       ],
@@ -2309,7 +2309,7 @@ export const reviewMain003OnggojibSource = {
           screenDirection: '옹고집의 말이 끝나는 순간 화면 전체에 금이 번진다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-            { name: '하인', side: 'right', active: false },
+            { name: '일꾼', side: 'right', active: false },
           ],
         },
         {
@@ -2681,7 +2681,7 @@ export const reviewMain003OnggojibSource = {
       ending: {
         title: '함께 여는 대문',
         location: '봄 햇살이 드는 대문 앞',
-        bg: 'ong-spring-room',
+        bg: 'ong-spring-courtyard',
         text: '봄날 아침, 대문 밖에서 밥을 청하는 소리가 났다. 옹고집이 문을 열었고, 부인은 밥 한 그릇을 더 담았다. 아이들은 그릇과 수저를 가져왔다.',
         characters: [
           { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },

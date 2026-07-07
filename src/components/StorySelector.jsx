@@ -5,6 +5,7 @@ import {
   getSavedPositionLabel,
   readUnlockedEndings,
   readSaveSlots,
+  unlockEnding,
 } from '../lib/saveSlots.js';
 
 function normalizeProtagonistName(value) {
@@ -99,8 +100,14 @@ function NameStartModal({ story, name, onChangeName, onCancel, onStart }) {
 }
 
 export function EndingCollection({ story, onBack, onStart }) {
+  const [, setUnlockRevision] = useState(0);
   const endings = getStoryEndings(story);
   const unlockedEndingKeys = getUnlockedEndingKeys(story);
+
+  function forceUnlockEnding(routeKey) {
+    unlockEnding(story.id, routeKey);
+    setUnlockRevision((revision) => revision + 1);
+  }
 
   return (
     <main className="library-screen ending-collection-screen">
@@ -145,6 +152,15 @@ export function EndingCollection({ story, onBack, onStart }) {
                     ? ending.text
                     : '이 결말에 도달하면 제목과 마지막 장면이 공개됩니다.'}
                 </p>
+                {!isUnlocked ? (
+                  <button
+                    className="ghost-button force-ending-button"
+                    type="button"
+                    onClick={() => forceUnlockEnding(key)}
+                  >
+                    엔딩 강제 보기
+                  </button>
+                ) : null}
                 {isUnlocked && ending.reflection?.questions?.length ? (
                   <div className="ending-question-block">
                     <span>되돌아볼 질문</span>
