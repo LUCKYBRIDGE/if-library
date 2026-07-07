@@ -1075,8 +1075,17 @@ h1 {
   right: clamp(12px, 3vw, 44px);
 }
 
+.character-center {
+  left: 50%;
+  transform: translateX(-50%) scale(var(--character-scale, 1));
+}
+
 .character-sprite.is-mirrored {
   transform: scaleX(-1) scale(var(--character-scale, 1));
+}
+
+.character-center.is-mirrored {
+  transform: translateX(-50%) scaleX(-1) scale(var(--character-scale, 1));
 }
 
 .character-sprite.is-active {
@@ -2404,6 +2413,10 @@ h1 {
   .character-right {
     right: clamp(4px, 2vw, 20px);
   }
+
+  .character-center {
+    left: 50%;
+  }
 }
 
 @media (max-width: 640px) {
@@ -2452,6 +2465,10 @@ h1 {
 
   .character-right {
     right: clamp(2px, 1.5vw, 10px);
+  }
+
+  .character-center {
+    left: 50%;
   }
 
   .dialogue-footer {

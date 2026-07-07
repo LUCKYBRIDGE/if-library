@@ -714,6 +714,7 @@ export const reviewMain003OnggojibSource = {
     scenePlace: '관아 마당',
     characters: [
       { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '막내', side: 'center', scale: 0.92, active: false },
       { name: '부인', side: 'right', variant: 'resolved', active: true },
     ],
     options: [
@@ -1219,6 +1220,7 @@ export const reviewMain003OnggojibSource = {
         scenePlace: '관아 마당',
         characters: [
           { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+          { name: '막내', side: 'center', scale: 0.92, active: false },
           { name: '부인', side: 'right', variant: 'resolved', active: true },
         ],
         options: [
@@ -2685,6 +2687,7 @@ export const reviewMain003OnggojibSource = {
         text: '봄날 아침, 대문 밖에서 밥을 청하는 소리가 났다. 옹고집이 문을 열었고, 부인은 밥 한 그릇을 더 담았다. 아이들은 그릇과 수저를 가져왔다.',
         characters: [
           { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
+          { name: '둘째', side: 'center', scale: 0.9, active: false },
           { name: '부인', side: 'right', variant: 'resolved', active: true },
         ],
       },

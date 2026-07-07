@@ -1319,6 +1319,290 @@ const onggojibVisualOverrides = Object.fromEntries([
       { name: '부인', side: 'right', variant: 'resolved', active: false },
     ],
   ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-open-1b-1'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '막내', side: 'right', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-open-1b-2', 'ong-open-1b-2b'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+      { name: '막내', side: 'right', active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-open-1b-3', 'ong-open-1b-3b'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '하인', side: 'right', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-open-1b-3a', 'ong-open-1b-3a-2', 'ong-open-1b-3a-3'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+      { name: '하인', side: 'right', active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-open-1b-3a-1'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '하인', side: 'center', scale: 0.86, active: false },
+      { name: '부인', side: 'right', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-open-8', 'ong-open-8-1', 'ong-open-8-2'],
+    'ong-warm-room',
+    [
+      { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: true },
+      { name: '둘째', side: 'center', scale: 0.9, active: false },
+      { name: '막내', side: 'right', scale: 0.92, active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-open-8c', 'ong-open-8c-1'],
+    'ong-warm-room',
+    [
+      { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
+      { name: '둘째', side: 'right', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-open-8c-3'],
+    'ong-warm-room',
+    [
+      { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: true },
+      { name: '둘째', side: 'right', active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-open-8c-4', 'ong-open-8e'],
+    'ong-warm-room',
+    [
+      { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
+      { name: '둘째', side: 'center', scale: 0.9, active: true },
+      { name: '막내', side: 'right', scale: 0.92, active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-return-4', 'real-route-1a', 'real-route-1b', 'real-route-5', 'real-route-6', 'real-route-9'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '막내', side: 'center', scale: 0.92, active: false },
+      { name: '부인', side: 'right', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-return-5', 'ong-court-4'],
+    'ong-magistrate-yard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+      { name: '막내', side: 'center', scale: 0.92, active: false },
+      { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-court-1b', 'ong-court-5b', 'ong-court-7', 'wife-testimony-before'],
+    'ong-magistrate-yard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '막내', side: 'center', scale: 0.92, active: false },
+      { name: '부인', side: 'right', variant: 'resolved', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-court-2'],
+    'ong-magistrate-yard',
+    [
+      { name: '사또', side: 'left', variant: 'command', active: true },
+      { name: '막내', side: 'right', scale: 0.92, active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-court-3'],
+    'ong-magistrate-yard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '포졸', side: 'center', scale: 0.9, active: true },
+      { name: '막내', side: 'right', scale: 0.92, active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-court-5'],
+    'ong-magistrate-yard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '막내', side: 'center', scale: 0.92, active: false },
+      { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['real-route-2', 'real-route-4', 'real-route-4a'],
+    'ong-magistrate-yard',
+    [
+      { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: true },
+      { name: '막내', side: 'center', scale: 0.92, active: false },
+      { name: '부인', side: 'right', variant: 'resolved', active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['real-route-7', 'real-route-10', 'real-route-11', 'real-loop-3', 'real-loop-4'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+      { name: '막내', side: 'right', scale: 0.92, active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['real-route-12', 'real-route-13'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '둘째', side: 'right', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['real-loop-5', 'real-loop-6'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+      { name: '하인', side: 'right', active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['real-loop-7', 'real-loop-7a', 'real-loop-11', 'real-loop-11a', 'wife-testimony-repeat-before'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '막내', side: 'center', scale: 0.92, active: false },
+      { name: '부인', side: 'right', variant: 'resolved', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['real-loop-8a'],
+    'ong-warm-room',
+    [
+      { name: '둘째', side: 'center', scale: 0.9, active: true },
+      { name: '막내', side: 'right', scale: 0.92, active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['real-loop-9', 'real-loop-9a', 'real-loop-9b', 'real-loop-9c', 'real-loop-9e'],
+    'ong-warm-room',
+    [
+      { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: true },
+      { name: '둘째', side: 'center', scale: 0.9, active: false },
+      { name: '막내', side: 'right', scale: 0.92, active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['real-loop-9f', 'real-loop-9g'],
+    'ong-warm-room',
+    [
+      { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
+      { name: '막내', side: 'center', scale: 0.92, active: false },
+      { name: '부인', side: 'right', variant: 'resolved', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['fake-route-19', 'fake-route-19a', 'fake-route-19b'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
+      { name: '막내', side: 'right', scale: 0.92, active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['fake-route-21', 'fake-route-23'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
+      { name: '막내', side: 'center', scale: 0.92, active: false },
+      { name: '부인', side: 'right', variant: 'resolved', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['b-meal-act-2'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
+      { name: '둘째', side: 'center', scale: 0.9, active: true },
+      { name: '막내', side: 'right', scale: 0.92, active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['b-before-confession-1'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
+      { name: '둘째', side: 'center', scale: 0.9, active: true },
+      { name: '막내', side: 'right', scale: 0.92, active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['b-before-confession-2'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
+      { name: '둘째', side: 'center', scale: 0.9, active: false },
+      { name: '부인', side: 'right', variant: 'resolved', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['b-final-6b'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
+      { name: '낯선 사내', side: 'right', active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-return-4'],
+    'ong-winter-courtyard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '막내', side: 'center', scale: 0.92, active: false },
+      { name: '부인', side: 'right', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['ong-return-5'],
+    'ong-winter-courtyard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+      { name: '막내', side: 'center', scale: 0.92, active: false },
+      { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['real-route-1a', 'real-route-1b'],
+    'ong-magistrate-yard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '막내', side: 'center', scale: 0.92, active: false },
+      { name: '부인', side: 'right', variant: 'resolved', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['real-loop-11', 'real-loop-11a', 'wife-testimony-repeat-before'],
+    'ong-magistrate-yard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '막내', side: 'center', scale: 0.92, active: false },
+      { name: '부인', side: 'right', variant: 'resolved', active: true },
+    ],
+  ),
 ]);
 
 const onggojibCharacterAssets = {
