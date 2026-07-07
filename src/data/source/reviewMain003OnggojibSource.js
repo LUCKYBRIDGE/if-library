@@ -2627,7 +2627,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '부인',
           bg: 'ong-warm-room',
-          text: '그동안 서방님이 달라지려고 애쓰시는 모습을 보았습니다.',
+          text: '그동안 아이들이 웃는 날도 늘었고, 저도 그 시간이 좋았습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -2638,7 +2638,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '부인',
           bg: 'ong-warm-room',
-          text: '예전 일이 아주 없어진 것은 아니지만, 지금 하신 말씀을 믿어 보겠습니다.',
+          text: '아직 두려운 마음이 아주 없는 것은 아닙니다. 그래도 지난 한 달을 없던 일로 여기고 싶지는 않습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
