@@ -21,6 +21,10 @@ function getSaveKey(storyId, slotId = SAVE_SLOT_MANUAL) {
   return `if-library-save:${storyId}:${slotId}`;
 }
 
+function getEndingUnlockKey(storyId) {
+  return `if-library-endings:${storyId}`;
+}
+
 export function createSaveData({ storyId, routeKey, beatIndex, history, slotId, protagonistName }) {
   return {
     version: SAVE_VERSION,
@@ -32,6 +36,33 @@ export function createSaveData({ storyId, routeKey, beatIndex, history, slotId, 
     protagonistName: protagonistName?.trim() || '자라',
     savedAt: new Date().toISOString(),
   };
+}
+
+export function readUnlockedEndings(storyId) {
+  if (typeof window === 'undefined') return [];
+
+  try {
+    const value = window.localStorage.getItem(getEndingUnlockKey(storyId));
+    if (!value) return [];
+
+    const parsedValue = JSON.parse(value);
+    if (!Array.isArray(parsedValue)) return [];
+
+    return parsedValue.filter((routeKey) => typeof routeKey === 'string');
+  } catch {
+    return [];
+  }
+}
+
+export function unlockEnding(storyId, routeKey) {
+  if (typeof window === 'undefined' || !routeKey) return;
+
+  const unlockedEndings = new Set(readUnlockedEndings(storyId));
+  unlockedEndings.add(routeKey);
+  window.localStorage.setItem(
+    getEndingUnlockKey(storyId),
+    JSON.stringify([...unlockedEndings]),
+  );
 }
 
 export function writeSavedGame(storyId, slotId, saveData) {

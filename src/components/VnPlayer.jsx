@@ -10,6 +10,7 @@ import {
   roleLabels,
   SAVE_SLOT_AUTO,
   SAVE_SLOT_MANUAL,
+  unlockEnding,
   writeSavedGame,
 } from '../lib/saveSlots.js';
 
@@ -598,6 +599,16 @@ export function VnPlayer({
     const timeoutId = window.setTimeout(() => setSaveNotice(''), 1500);
     return () => window.clearTimeout(timeoutId);
   }, [saveNotice]);
+
+  useEffect(() => {
+    if (!activeEnding) return;
+
+    try {
+      unlockEnding(story.id, routeKey);
+    } catch {
+      // Ending collection unlocks should not interrupt the ending screen.
+    }
+  }, [activeEnding, routeKey, story.id]);
 
   useEffect(
     () => () => {

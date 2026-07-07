@@ -3,6 +3,7 @@ import {
   formatSavedAt,
   getHasSavedGame,
   getSavedPositionLabel,
+  readUnlockedEndings,
   readSaveSlots,
 } from '../lib/saveSlots.js';
 
@@ -36,6 +37,22 @@ function DilemmaList({ items }) {
 
 function getStoryEndings(story) {
   return Object.entries(story.endings || {}).filter(([, ending]) => Boolean(ending));
+}
+
+function getUnlockedEndingKeys(story) {
+  const unlockedEndings = new Set(readUnlockedEndings(story.id));
+
+  for (const slot of readSaveSlots(story.id)) {
+    const savedGame = slot.savedGame;
+    const route = story.routes[savedGame?.routeKey];
+    const beatIndex = Number(savedGame?.beatIndex);
+
+    if (route?.ending && Number.isFinite(beatIndex) && beatIndex >= route.beats.length) {
+      unlockedEndings.add(savedGame.routeKey);
+    }
+  }
+
+  return unlockedEndings;
 }
 
 function NameStartModal({ story, name, onChangeName, onCancel, onStart }) {
@@ -83,6 +100,7 @@ function NameStartModal({ story, name, onChangeName, onCancel, onStart }) {
 
 export function EndingCollection({ story, onBack, onStart }) {
   const endings = getStoryEndings(story);
+  const unlockedEndingKeys = getUnlockedEndingKeys(story);
 
   return (
     <main className="library-screen ending-collection-screen">
@@ -102,31 +120,45 @@ export function EndingCollection({ story, onBack, onStart }) {
       </section>
 
       <section className="ending-grid" aria-label="엔딩 목록">
-        {endings.map(([key, ending], index) => (
-          <article className="ending-card" key={key}>
-            <div
-              className="ending-card-media"
-              style={{ backgroundImage: `url(${ending.bgImage || story.thumbnail})` }}
-              aria-hidden="true"
-            />
-            <div className="ending-card-body">
-              <span className="role-pill">END {index + 1}</span>
-              <h2>{ending.title}</h2>
-              <p className="ending-card-location">{ending.location}</p>
-              <p className="ending-card-text">{ending.text}</p>
-              {ending.reflection?.questions?.length ? (
-                <div className="ending-question-block">
-                  <span>되돌아볼 질문</span>
-                  <ul>
-                    {ending.reflection.questions.slice(0, 2).map((question) => (
-                      <li key={question}>{question}</li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-            </div>
-          </article>
-        ))}
+        {endings.map(([key, ending], index) => {
+          const isUnlocked = unlockedEndingKeys.has(key);
+
+          return (
+            <article className={`ending-card ${isUnlocked ? '' : 'is-locked'}`} key={key}>
+              <div
+                className="ending-card-media"
+                style={{
+                  backgroundImage: isUnlocked
+                    ? `url(${ending.bgImage || story.thumbnail})`
+                    : `url(${story.thumbnail})`,
+                }}
+                aria-hidden="true"
+              />
+              <div className="ending-card-body">
+                <span className="role-pill">END {index + 1}</span>
+                <h2>{isUnlocked ? ending.title : '미확인 엔딩'}</h2>
+                <p className="ending-card-location">
+                  {isUnlocked ? ending.location : '아직 도달하지 못했습니다'}
+                </p>
+                <p className="ending-card-text">
+                  {isUnlocked
+                    ? ending.text
+                    : '이 결말에 도달하면 제목과 마지막 장면이 공개됩니다.'}
+                </p>
+                {isUnlocked && ending.reflection?.questions?.length ? (
+                  <div className="ending-question-block">
+                    <span>되돌아볼 질문</span>
+                    <ul>
+                      {ending.reflection.questions.slice(0, 2).map((question) => (
+                        <li key={question}>{question}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+              </div>
+            </article>
+          );
+        })}
       </section>
     </main>
   );
