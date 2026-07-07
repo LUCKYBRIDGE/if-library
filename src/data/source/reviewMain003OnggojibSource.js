@@ -2431,7 +2431,7 @@ export const reviewMain003OnggojibSource = {
       scenePlace: '눈 덮인 길',
       sceneTime: '판결 뒤',
       defaultBg: 'ong-snow-road',
-      recordSummary: '옹고집은 자신이 남에게 했던 일을 그대로 겪었다. 가짜 옹고집은 재판과 일주일이 현실에 남지 않을 시간이며, 현실의 아내는 그를 만난 적이 없다고 밝혔다.',
+      recordSummary: '옹고집은 자신이 남에게 했던 일을 그대로 겪었다. 가짜 옹고집은 현실의 아내와 아이들에게는 일주일만 흘렀고, 가짜 옹고집 자신과 관아의 일은 그들에게 남지 않는다고 밝혔다.',
       scenes: [
         {
           id: 'fake-route-3',
@@ -2709,7 +2709,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '그날 부인이 대문 밖에 내놓은 것이오. 나는 가져왔을 뿐이오.',
+          text: '당신이 지나온 그 밤, 부인이 대문 밖에 내놓은 것이오. 나는 가져왔을 뿐이오.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -2753,7 +2753,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '당신이 집을 비운 일주일 동안, 부인과 아이들은 집에서 당신을 기다렸소.',
+          text: '당신의 부인과 아이들에게는 당신이 일주일 만에 돌아온 일이 될 것이오.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -2764,7 +2764,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '나는 그 집에 들어간 적이 없소. 관아의 판결도 없었소.',
+          text: '하지만 당신이 떠돈 시간은 반 년이 넘는 고된 시간이었을 것이오.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -2786,7 +2786,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '당신에게는 실제였소. 하지만 집으로 돌아가면 부인도 아이들도 나를 알지 못할 것이오.',
+          text: '그 일은 당신에게는 실제였소. 하지만 집으로 돌아가면 부인도 아이들도 나를 알지 못할 것이오.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -2849,7 +2849,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '안쪽에서 빗장이 풀렸다. 부인이 문을 열었다. 조금 전 대문 밖으로 나갔던 또 다른 옹고집은 보이지 않았다.',
+          text: '안쪽에서 빗장이 풀렸다. 부인이 문을 열었다. 문밖에는 지친 옹고집 혼자 서 있었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -2871,7 +2871,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '부인',
           bg: 'ong-winter-courtyard',
-          text: '장사길이 늦어져 걱정했습니다.',
+          text: '일주일째 소식이 없어 걱정했습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -2893,7 +2893,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-winter-courtyard',
-          text: '옹고집은 부인과 함께 대문 안으로 들어갔다.',
+          text: '부인은 더 묻지 않고 옹고집을 안으로 들였다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -3525,7 +3525,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '내가 집을 비운 일주일 동안, 내게는 참 많은 일이 있었소.',
+          text: '내가 집을 나간 사이, 사실 내게 많은 일이 있었소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3536,7 +3536,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '말로는 다 설명하기 어려운 기이한 일들이었소.',
+          text: '그 일들을 겪으며 지난날 내가 어떤 사람이었는지 돌아보게 되었소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3547,7 +3547,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '그 일을 겪고 나서야 내가 얼마나 몹쓸 사람이었는지 알았소.',
+          text: '밥상에서, 대문 앞에서, 일꾼과 하인들 앞에서 내가 어찌 굴었는지도 생각했소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3591,7 +3591,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '당장 달라졌다고 믿어 달라는 말은 하지 않겠소.',
+          text: '이렇게 말한다고 해서 당신이 곧장 믿을 수 없다는 것도 알고 있소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3602,7 +3602,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '다만 앞으로는 가족뿐 아니라 내 주변을 돌아보고, 어려운 사람에게 베풀 줄 아는 사람이 되고 싶소.',
+          text: '그래도 나는 바뀌겠소. 가족뿐 아니라 내 주변을 돌아보고, 어려운 사람에게 베풀 줄 아는 사람이 되고 싶소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3624,7 +3624,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '부인',
           bg: 'ong-warm-room',
-          text: '서방님이 달라지려고 애쓰시는 것도, 그 마음이 진심이라는 것도 압니다.',
+          text: '그동안 서방님이 달라지려고 애쓰시는 모습을 보았습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -3635,7 +3635,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '부인',
           bg: 'ong-warm-room',
-          text: '하지만 저는 아직 서방님이 두렵습니다. 다시 예전으로 돌아가실까 봐, 마음을 다 놓지는 못하겠습니다.',
+          text: '예전 일이 아주 없어진 것은 아니지만, 지금 하신 말씀을 믿어 보겠습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -3646,7 +3646,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '그럴 수밖에 없었을 거요. 그 두려움도 내가 만든 것이오.',
+          text: '그 말에 부끄럽지 않게 살겠소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -3657,7 +3657,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '부인',
           bg: 'ong-warm-room',
-          text: '그래도 예전으로 돌아가지 않으려는 일이라면, 저도 함께하겠습니다.',
+          text: '우리, 다시 잘 살아 봅시다. 저도 함께하겠습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -3705,7 +3705,7 @@ export const reviewMain003OnggojibSource = {
       decisionTitle: '옹고집의 고백',
       decisions: [
         '부인은 정체를 알 수 없는 사내를 위해 죽과 낡은 짚신을 대문 밖에 내놓았다.',
-        '가짜 옹고집이 머문 일주일과 관아에서 있었던 일은 옹고집에게만 남았고, 현실의 아내와 아이들은 그를 기다리고 있었다.',
+        '가짜 옹고집과 관아에서 있었던 일은 옹고집에게만 남았고, 현실의 아내와 아이들은 일주일 동안 그를 기다리고 있었다.',
         '옹고집은 자신이 남에게 했던 문전박대와 모욕을 그대로 겪은 뒤, 가족과 주변 사람들에게 너그럽게 살고 싶다고 고백했다.',
       ],
       questions: [
