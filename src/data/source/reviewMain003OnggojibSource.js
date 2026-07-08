@@ -1434,7 +1434,7 @@ export const reviewMain003OnggojibSource = {
       scenePlace: '눈 덮인 길',
       sceneTime: '판결 뒤',
       defaultBg: 'ong-snow-road',
-      recordSummary: '옹고집은 자신이 남에게 했던 일을 그대로 겪었다. 가짜 옹고집은 현실의 아내와 아이들에게는 일주일만 흘렀고, 가짜 옹고집 자신과 관아의 일은 그들에게 남지 않는다고 밝혔다.',
+      recordSummary: '옹고집은 자신이 남에게 했던 일을 그대로 겪었다. 가짜 옹고집은 부인과 아이들에게는 일주일만 흐르고, 자신과 관아의 일은 옹고집에게만 남는다고 밝혔다.',
       scenes: [
         {
           id: 'fake-route-3',
@@ -1767,7 +1767,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '당신에게는 반 년이 넘는 고된 시간이었을 것이오.',
+          text: '그러나 당신이 떠돈 길은 그 일주일 안에 다 담기지 않소. 반 년이 넘는 고생이었을 것이오.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -1778,7 +1778,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-snow-road',
-          text: '그럼 내가 쫓겨나 여기까지 온 일은 대체 무엇이오?',
+          text: '그럼 내가 쫓겨나 여기까지 온 일은... 나한테만 남는다는 말이오?',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
@@ -1789,7 +1789,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '당신에게는 실제로 있었던 일이오. 하지만 집으로 돌아가면 부인도 아이들도 나를 알지 못할 것이오.',
+          text: '그렇소. 당신에게는 분명히 있었던 일이오. 다만 돌아가면 부인도 아이들도 나와 관아의 일을 기억하지 못할 것이오.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -2124,7 +2124,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-after-meal-1',
           type: 'narration',
           speaker: '해설',
-          text: '몸이 어느 정도 나은 뒤, 옹고집은 다시 집안일을 살피기 시작했다. 어느 날 장작을 패러 온 일꾼들이 약속한 스무 단을 모두 마쳤다.',
+          text: '아이들의 이야기를 들어 준 뒤로 며칠이 지났다. 옹고집은 몸을 추스르며 마당의 장작 일을 살폈다. 일꾼들은 약속한 스무 단을 모두 패 두었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '일꾼', side: 'right', active: false },
@@ -2186,7 +2186,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-child-scene-1',
           type: 'narration',
           speaker: '해설',
-          text: '몸이 어느 정도 나은 뒤, 옹고집은 다시 집안일을 살피기 시작했다. 어느 날 장작을 패러 온 일꾼들이 약속한 스무 단을 모두 마쳤다.',
+          text: '아이에게 말을 고친 뒤로 며칠이 지났다. 옹고집은 몸을 추스르며 마당의 장작 일을 살폈다. 일꾼들은 약속한 스무 단을 모두 패 두었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '일꾼', side: 'right', active: false },
@@ -2694,7 +2694,7 @@ export const reviewMain003OnggojibSource = {
       decisionTitle: '옹고집의 고백',
       decisions: [
         '부인은 정체를 알 수 없는 사내를 위해 남편 몰래 죽과 낡은 짚신을 대문 밖에 내놓았다.',
-        '가짜 옹고집과 관아에서 있었던 일은 옹고집에게만 남았고, 현실의 아내와 아이들은 일주일 동안 그를 기다리고 있었다.',
+        '가짜 옹고집과 관아에서 있었던 일은 옹고집에게만 남았고, 아내와 아이들에게는 그가 일주일 만에 돌아온 일이 되었다.',
         '옹고집은 자신이 남에게 했던 문전박대와 모욕을 그대로 겪은 뒤, 가족과 주변 사람들에게 너그럽게 살고 싶다고 고백했다.',
       ],
       questions: [
