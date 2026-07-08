@@ -328,7 +328,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-winter-courtyard',
-      text: '옹고집이 안방으로 들어간 뒤, 부인은 남편 몰래 남은 죽과 낡은 짚신을 대문 밖 처마 밑에 내놓았다. 사내를 따로 부르지는 않았다.',
+      text: '옹고집이 안방으로 들어간 뒤, 부인은 남편 몰래 남은 죽과 낡은 짚신을 대문 밖 처마 밑에 내놓았다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '부인', side: 'right', active: true },
@@ -1529,7 +1529,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '문 안의 사내',
           bg: 'ong-snow-road',
-          text: '그리 배가 고프면 장작이나 패라. 끝나면 삯은 주겠다.',
+          text: '밥은 거저 못 준다. 일할 힘이 남았으면 장작이나 패라. 끝나면 삯은 주겠다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -2398,7 +2398,6 @@ export const reviewMain003OnggojibSource = {
         text: '대문 안에서 아이가 “아버지” 하고 불렀다. 옹고집은 돌아섰지만, 그 목소리는 문 안의 다른 옹고집에게 닿았다. 대문은 닫혔고, 옹고집의 이름만 눈발 속에 남았다.',
         characters: [
           { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-          { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
         ],
       },
     },
@@ -2684,7 +2683,7 @@ export const reviewMain003OnggojibSource = {
         bg: 'ong-spring-courtyard',
         text: '봄날 아침, 대문 밖에서 밥을 청하는 소리가 났다. 옹고집이 문을 열었고, 부인은 밥 한 그릇을 더 담았다. 아이들은 그릇과 수저를 가져왔다.',
         characters: [
-          { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
+          { name: '진짜 옹고집', side: 'left', variant: 'resolve', active: false },
           { name: '부인', side: 'right', variant: 'resolved', active: true },
         ],
       },
