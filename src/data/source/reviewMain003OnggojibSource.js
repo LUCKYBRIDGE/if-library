@@ -391,7 +391,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-warm-room',
-      text: '그는 품에서 작은 종이 꾸러미를 꺼냈다. 엿 꾸러미 앞에서도 아이들은 선뜻 움직이지 못했다.',
+      text: '그는 품에서 작은 엿 꾸러미를 꺼냈다. 엿 꾸러미 앞에서도 아이들은 선뜻 움직이지 못했다.',
       characters: [
         { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
         { name: '부인', side: 'right', active: false },
@@ -575,7 +575,7 @@ export const reviewMain003OnggojibSource = {
       type: 'thought',
       speaker: '부인',
       bg: 'ong-winter-courtyard',
-      text: '막내는 내 뒤로 숨었다. 방금 전까지 다른 아버지와 웃던 아이였다.',
+      text: '막내는 내 뒤로 숨었다. 엿을 먹으며 웃던 아이가 아무 말도 하지 못했다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '부인', side: 'right', active: true },
