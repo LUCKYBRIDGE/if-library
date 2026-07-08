@@ -512,7 +512,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-warm-room',
-      text: '둘째는 낮에 본 까치 이야기를 끝까지 했다. 막내도 옆에서 따라 웃었다.',
+      text: '둘째는 낮에 본 까치 이야기를 다 말했다. 막내도 옆에서 따라 웃었다.',
       characters: [
         { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
         { name: '부인', side: 'right', active: true },
@@ -586,7 +586,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-winter-courtyard',
-      text: '분노한 옹고집이 한 걸음 다가오자 아이들이 뒤로 물러섰다. 또 다른 옹고집은 아이들을 부인 곁으로 물리고, 분노한 옹고집 앞에 섰다.',
+      text: '분노한 옹고집이 한 걸음 다가오자 아이들이 뒤로 물러섰다. 또 다른 옹고집은 아이들 앞에 서서 그를 막았다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
@@ -641,7 +641,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-magistrate-yard',
-      text: '포졸들이 둘 사이를 벌리자, 막내는 부인 곁을 떠나 방금 자신을 윽박지르지 않은 옹고집 뒤에 섰다.',
+      text: '포졸들이 둘 사이를 벌리자, 막내는 조용한 옹고집 뒤로 옮겨 섰다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
@@ -663,7 +663,7 @@ export const reviewMain003OnggojibSource = {
       type: 'dialogue',
       speaker: '조용한 옹고집',
       bg: 'ong-magistrate-yard',
-      text: '아이를 윽박지르지 마시오. 화가 나거든 나에게 하시오.',
+      text: '아이에게 소리치지 마시오. 화가 나거든 나에게 하시오.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -674,7 +674,7 @@ export const reviewMain003OnggojibSource = {
       type: 'thought',
       speaker: '부인',
       bg: 'ong-magistrate-yard',
-      text: '막내는 판결이 무엇인지 알지 못했다. 다만 진짜 옹고집에게 돌아가지 않고, 자신을 윽박지르지 않은 사람 곁에 서 있었다.',
+      text: '막내는 판결이 무엇인지 알지 못했다. 다만 화를 내는 아버지 쪽으로는 가지 않았다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -696,7 +696,7 @@ export const reviewMain003OnggojibSource = {
       type: 'thought',
       speaker: '부인',
       bg: 'ong-magistrate-yard',
-      text: '평생 함께 산 남편이었다. 말버릇도, 화를 참지 못하는 성질도 모를 리 없었다. 그런데 막내는 진짜 옹고집에게 다가가지 않았다. 자신을 윽박지르지 않은 사람 곁에 그대로 서 있었다.',
+      text: '평생 함께 산 남편이었다. 말버릇도, 화를 참지 못하는 성질도 모를 리 없었다. 그런데 막내는 그에게 다가가지 않았다. 그를 막아선 옹고집 뒤에 머물렀다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -706,7 +706,7 @@ export const reviewMain003OnggojibSource = {
   firstChoice: {
     id: 'wife-testimony',
     label: '부인의 대답',
-    prompt: '사또의 시선이 부인에게 멈췄다. 한쪽은 오래 함께 산 남편이고, 한쪽은 아이들을 부인 곁으로 물리고 분노한 남편 앞에 선 같은 얼굴의 사람이었다.',
+    prompt: '사또의 시선이 부인에게 멈췄다. 한쪽은 화를 내며 아이를 부르는 남편이고, 한쪽은 아이 앞에 선 같은 얼굴의 사람이었다.',
     choiceType: 'dilemma',
     choiceWeight: 'core',
     systemCue: '부인의 핵심 판정 선택지',
@@ -719,21 +719,21 @@ export const reviewMain003OnggojibSource = {
     options: [
       {
         id: 'point-real',
-        text: '오래 함께 산 남편을 가리킨다',
-        shortText: '오래 함께 산 남편을 가리킨다',
+        text: '화를 내는 옹고집을 가리킨다',
+        shortText: '화를 내는 옹고집을 가리킨다',
         nextStep: 'real-route',
-        reason: '그가 어떤 사람인지 알면서도, 평생 함께 산 남편을 가리킨다.',
-        cost: '그가 집으로 돌아오면 아이들의 말소리가 다시 밥상에서 끊길 수 있다.',
+        reason: '오래 함께 산 남편이라는 사실을 따른다.',
+        cost: '그가 집으로 돌아오면 아이들이 밥상에서 말을 아낄 수 있다.',
         helps: ['진실', '옹고집의 책임'],
         hurts: ['부인과 아이들의 안전감', '조용한 옹고집'],
         lingeringEmotion: '가짜 옹고집은 떠나고, 진짜 옹고집이 가족과 집으로 돌아간다.',
       },
       {
         id: 'point-double',
-        text: '아이들을 부인 곁으로 물린 사람을 가리킨다',
-        shortText: '아이들을 부인 곁으로 물린 사람을 가리킨다',
+        text: '아이를 감싸는 옹고집을 가리킨다',
+        shortText: '아이를 감싸는 옹고집을 가리킨다',
         nextStep: 'fake-first-verdict',
-        reason: '막내는 그 사람 곁에서 물러서지 않았고, 아이들은 그 앞에서 다시 말을 꺼냈다.',
+        reason: '막내는 그의 뒤에 섰고, 아이들은 그 앞에서 말을 꺼내기 시작했다.',
         cost: '눈발 속으로 밀려날 사람도 제 남편이라는 것을 안다.',
         helps: ['부인과 아이들의 안전감', '조용한 옹고집'],
         hurts: ['오래 함께 산 남편', '부인의 양심'],
@@ -911,7 +911,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-warm-room',
-          text: '그날 저녁, 둘째가 밥상에서 낮에 본 일을 꺼내려다 입을 다물었다.',
+          text: '그날 저녁, 둘째가 낮에 본 일을 말하려 했다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
             { name: '부인', side: 'right', active: false },
@@ -1127,7 +1127,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-warm-room',
-          text: '며칠 동안 아이들은 밥상에서 다시 말을 꺼냈다. 부인은 대문에서 소리가 날 때마다 돌아올 남편을 생각했다.',
+          text: '며칠 동안 아이들은 저녁마다 낮에 본 일을 이야기했다. 부인은 대문에서 소리가 날 때마다 돌아올 남편을 생각했다.',
           characters: [
             { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -1190,7 +1190,7 @@ export const reviewMain003OnggojibSource = {
           type: 'thought',
           speaker: '부인',
           bg: 'ong-magistrate-yard',
-          text: '지난번에는 진짜 남편을 가리켰다. 그가 돌아온 뒤, 아이들은 아버지가 없는 날에만 제 이야기를 하고 웃었다.',
+          text: '지난번에는 진짜 남편을 가리켰다. 그가 돌아온 뒤, 아이들은 아버지가 없는 날에만 제 이야기를 했다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -1201,7 +1201,7 @@ export const reviewMain003OnggojibSource = {
           type: 'thought',
           speaker: '부인',
           bg: 'ong-magistrate-yard',
-          text: '저 사람이 내 서방님인 것은 안다. 하지만 그를 다시 가리키는 것은 아이들을 같은 두려움 속으로 돌려보내는 일이었다.',
+          text: '저 사람이 내 서방님인 것은 안다. 하지만 아이들이 그 앞에서 말도 못 하는 날을 또 보낼 수는 없었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -1211,7 +1211,7 @@ export const reviewMain003OnggojibSource = {
       choice: {
         id: 'wife-testimony-repeat',
         label: '부인의 대답',
-        prompt: '사또의 물음이 다시 부인에게 돌아왔다. 부인은 지난 판결 뒤 아이들이 밥상에서 입을 다물고, 하인이 잘못하기 전부터 무릎을 꿇던 날들을 알고 있었다.',
+        prompt: '사또의 물음이 다시 부인에게 돌아왔다. 부인은 지난 판결 뒤 아이들이 말을 줄이고, 하인이 작은 실수에도 먼저 무릎부터 꿇던 날들을 알고 있었다.',
         choiceType: 'dilemma',
         choiceWeight: 'core',
         systemCue: '반복된 판정 선택지',
@@ -1224,23 +1224,23 @@ export const reviewMain003OnggojibSource = {
         options: [
           {
             id: 'point-real-locked',
-            text: '오래 함께 산 남편을 다시 가리킨다',
-            shortText: '오래 함께 산 남편을 다시 가리킨다',
+            text: '화를 내는 옹고집을 가리킨다',
+            shortText: '화를 내는 옹고집을 가리킨다',
             nextStep: 'real-loop-testimony',
             disabled: true,
             disabledReason: '한 번 같은 선택을 한 뒤, 가족이 어떻게 지냈는지 보았다.',
-            reason: '그가 어떤 사람인지 알면서도, 평생 함께 산 남편을 다시 가리킨다.',
-            cost: '아이들의 말소리가 다시 밥상에서 끊긴다.',
+            reason: '오래 함께 산 남편이라는 사실을 다시 따른다.',
+            cost: '아이들이 밥상에서 다시 조용해질 수 있다.',
             helps: ['진실', '옹고집의 이름'],
             hurts: ['부인과 아이들의 안전감'],
             lingeringEmotion: '지난번과 같은 선택은 다시 할 수 없다.',
           },
           {
             id: 'point-double-repeat',
-            text: '아이들을 부인 곁으로 물린 사람을 가리킨다',
-            shortText: '아이들을 부인 곁으로 물린 사람을 가리킨다',
+            text: '아이를 감싸는 옹고집을 가리킨다',
+            shortText: '아이를 감싸는 옹고집을 가리킨다',
             nextStep: 'fake-repeat-verdict',
-            reason: '막내는 그 사람 곁에서 물러서지 않았고, 아이들은 다시 밥상에서 말을 꺼냈다.',
+            reason: '아이들은 그 앞에서 말을 꺼냈고, 막내는 그의 뒤에 숨었다.',
             cost: '눈발 속으로 밀려날 사람도 제 남편이라는 것을 안다.',
             helps: ['부인과 아이들의 안전감', '조용한 옹고집'],
             hurts: ['오래 함께 산 남편', '부인의 양심'],
@@ -1254,13 +1254,13 @@ export const reviewMain003OnggojibSource = {
       scenePlace: '관아 마당',
       sceneTime: '첫 번째 판결 직후',
       defaultBg: 'ong-magistrate-yard',
-      recordSummary: '부인은 진짜 남편을 알아보면서도, 아이들과 가족을 지키기 위해 아이들을 부인 곁으로 물린 옹고집을 선택했다.',
+      recordSummary: '부인은 진짜 남편을 알아보면서도, 아이들과 가족을 지키기 위해 아이를 감싸던 옹고집을 선택했다.',
       scenes: [
         {
           id: 'fake-route-1',
           type: 'dialogue',
           speaker: '부인',
-          text: '아이들을 제 곁으로 물려 준 저 사람을 택하겠습니다.',
+          text: '아이를 감싸 준 저 사람을 택하겠습니다.',
           characters: [
             { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -1280,7 +1280,7 @@ export const reviewMain003OnggojibSource = {
           id: 'fake-first-verdict-1',
           type: 'thought',
           speaker: '부인',
-          text: '저 사람이 오래 함께 산 서방님인 것을 모르는 게 아니었다. 그래도 아이들을 다시 겁먹던 자리로 돌려보낼 수는 없었다.',
+          text: '저 사람이 오래 함께 산 서방님인 것을 모르는 게 아니었다. 그래도 아이들이 그의 앞에서 굳는 것을 또 볼 수는 없었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -1320,7 +1320,7 @@ export const reviewMain003OnggojibSource = {
           id: 'fake-first-verdict-2',
           type: 'thought',
           speaker: '부인',
-          text: '저대로 쫓겨나면 어디로 갈까. 걱정이 되었지만, 아이들을 지키겠다는 대답까지 거둘 수는 없었다.',
+          text: '저대로 쫓겨나면 어디로 갈까. 걱정이 되었지만, 방금 한 대답을 거둘 수는 없었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -1334,13 +1334,13 @@ export const reviewMain003OnggojibSource = {
       scenePlace: '관아 마당',
       sceneTime: '두 번째 판결 직후',
       defaultBg: 'ong-magistrate-yard',
-      recordSummary: '부인은 첫 번째 판결 뒤 되돌아온 일상을 겪고, 이번에는 아이들과 가족을 먼저 지키기로 했다.',
+      recordSummary: '부인은 첫 번째 판결 뒤 되돌아온 일상을 겪고, 이번에는 아이들과 가족을 지키기로 했다.',
       scenes: [
         {
           id: 'fake-repeat-verdict-1',
           type: 'dialogue',
           speaker: '부인',
-          text: '아이들을 제 곁으로 물려 준 저 사람을 택하겠습니다.',
+          text: '아이를 감싸 준 저 사람을 택하겠습니다.',
           characters: [
             { name: '가짜 옹고집', side: 'left', variant: 'gentle', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -1370,7 +1370,7 @@ export const reviewMain003OnggojibSource = {
           id: 'fake-repeat-verdict-3a',
           type: 'dialogue',
           speaker: '부인',
-          text: '하지만 서방님이 돌아온 뒤, 아이들은 다시 밥상에서 입을 다물었습니다.',
+          text: '하지만 서방님이 돌아온 뒤, 아이들은 밥상에서 제 이야기를 꺼내지 못했습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -1380,7 +1380,7 @@ export const reviewMain003OnggojibSource = {
           id: 'fake-repeat-verdict-3b',
           type: 'dialogue',
           speaker: '부인',
-          text: '이 말을 드려 미안합니다. 그래도 이번에는 아이들이 다시 서방님 눈치만 보며 살게 하지 않겠습니다.',
+          text: '이 말을 드려 미안합니다. 그래도 이번에는 아이들이 서방님 눈치만 보며 살게 하지 않겠습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -1420,7 +1420,7 @@ export const reviewMain003OnggojibSource = {
           id: 'fake-repeat-verdict-6',
           type: 'thought',
           speaker: '부인',
-          text: '그가 어디로 갈지 알 수 없었다. 미안한 마음은 남았지만, 이번에는 아이들을 다시 그 두려움 속으로 돌려보낼 수 없었다.',
+          text: '그가 어디로 갈지 알 수 없었다. 미안했지만, 아이들이 또 숨죽이는 집으로 돌아갈 수는 없었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -1473,7 +1473,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '더 걸을 힘이 떨어졌을 때, 낯익은 기와지붕과 큰 대문이 눈 속에서 나타났다.',
+          text: '더 걷기 어려워졌을 때, 낯익은 기와지붕과 큰 대문이 눈 속에서 나타났다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -1481,7 +1481,7 @@ export const reviewMain003OnggojibSource = {
           type: 'thought',
           speaker: '옹고집',
           bg: 'ong-snow-road',
-          text: '어디서 본 집인지 따질 기운도 없었다. 지금은 밥 한 그릇이 먼저였다.',
+          text: '어느 집인지 살필 겨를도 없었다. 밥 한 그릇이 급했다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true }],
         },
         {
@@ -1513,7 +1513,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '여인의 목소리',
           bg: 'ong-snow-road',
-          text: '손이 다 터졌습니다. 죽 한 그릇만 내어 주시면...',
+          text: '서방님, 손이 다 터졌습니다. 죽 한 그릇만 내어 주면 안 되겠습니까.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -1561,7 +1561,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-snow-road',
-          text: '나리, 장작은 다 팼습니다. 약속하신 삯을 조금만 주십시오.',
+          text: '나리, 장작을 다 팼습니다. 약속하신 삯을 조금만 주십시오.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true }],
         },
         {
@@ -1601,7 +1601,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-snow-road',
-          text: '헛간의 낡은 짚신이라도 좋습니다. 눈길을 걸을 것만 주십시오.',
+          text: '버리는 짚신이라도 좋습니다. 눈길을 걸을 것만 주십시오.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true }],
         },
         {
@@ -1609,7 +1609,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '여인의 목소리',
           bg: 'ong-snow-road',
-          text: '버리려던 것입니다. 그냥 두시면...',
+          text: '서방님, 헛간에 낡은 짚신이 한 켤레 있습니다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -1649,7 +1649,7 @@ export const reviewMain003OnggojibSource = {
           type: 'narration',
           speaker: '해설',
           bg: 'ong-snow-road',
-          text: '더는 일어나지 못하고 있을 때, 누군가 그의 앞에 죽 한 그릇과 마른 짚신을 내려놓았다.',
+          text: '일어나지 못한 채 앉아 있을 때, 누군가 그의 앞에 죽 한 그릇과 낡은 짚신을 내려놓았다.',
           characters: [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
         },
         {
@@ -1712,7 +1712,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '또 다른 옹고집',
           bg: 'ong-snow-road',
-          text: '당신이 지나온 그 밤, 부인이 남편 몰래 대문 밖에 내놓은 것이오. 나는 가져왔을 뿐이오.',
+          text: '그 집 부인이 남편 몰래 대문 밖 처마 밑에 내놓은 것이오. 나는 가져왔을 뿐이오.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
             { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
@@ -2421,7 +2421,7 @@ export const reviewMain003OnggojibSource = {
           id: 'b-before-confession-2',
           type: 'dialogue',
           speaker: '부인',
-          text: '요즘 들어 아이들이 많이 웃습니다. 저도 그 시간이 좋습니다.',
+          text: '요즘 들어 아이들이 많이 웃습니다. 저도 그 웃음이 반갑습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -2571,7 +2571,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '아이들이 내 눈치를 보고, 당신이 그 아이들을 감싸야 했던 것도 모두 나 때문이었소.',
+          text: '아이들이 내 눈치를 보고, 당신이 그 아이들을 달래야 했던 것도 모두 나 때문이었소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
