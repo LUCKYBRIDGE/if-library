@@ -1,3 +1,517 @@
+const partOneGateResponses = {
+  scoldMercy: {
+    code: 'gate-scold-mercy',
+    optionText: '부인의 동정을 꾸짖는다',
+    shortText: '부인을 꾸짖는다',
+    line: '부인, 그런 자 하나 불쌍히 여기면 온 동네 거지가 다 몰려오오.',
+    reason: '사내를 돕자는 부인의 말을 사람들 앞에서 꺾는다.',
+    cost: '굶주린 사람보다 제 집 문간에 몰릴 사람들부터 걱정한다.',
+    lingeringEmotion: '부인은 더 말하지 못하고, 사내는 빈 그릇을 든 채 서 있었다.',
+  },
+  beggarHouse: {
+    code: 'gate-beggar-house',
+    optionText: '사내를 거지 취급하며 쫓는다',
+    shortText: '거지 취급한다',
+    line: '구걸할 곳을 잘못 찾았다. 내 집은 거지 먹이는 곳이 아니다.',
+    reason: '사내를 사람으로 대하지 않고 거지라 부르며 밀어낸다.',
+    cost: '죽을 청한 사람에게 밥 대신 모욕을 준다.',
+    lingeringEmotion: '사내는 문설주에 기대 선 채 그 말을 들었다.',
+  },
+};
+
+const partOneWorkDemands = {
+  promised: {
+    code: 'work-promised',
+    optionText: '장작을 패면 삯을 주겠다며 몰아붙인다',
+    shortText: '장작을 패라 한다',
+    line: '밥은 거저 못 준다. 일할 힘이 남았으면 장작이나 패라. 끝나면 삯은 주겠다.',
+    reason: '굶주린 사내에게 먼저 일을 시킨다.',
+    cost: '죽 한 그릇 앞에서도 대가부터 따진다.',
+    lingeringEmotion: '사내는 밥을 얻기 위해 젖은 장작 앞에 선다.',
+  },
+  noFinishNoFood: {
+    code: 'work-no-food',
+    optionText: '다 패야 죽과 삯을 주겠다고 한다',
+    shortText: '다 패야 준다고 한다',
+    line: '먹고 싶으면 젖은 장작부터 다 패라. 다 패면 죽 한 그릇과 삯은 주겠다.',
+    reason: '사내의 배고픔을 빌미로 더 몰아붙인다.',
+    cost: '죽 한 그릇조차 밤새 일한 뒤에야 주겠다고 한다.',
+    lingeringEmotion: '사내는 거절하지 못하고 도끼를 든다.',
+  },
+};
+
+const partOneWageCuts = {
+  wetWood: {
+    code: 'wage-wet-wood',
+    optionText: '젖은 나무를 트집 잡아 반만 준다',
+    shortText: '반만 준다',
+    line: '젖은 나무를 이렇게 패 놓고 온전한 삯을 바라느냐. 반만 받고 물러가라.',
+    reason: '처음에 없던 트집으로 약속한 삯을 깎는다.',
+    cost: '밤새 일한 사람에게 약속한 값을 주지 않는다.',
+    lingeringEmotion: '사내는 엽전을 주우려고 허리를 굽힌다.',
+  },
+  tooSlow: {
+    code: 'wage-too-slow',
+    optionText: '느리게 했다며 약속한 삯을 깎는다',
+    shortText: '느리다며 깎는다',
+    line: '도끼질이 느려 밤이 다 갔다. 약속한 삯을 다 받을 생각은 버려라.',
+    reason: '굶주린 몸으로 일한 사내에게 속도가 느렸다고 탓한다.',
+    cost: '자신이 시킨 일을 마쳤는데도 약속을 지키지 않는다.',
+    lingeringEmotion: '사내는 더 따지지 못하고 엽전을 줍는다.',
+  },
+};
+
+const partOneShoeRefusals = {
+  povertyDisease: {
+    code: 'shoe-poverty',
+    optionText: '가난도 병이라며 내쫓는다',
+    shortText: '가난도 병이라 한다',
+    line: '낡은 것도 내 집 물건이오. 가난도 병이다. 내 대문 앞에 붙어 있지 말고 썩 가라.',
+    reason: '버리는 짚신 한 켤레마저 아까워한다.',
+    cost: '눈길을 걸을 신발도 없는 사람에게 모욕을 준다.',
+    lingeringEmotion: '사내는 찢어진 짚신을 끌고 대문 밖에 선다.',
+  },
+  crawlAway: {
+    code: 'shoe-crawl',
+    optionText: '맨발로 가든 기어가든 상관없다고 한다',
+    shortText: '내 알 바 아니라고 한다',
+    line: '버리는 짚신도 네 몫은 없다. 맨발로 가든 기어가든 내 알 바 아니오.',
+    reason: '상대가 어떻게 눈길을 걸을지조차 외면한다.',
+    cost: '도울 수 있는 물건을 두고도 일부러 내주지 않는다.',
+    lingeringEmotion: '사내는 발을 감싸 쥔 채 대문 앞을 떠나지 못한다.',
+  },
+};
+
+function partOneStateKey({ gate, work, wage, shoe }) {
+  return [
+    partOneGateResponses[gate].code,
+    partOneWorkDemands[work].code,
+    partOneWageCuts[wage].code,
+    partOneShoeRefusals[shoe].code,
+  ].join('__');
+}
+
+function cloneOnggojibScene(scene, overrides = {}) {
+  return {
+    ...scene,
+    characters: scene.characters?.map((character) => ({ ...character })) || [],
+    ...overrides,
+  };
+}
+
+function sceneById(source, id) {
+  const scene = source.startScenes.find((candidate) => candidate.id === id);
+  if (!scene) throw new Error(`Missing Onggojib scene ${id}`);
+  return scene;
+}
+
+function routeScenesById(source, routeKey, ids) {
+  const sourceRoute = source.routes[routeKey];
+  if (!sourceRoute) throw new Error(`Missing Onggojib route ${routeKey}`);
+  return ids.map((id) => {
+    const scene = sourceRoute.scenes.find((candidate) => candidate.id === id);
+    if (!scene) throw new Error(`Missing Onggojib route scene ${routeKey}/${id}`);
+    return cloneOnggojibScene(scene);
+  });
+}
+
+function startScenesById(source, ids) {
+  return ids.map((id) => cloneOnggojibScene(sceneById(source, id)));
+}
+
+function makePartOneBadChoice({ id, label, prompt, systemCue, state, stateField, nextStage, options }) {
+  return {
+    id,
+    label,
+    prompt,
+    choiceType: 'relationship',
+    choiceWeight: 'medium',
+    systemCue,
+    bg: 'ong-winter-courtyard',
+    scenePlace: '옹고집 저택 대문',
+    characters: [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+      { name: '낯선 사내', side: 'right', active: false },
+    ],
+    options: options.map(([optionId, option]) => ({
+      id: option.code,
+      text: option.optionText,
+      shortText: option.shortText,
+      nextStep: `${nextStage}-${partOneStateKey({ ...state, [stateField]: optionId })}`,
+      reason: option.reason,
+      cost: option.cost,
+      helps: [],
+      hurts: ['대문 밖 사내', '부인의 마음'],
+      lingeringEmotion: option.lingeringEmotion,
+    })),
+  };
+}
+
+function makeWifeTestimonyChoice(stateKey) {
+  return {
+    id: `wife-testimony-${stateKey}`,
+    label: '부인의 대답',
+    prompt: '사또의 시선이 부인에게 멈췄다. 한쪽은 화를 내며 아이를 부르는 남편이고, 한쪽은 아이 앞에 선 같은 얼굴의 사람이었다.',
+    choiceType: 'dilemma',
+    choiceWeight: 'core',
+    systemCue: '부인의 핵심 판정 선택지',
+    bg: 'ong-magistrate-yard',
+    scenePlace: '관아 마당',
+    characters: [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
+    ],
+    options: [
+      {
+        id: 'point-real',
+        text: '화를 내는 옹고집을 가리킨다',
+        shortText: '화를 내는 옹고집을 가리킨다',
+        nextStep: `real-route-${stateKey}`,
+        reason: '오래 함께 산 남편이라는 사실을 따른다.',
+        cost: '그가 집으로 돌아오면 아이들이 밥상에서 말을 아낄 수 있다.',
+        helps: ['진실', '옹고집의 책임'],
+        hurts: ['부인과 아이들의 안전감', '조용한 옹고집'],
+        lingeringEmotion: '가짜 옹고집은 떠나고, 진짜 옹고집이 가족과 집으로 돌아간다.',
+      },
+      {
+        id: 'point-double',
+        text: '아이를 감싸는 옹고집을 가리킨다',
+        shortText: '아이를 감싸는 옹고집을 가리킨다',
+        nextStep: `fake-first-verdict-${stateKey}`,
+        reason: '막내는 그의 뒤에 섰고, 아이들은 그 앞에서 말을 꺼내기 시작했다.',
+        cost: '쫓겨날 사람도 제 남편이라는 것을 안다.',
+        helps: ['부인과 아이들의 안전감', '조용한 옹고집'],
+        hurts: ['오래 함께 산 남편', '부인의 양심'],
+        lingeringEmotion: '진짜 옹고집은 관아 밖으로 쫓겨난다.',
+      },
+    ],
+  };
+}
+
+function makeRepeatTestimonyChoice(stateKey) {
+  return {
+    id: `wife-testimony-repeat-${stateKey}`,
+    label: '부인의 대답',
+    prompt: '사또의 물음이 다시 부인에게 돌아왔다. 부인은 지난 판결 뒤 아이들이 말을 줄이고, 하인이 작은 실수에도 먼저 무릎부터 꿇던 날들을 알고 있었다.',
+    choiceType: 'dilemma',
+    choiceWeight: 'core',
+    systemCue: '반복된 판정 선택지',
+    bg: 'ong-magistrate-yard',
+    scenePlace: '관아 마당',
+    characters: [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
+      { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
+    ],
+    options: [
+      {
+        id: 'point-real-locked',
+        text: '화를 내는 옹고집을 가리킨다',
+        shortText: '화를 내는 옹고집을 가리킨다',
+        nextStep: 'real-loop-testimony',
+        disabled: true,
+        disabledReason: '한 번 같은 선택을 한 뒤, 가족이 어떻게 지냈는지 보았다.',
+        reason: '오래 함께 산 남편이라는 사실을 다시 따른다.',
+        cost: '아이들이 밥상에서 다시 조용해질 수 있다.',
+        helps: ['진실', '옹고집의 이름'],
+        hurts: ['부인과 아이들의 안전감'],
+        lingeringEmotion: '지난번과 같은 선택은 다시 할 수 없다.',
+      },
+      {
+        id: 'point-double-repeat',
+        text: '아이를 감싸는 옹고집을 가리킨다',
+        shortText: '아이를 감싸는 옹고집을 가리킨다',
+        nextStep: `fake-repeat-verdict-${stateKey}`,
+        reason: '아이들은 그 앞에서 말을 꺼냈고, 막내는 그의 뒤에 숨었다.',
+        cost: '쫓겨날 사람도 제 남편이라는 것을 안다.',
+        helps: ['부인과 아이들의 안전감', '조용한 옹고집'],
+        hurts: ['오래 함께 산 남편', '부인의 양심'],
+        lingeringEmotion: '진짜 옹고집은 다시 관아 밖으로 쫓겨난다.',
+      },
+    ],
+  };
+}
+
+function makeMirroredFakeRouteScenes(source, state) {
+  const stateTexts = {
+    gate: partOneGateResponses[state.gate].line,
+    work: partOneWorkDemands[state.work].line,
+    wage: partOneWageCuts[state.wage].line,
+    shoe: partOneShoeRefusals[state.shoe].line,
+  };
+
+  const openingIds = ['fake-route-3', 'fake-route-3a', 'fake-route-3b', 'fake-route-3c', 'fake-route-3d', 'fake-route-3e', 'fake-route-4', 'fake-route-5'];
+  const afterWorkIds = ['fake-route-7a', 'fake-route-7b', 'fake-route-8', 'fake-route-9'];
+  const afterWageIds = ['fake-route-10a', 'fake-route-11', 'fake-route-12', 'fake-route-13', 'fake-route-14'];
+  const endingIds = [
+    'fake-route-15a',
+    'fake-route-15b',
+    'fake-route-16',
+    'fake-route-17',
+    'fake-route-18',
+    'fake-route-18a',
+    'fake-route-18b',
+    'fake-route-18c',
+    'fake-route-18d',
+    'fake-route-18e',
+    'fake-route-18f',
+    'fake-route-18g',
+    'fake-route-18g-1',
+    'fake-route-18g-2',
+    'fake-route-18g-3',
+    'fake-route-18g-4',
+    'fake-route-18g-5',
+    'fake-route-18g-6',
+    'fake-route-18h',
+    'fake-route-18i',
+    'fake-route-18j',
+    'fake-route-18k',
+    'fake-route-18l',
+    'fake-route-18m',
+    'fake-route-18n',
+    'fake-route-18o',
+    'fake-route-18q',
+    'fake-route-19',
+    'fake-route-19b',
+    'fake-route-19a',
+    'fake-route-21',
+    'fake-route-22',
+    'fake-route-22a',
+    'fake-route-23',
+    'fake-route-23a',
+    'fake-route-23b',
+    'fake-route-23c',
+  ];
+
+  const wifePlea = routeScenesById(source, 'fake-route', ['fake-route-6a'])[0];
+  const gateEcho = cloneOnggojibScene(routeScenesById(source, 'fake-route', ['fake-route-6'])[0], {
+    text: stateTexts.gate,
+  });
+  const workEcho = cloneOnggojibScene(routeScenesById(source, 'fake-route', ['fake-route-7'])[0], {
+    text: stateTexts.work,
+  });
+  const wageEcho = cloneOnggojibScene(routeScenesById(source, 'fake-route', ['fake-route-10'])[0], {
+    text: stateTexts.wage,
+  });
+  const shoeEcho = cloneOnggojibScene(routeScenesById(source, 'fake-route', ['fake-route-15'])[0], {
+    text: stateTexts.shoe,
+  });
+
+  return [
+    ...routeScenesById(source, 'fake-route', openingIds),
+    wifePlea,
+    gateEcho,
+    workEcho,
+    ...routeScenesById(source, 'fake-route', afterWorkIds),
+    wageEcho,
+    ...routeScenesById(source, 'fake-route', afterWageIds),
+    shoeEcho,
+    ...routeScenesById(source, 'fake-route', endingIds),
+  ];
+}
+
+function createOnggojibPartOneRoutes(source) {
+  const routes = {};
+  const courtIntroIds = [
+    'ong-open-3e',
+    'ong-open-3f',
+    'ong-open-4',
+    'ong-open-5',
+    'ong-open-6',
+    'ong-open-7',
+    'ong-open-8',
+    'ong-open-8-1',
+    'ong-open-8-2',
+    'ong-open-8a',
+    'ong-open-8b',
+    'ong-open-8b-1',
+    'ong-open-8b-3',
+    'ong-open-8b-4',
+    'ong-open-8c',
+    'ong-open-8c-1',
+    'ong-open-8c-3',
+    'ong-open-8c-4',
+    'ong-open-8d-0',
+    'ong-open-8e',
+    'ong-return-1',
+    'ong-return-2',
+    'ong-return-3',
+    'ong-return-4',
+    'ong-return-5',
+    'ong-court-1',
+    'ong-court-1a',
+    'ong-court-1b',
+    'ong-court-2',
+    'ong-court-3',
+    'ong-court-4',
+    'ong-court-5',
+    'ong-court-5b',
+    'ong-court-6',
+    'ong-court-7',
+  ];
+
+  for (const gate of Object.keys(partOneGateResponses)) {
+    const gateState = { gate, work: 'promised', wage: 'wetWood', shoe: 'povertyDisease' };
+    const gateRouteKey = `part1-gate-${partOneStateKey(gateState)}`;
+
+    routes[gateRouteKey] = {
+      title: '대문 앞 사내',
+      scenePlace: '옹고집 저택 대문',
+      sceneTime: '겨울밤',
+      defaultBg: 'ong-winter-courtyard',
+      recordSummary: `옹고집은 대문 앞 사내에게 "${partOneGateResponses[gate].line}"라고 말했다.`,
+      scenes: [
+        {
+          id: `ong-open-gate-${gate}`,
+          type: 'dialogue',
+          speaker: '옹고집',
+          bg: 'ong-winter-courtyard',
+          text: partOneGateResponses[gate].line,
+          characters: [
+            { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+            { name: '낯선 사내', side: 'right', active: false },
+          ],
+        },
+      ],
+      choice: makePartOneBadChoice({
+        id: `part1-work-choice-${gate}`,
+        label: '죽 한 그릇',
+        prompt: '사내는 빈 그릇을 든 채 물러서지 못했다. 부엌에는 아침에 남은 죽이 있었다.',
+        systemCue: '대문 밖 사내에게 일을 시킬지 정하는 선택',
+        state: gateState,
+        stateField: 'work',
+        nextStage: 'part1-work',
+        options: Object.entries(partOneWorkDemands),
+      }),
+    };
+
+    for (const work of Object.keys(partOneWorkDemands)) {
+      const workState = { gate, work, wage: 'wetWood', shoe: 'povertyDisease' };
+      const workRouteKey = `part1-work-${partOneStateKey(workState)}`;
+
+      routes[workRouteKey] = {
+        title: '젖은 장작',
+        scenePlace: '옹고집 저택 대문',
+        sceneTime: '겨울밤',
+        defaultBg: 'ong-winter-courtyard',
+        recordSummary: `옹고집은 대문 밖 사내에게 "${partOneWorkDemands[work].line}"라고 말했다.`,
+        scenes: [
+          {
+            id: `ong-open-work-${gate}-${work}`,
+            type: 'dialogue',
+            speaker: '옹고집',
+            bg: 'ong-winter-courtyard',
+            text: partOneWorkDemands[work].line,
+            characters: [
+              { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+              { name: '낯선 사내', side: 'right', active: false },
+            ],
+          },
+          ...startScenesById(source, ['ong-open-3', 'ong-open-3a', 'ong-open-3a-1', 'ong-open-3a-2']),
+        ],
+        choice: makePartOneBadChoice({
+          id: `part1-wage-choice-${gate}-${work}`,
+          label: '장작 삯',
+          prompt: '사내는 밤새 젖은 장작을 팼다. 그는 약속한 삯을 청했다.',
+          systemCue: '약속한 삯을 줄지 정하는 선택',
+          state: workState,
+          stateField: 'wage',
+          nextStage: 'part1-wage',
+          options: Object.entries(partOneWageCuts),
+        }),
+      };
+
+      for (const wage of Object.keys(partOneWageCuts)) {
+        const wageState = { gate, work, wage, shoe: 'povertyDisease' };
+        const wageRouteKey = `part1-wage-${partOneStateKey(wageState)}`;
+
+        routes[wageRouteKey] = {
+          title: '깎인 삯',
+          scenePlace: '옹고집 저택 대문',
+          sceneTime: '새벽녘',
+          defaultBg: 'ong-winter-courtyard',
+          recordSummary: `옹고집은 장작을 다 팬 사내에게 "${partOneWageCuts[wage].line}"라고 말했다.`,
+          scenes: [
+            {
+              id: `ong-open-wage-${gate}-${work}-${wage}`,
+              type: 'dialogue',
+              speaker: '옹고집',
+              bg: 'ong-winter-courtyard',
+              text: partOneWageCuts[wage].line,
+              characters: [
+                { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+                { name: '낯선 사내', side: 'right', active: false },
+              ],
+            },
+            ...startScenesById(source, ['ong-open-3b-1', 'ong-open-3c', 'ong-open-3c-1', 'ong-open-3c-2']),
+          ],
+          choice: makePartOneBadChoice({
+            id: `part1-shoe-choice-${gate}-${work}-${wage}`,
+            label: '낡은 짚신',
+            prompt: '사내는 찢어진 짚신을 끌고 다시 대문 앞에 섰다. 부인은 헛간의 낡은 짚신 한 켤레를 말했다.',
+            systemCue: '낡은 짚신을 내줄지 정하는 선택',
+            state: wageState,
+            stateField: 'shoe',
+            nextStage: 'part1-court',
+            options: Object.entries(partOneShoeRefusals),
+          }),
+        };
+
+        for (const shoe of Object.keys(partOneShoeRefusals)) {
+          const state = { gate, work, wage, shoe };
+          const stateKey = partOneStateKey(state);
+          const courtRouteKey = `part1-court-${stateKey}`;
+
+          routes[courtRouteKey] = {
+            title: '아내의 대답',
+            scenePlace: '관아 마당',
+            sceneTime: '일주일 뒤',
+            defaultBg: 'ong-magistrate-yard',
+            recordSummary: '옹고집은 대문 앞 사내에게 모진 말을 거듭했고, 부인은 남편 몰래 죽과 낡은 짚신을 대문 밖에 내놓았다.',
+            scenes: [
+              {
+                id: `ong-open-shoe-${gate}-${work}-${wage}-${shoe}`,
+                type: 'dialogue',
+                speaker: '옹고집',
+                bg: 'ong-winter-courtyard',
+                text: partOneShoeRefusals[shoe].line,
+                characters: [
+                  { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+                  { name: '낯선 사내', side: 'right', active: false },
+                ],
+              },
+              ...startScenesById(source, courtIntroIds),
+            ],
+            choice: makeWifeTestimonyChoice(stateKey),
+          };
+
+          routes[`real-route-${stateKey}`] = {
+            ...source.routes['real-route'],
+            choice: makeRepeatTestimonyChoice(stateKey),
+          };
+
+          routes[`fake-first-verdict-${stateKey}`] = {
+            ...source.routes['fake-first-verdict'],
+            nextStep: `fake-route-${stateKey}`,
+          };
+
+          routes[`fake-repeat-verdict-${stateKey}`] = {
+            ...source.routes['fake-repeat-verdict'],
+            nextStep: `fake-route-${stateKey}`,
+          };
+
+          routes[`fake-route-${stateKey}`] = {
+            ...source.routes['fake-route'],
+            recordSummary: '옹고집은 자신이 대문 앞 사내에게 했던 말을 그대로 들었다. 가짜 옹고집은 부인과 아이들에게는 일주일만 흐르고, 자신과 관아의 일은 옹고집에게만 남는다고 밝혔다.',
+            scenes: makeMirroredFakeRouteScenes(source, state),
+          };
+        }
+      }
+    }
+  }
+
+  return routes;
+}
+
 export const reviewMain003OnggojibSource = {
   id: 'review-main-003',
   title: '옹고집전: 옹고집의 속죄',
@@ -180,7 +694,7 @@ export const reviewMain003OnggojibSource = {
       type: 'narration',
       speaker: '해설',
       bg: 'ong-winter-courtyard',
-      text: '사내가 돌아서려다 문설주에 기대 섰다. 빈 그릇이 팔 안에서 덜그럭거렸다.',
+      text: '사내는 문설주에 기대 서 있었다. 빈 그릇이 팔 안에서 덜그럭거렸다. 손등은 터져 있었다.',
       characters: [
         { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
         { name: '부인', side: 'right', active: true },
@@ -703,41 +1217,70 @@ export const reviewMain003OnggojibSource = {
       ],
     },
   ],
+  startSceneIdsBeforeFirstChoice: [
+    'ong-open-1',
+    'ong-open-1a',
+    'ong-open-1b',
+    'ong-open-1b-1',
+    'ong-open-1b-2',
+    'ong-open-1b-2a',
+    'ong-open-1b-2b',
+    'ong-open-1b-3',
+    'ong-open-1b-3a',
+    'ong-open-1b-3a-1',
+    'ong-open-1b-3a-2',
+    'ong-open-1b-3a-3',
+    'ong-open-1b-3b',
+    'ong-open-1c',
+    'ong-open-2a',
+    'ong-open-2b',
+  ],
+  startChoiceAfterSceneId: 'ong-open-2b',
   firstChoice: {
-    id: 'wife-testimony',
-    label: '부인의 대답',
-    prompt: '사또의 시선이 부인에게 멈췄다. 한쪽은 화를 내며 아이를 부르는 남편이고, 한쪽은 아이 앞에 선 같은 얼굴의 사람이었다.',
-    choiceType: 'dilemma',
-    choiceWeight: 'core',
-    systemCue: '부인의 핵심 판정 선택지',
-    bg: 'ong-magistrate-yard',
-    scenePlace: '관아 마당',
+    id: 'part1-gate-choice',
+    label: '대문 앞 사내',
+    prompt: '부인이 죽 한 그릇을 말하자, 옹고집은 대문 밖 사내를 내려다보았다.',
+    choiceType: 'relationship',
+    choiceWeight: 'medium',
+    systemCue: '대문 밖 사내에게 던질 말을 정하는 선택',
+    bg: 'ong-winter-courtyard',
+    scenePlace: '옹고집 저택 대문',
     characters: [
-      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
-      { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+      { name: '낯선 사내', side: 'right', active: false },
     ],
     options: [
       {
-        id: 'point-real',
-        text: '화를 내는 옹고집을 가리킨다',
-        shortText: '화를 내는 옹고집을 가리킨다',
-        nextStep: 'real-route',
-        reason: '오래 함께 산 남편이라는 사실을 따른다.',
-        cost: '그가 집으로 돌아오면 아이들이 밥상에서 말을 아낄 수 있다.',
-        helps: ['진실', '옹고집의 책임'],
-        hurts: ['부인과 아이들의 안전감', '조용한 옹고집'],
-        lingeringEmotion: '가짜 옹고집은 떠나고, 진짜 옹고집이 가족과 집으로 돌아간다.',
+        id: partOneGateResponses.scoldMercy.code,
+        text: partOneGateResponses.scoldMercy.optionText,
+        shortText: partOneGateResponses.scoldMercy.shortText,
+        nextStep: `part1-gate-${partOneStateKey({
+          gate: 'scoldMercy',
+          work: 'promised',
+          wage: 'wetWood',
+          shoe: 'povertyDisease',
+        })}`,
+        reason: partOneGateResponses.scoldMercy.reason,
+        cost: partOneGateResponses.scoldMercy.cost,
+        helps: [],
+        hurts: ['대문 밖 사내', '부인의 마음'],
+        lingeringEmotion: partOneGateResponses.scoldMercy.lingeringEmotion,
       },
       {
-        id: 'point-double',
-        text: '아이를 감싸는 옹고집을 가리킨다',
-        shortText: '아이를 감싸는 옹고집을 가리킨다',
-        nextStep: 'fake-first-verdict',
-        reason: '막내는 그의 뒤에 섰고, 아이들은 그 앞에서 말을 꺼내기 시작했다.',
-        cost: '쫓겨날 사람도 제 남편이라는 것을 안다.',
-        helps: ['부인과 아이들의 안전감', '조용한 옹고집'],
-        hurts: ['오래 함께 산 남편', '부인의 양심'],
-        lingeringEmotion: '진짜 옹고집은 관아 밖으로 쫓겨난다.',
+        id: partOneGateResponses.beggarHouse.code,
+        text: partOneGateResponses.beggarHouse.optionText,
+        shortText: partOneGateResponses.beggarHouse.shortText,
+        nextStep: `part1-gate-${partOneStateKey({
+          gate: 'beggarHouse',
+          work: 'promised',
+          wage: 'wetWood',
+          shoe: 'povertyDisease',
+        })}`,
+        reason: partOneGateResponses.beggarHouse.reason,
+        cost: partOneGateResponses.beggarHouse.cost,
+        helps: [],
+        hurts: ['대문 밖 사내', '부인의 마음'],
+        lingeringEmotion: partOneGateResponses.beggarHouse.lingeringEmotion,
       },
     ],
   },
@@ -2386,7 +2929,7 @@ export const reviewMain003OnggojibSource = {
           speaker: '가짜 옹고집',
           bg: 'ong-winter-courtyard',
           scenePlace: '금 간 마당',
-          text: '아이를 함부로 대하려 했던 것, 기억하오?',
+          text: '아이의 말을 끊으려 했던 것, 기억하오?',
           transition: 'reality-fractured',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
@@ -2717,7 +3260,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '옹고집',
           bg: 'ong-warm-room',
-          text: '이렇게 말한다고 당신이 곧장 나를 믿지는 못하겠지요.',
+          text: '이렇게 말한다고 그동안 당신이 견뎌 온 날들이 없어지지는 않겠지요.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
             { name: '부인', side: 'right', variant: 'resolved', active: false },
@@ -2761,7 +3304,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '부인',
           bg: 'ong-warm-room',
-          text: '아직 두려운 마음이 아주 없지는 않습니다. 그래도 지난 한 달을 없던 일로 여기고 싶지는 않습니다.',
+          text: '그래도 저는 아직 서방님 목소리가 높아질까 먼저 겁이 납니다. 오래 그렇게 살아 왔으니까요.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -2783,7 +3326,7 @@ export const reviewMain003OnggojibSource = {
           type: 'dialogue',
           speaker: '부인',
           bg: 'ong-warm-room',
-          text: '우리, 다시 잘 살아 봅시다. 저도 함께하겠습니다.',
+          text: '그래도 믿고 싶습니다. 오늘 같은 날이 계속되면 좋겠습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
             { name: '부인', side: 'right', variant: 'resolved', active: true },
@@ -2839,3 +3382,8 @@ export const reviewMain003OnggojibSource = {
     },
   },
 };
+
+Object.assign(
+  reviewMain003OnggojibSource.routes,
+  createOnggojibPartOneRoutes(reviewMain003OnggojibSource),
+);

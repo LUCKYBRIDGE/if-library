@@ -2144,13 +2144,30 @@ function buildOnggojibRoute(routeKey, sourceRoute) {
 function buildOnggojibStory() {
   const startDefaults = getOnggojibRouteDefaults('start');
   const startChoice = normalizeOnggojibChoice(reviewMain003OnggojibSource.firstChoice);
+  const startChoiceAfterSceneId = reviewMain003OnggojibSource.startChoiceAfterSceneId;
+  const startSceneById = new Map(
+    reviewMain003OnggojibSource.startScenes.map((scene) => [scene.id, scene]),
+  );
+  const startSceneEndIndex = startChoiceAfterSceneId
+    ? reviewMain003OnggojibSource.startScenes.findIndex((scene) => scene.id === startChoiceAfterSceneId)
+    : -1;
+  let startScenes = reviewMain003OnggojibSource.startScenes;
+
+  if (Array.isArray(reviewMain003OnggojibSource.startSceneIdsBeforeFirstChoice)) {
+    startScenes = reviewMain003OnggojibSource.startSceneIdsBeforeFirstChoice
+      .map((id) => startSceneById.get(id))
+      .filter(Boolean);
+  } else if (startSceneEndIndex >= 0) {
+    startScenes = reviewMain003OnggojibSource.startScenes.slice(0, startSceneEndIndex + 1);
+  }
+
   const routes = {
     start: {
       ...startDefaults,
       key: 'start',
       recordSummary: null,
       beats: [
-        ...reviewMain003OnggojibSource.startScenes.flatMap((scene, index) =>
+        ...startScenes.flatMap((scene, index) =>
           normalizeOnggojibSceneBeats(scene, 'start', index, startDefaults),
         ),
         ...createOnggojibChoiceIntroBeats(startChoice, 'start', startDefaults),
