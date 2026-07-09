@@ -352,7 +352,14 @@ function ChoicePanel({ choice, onChoose, onOpenHistory, onPrevious, canOpenHisto
   );
 }
 
-function EndingPanel({ ending, onRestart, onExit, onOpenReflection, activityHref }) {
+function EndingPanel({
+  ending,
+  onRestart,
+  onExit,
+  onOpenReflection,
+  onRetryChoice,
+  activityHref,
+}) {
   return (
     <section className="ending-panel role-narration" aria-labelledby="ending-title">
       <span className="role-pill">{ending.label}</span>
@@ -362,6 +369,15 @@ function EndingPanel({ ending, onRestart, onExit, onOpenReflection, activityHref
         <button className="next-button" type="button" onClick={onOpenReflection}>
           생각해보기
         </button>
+        {ending.retryChoice ? (
+          <button
+            className="ghost-button"
+            type="button"
+            onClick={() => onRetryChoice(ending.retryChoice)}
+          >
+            {ending.retryChoice.label || '직전 선택으로 돌아가기'}
+          </button>
+        ) : null}
         {activityHref ? (
           <a className="ghost-button ending-activity-link" href={activityHref}>
             활동지
@@ -582,6 +598,8 @@ export function VnPlayer({
   const stageBeat = currentBeat || endingBeat || lastBeat;
   const isFlashback = stageBeat?.visualMode === 'flashback';
   const isRealityCrack = stageBeat?.transition === 'reality-crack';
+  const isRealityFractured =
+    isRealityCrack || stageBeat?.transition === 'reality-fractured';
   const displayedScenePlace = stageBeat?.scenePlace || route.scenePlace;
   const activeChoice = isRouteComplete ? route.choice : null;
   const activeEnding = isRouteComplete && !route.choice ? route.ending : null;
@@ -680,6 +698,26 @@ export function VnPlayer({
     setBeatIndex(0);
     setHistory(nextHistory);
     setShowLoadPanel(false);
+    setShowReflection(false);
+    startSceneIntro();
+  }
+
+  function goToRouteAt(nextRouteKey, nextBeatIndex, nextHistory = history) {
+    const nextRoute = story.routes[nextRouteKey];
+    if (!nextRoute) return;
+
+    const targetBeatIndex = Number(nextBeatIndex);
+    const clampedBeatIndex = Math.min(
+      Math.max(0, Math.trunc(Number.isFinite(targetBeatIndex) ? targetBeatIndex : 0)),
+      nextRoute.beats.length,
+    );
+
+    saveAutoPosition(nextRouteKey, clampedBeatIndex, nextHistory);
+    setRouteKey(nextRouteKey);
+    setBeatIndex(clampedBeatIndex);
+    setHistory(nextHistory);
+    setShowLoadPanel(false);
+    setShowHistory(false);
     setShowReflection(false);
     startSceneIntro();
   }
@@ -842,6 +880,19 @@ export function VnPlayer({
     goToRoute(option.nextRoute, nextHistory);
   }
 
+  function handleRetryChoice(retryChoice) {
+    const targetRoute = story.routes[retryChoice?.route];
+    if (!targetRoute?.choice) return;
+
+    const marker = retryChoice.removeHistoryFromId;
+    const markerIndex = marker
+      ? history.findIndex((entry) => entry.id === marker || entry.id.startsWith(`${marker}-`))
+      : -1;
+    const nextHistory = markerIndex >= 0 ? history.slice(0, markerIndex) : history;
+
+    goToRouteAt(retryChoice.route, targetRoute.beats.length, nextHistory);
+  }
+
   function restartStory() {
     saveAutoPosition(story.startRoute, 0, []);
     setRouteKey(story.startRoute);
@@ -860,6 +911,7 @@ export function VnPlayer({
           'vn-stage',
           isFlashback ? 'is-flashback' : '',
           isRealityCrack ? 'is-reality-crack' : '',
+          isRealityFractured ? 'is-reality-fractured' : '',
           isSceneIntro ? 'is-scene-intro' : '',
         ].join(' ')}
         onClick={handleStageTap}
@@ -883,31 +935,31 @@ export function VnPlayer({
             <defs>
               <path
                 id="crack-main"
-                d="M -4 30 L 7 28 L 13 30.5 L 22 26.8 L 30 29.6 L 39 27.1 L 47 29.3 L 55 25.7 L 64 28.6 L 73 25.9 L 82 28.1 L 92 24.9 L 104 26.4"
+                d="M -5 31 L 4 25 L 10 31 L 17 27 L 23 33 L 31 25 L 39 30 L 47 23 L 54 29 L 62 22 L 68 31 L 77 24 L 84 29 L 93 21 L 105 27"
               />
               <path
                 id="crack-up"
-                d="M 52 27 L 50 21 L 54 15 L 51 9 L 55 3 L 53 -4"
+                d="M 54 28 L 50 22 L 55 17 L 51 11 L 57 5 L 53 -4"
               />
               <path
                 id="crack-down"
-                d="M 52 27 L 56 33 L 53 39 L 59 47 L 56 60"
+                d="M 54 28 L 59 34 L 55 40 L 62 48 L 58 61"
               />
               <path
                 id="crack-left-up"
-                d="M 39 28 L 32 23 L 24 19 L 17 12 L 9 8 L -3 -2"
+                d="M 39 30 L 33 23 L 24 20 L 18 12 L 8 9 L -4 -2"
               />
               <path
                 id="crack-left-down"
-                d="M 22 27 L 15 34 L 8 39 L 2 47 L -4 55"
+                d="M 23 33 L 15 35 L 10 43 L 2 47 L -4 57"
               />
               <path
                 id="crack-right-up"
-                d="M 65 28 L 70 20 L 78 16 L 84 9 L 92 4 L 103 -3"
+                d="M 68 31 L 73 22 L 80 18 L 85 10 L 94 5 L 103 -3"
               />
               <path
                 id="crack-right-down"
-                d="M 61 28 L 69 34 L 75 40 L 84 45 L 93 52 L 104 60"
+                d="M 68 31 L 72 38 L 80 42 L 86 50 L 96 54 L 104 62"
               />
               <path
                 id="crack-small-a"
@@ -1013,6 +1065,7 @@ export function VnPlayer({
               onRestart={restartStory}
               onExit={onExit}
               onOpenReflection={() => setShowReflection(true)}
+              onRetryChoice={handleRetryChoice}
               activityHref={story.activityHref}
             />
           ) : null}

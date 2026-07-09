@@ -25,12 +25,13 @@ const onggojibRealSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_real_consistent_p
 const onggojibRealAngrySprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_real_angry_pixel.png`;
 const onggojibRealRemorseSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_real_remorse_consistent_pixel.png`;
 const onggojibRealExiledSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_real_exiled_consistent_pixel.png`;
+const onggojibRealExiledPleadingSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_real_exiled_pleading_v2_pixel.png`;
 const onggojibRealBorrowedSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_real_borrowed_consistent_pixel.png`;
 const onggojibRealResolveSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_real_resolve_consistent_pixel.png`;
-const onggojibDoubleSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_double_blue_gentle_consistent_pixel.png`;
-const onggojibDoubleGentleSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_double_blue_gentle_consistent_pixel.png`;
-const onggojibDoubleOfferingSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_double_blue_offering_consistent_pixel.png`;
-const onggojibDoubleFirmSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_double_blue_firm_consistent_pixel.png`;
+const onggojibDoubleSprite = onggojibRealResolveSprite;
+const onggojibDoubleGentleSprite = onggojibRealResolveSprite;
+const onggojibDoubleOfferingSprite = onggojibRealResolveSprite;
+const onggojibDoubleFirmSprite = onggojibRealSprite;
 const onggojibMagistrateSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_magistrate_pixel.png`;
 const onggojibMagistrateCommandSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_magistrate_command_pixel.png`;
 const onggojibPosolSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_posol_pixel.png`;
@@ -43,6 +44,7 @@ const onggojibYoungestChildCautiousSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_
 const onggojibHouseholdServantSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_servant_household_pixel.png`;
 const onggojibServantInjuredSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_servant_injured_pixel.png`;
 const onggojibWorkerSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_worker_woodcutter_v2_pixel.png`;
+const onggojibWorkerAskingSprite = `${ONGGOJIB_CHARACTER_ROOT}onggojib_worker_asking_v2_pixel.png`;
 
 const backgroundAssets = {
   'palace-hall-dim': `${IMAGE_ROOT}backgrounds/adventure_rabbit_turtle_bg_palace_welcome.png`,
@@ -824,7 +826,7 @@ function createChoiceIntroBeats(choice, routeKey) {
   return splitBeatForDisplay(introBeat);
 }
 
-function normalizeEnding(ending, routeKey) {
+function normalizeEnding(ending, routeKey, summary = null) {
   if (!ending) return null;
 
   const fallbackBg = routeDefaults[routeKey]?.defaultBg || 'palace-hall-dim';
@@ -851,7 +853,7 @@ function normalizeEnding(ending, routeKey) {
     }),
     bg,
     bgImage: backgroundAssets[bg] || backgroundAssets[fallbackBg],
-    scenePlace: routeDefaults[routeKey]?.scenePlace || null,
+    scenePlace: ending.location || routeDefaults[routeKey]?.scenePlace || null,
     sceneTime: routeDefaults[routeKey]?.sceneTime || '',
     bgm: ending.bgm || null,
     sfx: ending.sfx || null,
@@ -877,6 +879,7 @@ function normalizeEnding(ending, routeKey) {
     location: ending.location,
     label: '마지막 장면',
     text: ending.text,
+    summary: ending.summary || summary || ending.text,
     beats: splitBeatForDisplay(endingBaseBeat),
     bg,
     bgImage: backgroundAssets[bg] || backgroundAssets[fallbackBg],
@@ -890,7 +893,7 @@ function normalizeEnding(ending, routeKey) {
 
 function buildRoute(routeKey, sourceRoute, choiceKey = null) {
   const defaults = routeDefaults[routeKey] || {};
-  const ending = normalizeEnding(sourceRoute?.ending, routeKey);
+  const ending = normalizeEnding(sourceRoute?.ending, routeKey, sourceRoute?.summary);
   const choice = choiceKey && sourceRoute?.choice ? normalizeChoice(sourceRoute.choice, choiceKey) : null;
   const sceneBeats = (sourceRoute?.scenes || []).flatMap((scene, index) =>
     normalizeSceneBeats(scene, routeKey, index),
@@ -1131,29 +1134,41 @@ const onggojibVisualOverrides = Object.fromEntries([
   ),
   ...makeOnggojibSpriteOverrides(
     [
-      'fake-route-4',
       'fake-route-5',
+      'fake-route-9',
+      'fake-route-13',
+    ],
+    'ong-winter-courtyard',
+    [{ name: '진짜 옹고집', side: 'left', variant: 'pleading', active: true }],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    [
+      'fake-route-7a',
+      'fake-route-7b',
+      'fake-route-8',
+      'fake-route-15b',
+    ],
+    'ong-winter-courtyard',
+    [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true }],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    [
+      'fake-route-4',
       'fake-route-6',
       'fake-route-6a',
       'fake-route-6b',
       'fake-route-7',
-      'fake-route-7a',
-      'fake-route-7b',
-      'fake-route-8',
-      'fake-route-9',
       'fake-route-10',
       'fake-route-10a',
       'fake-route-11',
       'fake-route-12',
-      'fake-route-13',
       'fake-route-14',
       'fake-route-15',
       'fake-route-15a',
-      'fake-route-15b',
       'fake-route-16',
     ],
     'ong-winter-courtyard',
-    [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true }],
+    [{ name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false }],
   ),
   ...makeOnggojibSpriteOverrides(
     ['fake-route-17'],
@@ -1500,7 +1515,15 @@ const onggojibVisualOverrides = Object.fromEntries([
     ],
   ),
   ...makeOnggojibSpriteOverrides(
-    ['fake-route-19', 'fake-route-19a', 'fake-route-19b'],
+    ['fake-route-19', 'fake-route-19b'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
+      { name: '막내', side: 'right', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['fake-route-19a'],
     'ong-warm-room',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
@@ -1513,6 +1536,14 @@ const onggojibVisualOverrides = Object.fromEntries([
     [
       { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
       { name: '부인', side: 'right', variant: 'concerned', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['b-meal-act-1'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'resolve', active: true },
+      { name: '둘째', side: 'right', variant: 'hesitant', active: false },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
@@ -1562,15 +1593,21 @@ const onggojibVisualOverrides = Object.fromEntries([
   ...makeOnggojibSpriteOverrides(
     [
       'fake-route-22',
-      'fake-route-22a',
       'fake-route-23a',
       'fake-route-23b',
-      'fake-route-23c',
     ],
     'ong-warm-room',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
       { name: '부인', side: 'right', variant: 'concerned', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['fake-route-22a', 'fake-route-23c'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true },
+      { name: '부인', side: 'right', variant: 'concerned', active: false },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
@@ -1586,7 +1623,7 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-winter-courtyard',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'resolve', active: true },
-      { name: '일꾼', side: 'right', active: false },
+      { name: '일꾼', side: 'right', variant: 'asking', active: false },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
@@ -1594,11 +1631,40 @@ const onggojibVisualOverrides = Object.fromEntries([
     'ong-winter-courtyard',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'resolve', active: false },
-      { name: '일꾼', side: 'right', active: true },
+      { name: '일꾼', side: 'right', variant: 'asking', active: true },
     ],
   ),
   ...makeOnggojibSpriteOverrides(
-    ['b-fake-warning-3', 'b-fake-warning-4'],
+    ['b-fake-warning-2', 'b-fake-warning-3'],
+    'ong-winter-courtyard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
+      { name: '가짜 옹고집', side: 'center', variant: 'firm', active: true },
+      { name: '일꾼', side: 'right', variant: 'asking', active: false },
+    ],
+    { scenePlace: '금 간 마당' },
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['b-fake-warning-4'],
+    'ong-winter-courtyard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
+      { name: '가짜 옹고집', side: 'center', variant: 'firm', active: true },
+      { name: '일꾼', side: 'right', variant: 'asking', active: false },
+    ],
+    { scenePlace: '금 간 마당' },
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['b-fake-warning-5'],
+    'ong-winter-courtyard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+      { name: '가짜 옹고집', side: 'right', variant: 'firm', active: false },
+    ],
+    { scenePlace: '금 간 마당' },
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['b-fake-warning-6', 'b-fake-warning-7', 'b-fake-warning-7a', 'b-fake-warning-7b', 'b-fake-warning-7c'],
     'ong-winter-courtyard',
     [
       { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
@@ -1607,29 +1673,59 @@ const onggojibVisualOverrides = Object.fromEntries([
     { scenePlace: '금 간 마당' },
   ),
   ...makeOnggojibSpriteOverrides(
-    ['b-fake-warning-5', 'b-fake-warning-7'],
-    'ong-warm-room',
+    ['b-fake-warning-8'],
+    'ong-winter-courtyard',
     [
-      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-      { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
-    ],
-    { scenePlace: '금 간 안방' },
-  ),
-  ...makeOnggojibSpriteOverrides(
-    ['b-fake-warning-6', 'b-fake-warning-9'],
-    'ong-warm-room',
-    [
-      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
+      { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
       { name: '가짜 옹고집', side: 'right', variant: 'firm', active: false },
     ],
-    { scenePlace: '금 간 안방' },
+    { scenePlace: '금 간 마당' },
   ),
   ...makeOnggojibSpriteOverrides(
-    ['b-fake-warning-8', 'b-fake-warning-10', 'b-fake-warning-11'],
+    ['b-fake-warning-9'],
+    'ong-snow-road',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true },
+    ],
+    { scenePlace: '금 간 대문 밖' },
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['b-fake-warning-11'],
+    'ong-snow-road',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'pleading', active: true },
+    ],
+    { scenePlace: '금 간 대문 밖' },
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['b-final-5'],
     'ong-warm-room',
     [
-      { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-      { name: '가짜 옹고집', side: 'right', variant: 'firm', active: true },
+      { name: '진짜 옹고집', side: 'left', variant: 'resolve', active: true },
+      { name: '부인', side: 'right', variant: 'resolved', active: false },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['b-final-6'],
+    'ong-winter-courtyard',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'resolve', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['b-final-6a'],
+    'ong-warm-room',
+    [
+      { name: '진짜 옹고집', side: 'left', variant: 'resolve', active: false },
+      { name: '부인', side: 'right', variant: 'resolved', active: true },
+    ],
+  ),
+  ...makeOnggojibSpriteOverrides(
+    ['b-fake-warning-10', 'b-fake-warning-12', 'b-fake-warning-13'],
+    'ong-warm-room',
+    [
+      { name: '가짜 옹고집', side: 'center', variant: 'gentle', active: true },
+      { name: '부인', side: 'right', variant: 'resolved', active: false },
     ],
     { scenePlace: '금 간 안방' },
   ),
@@ -1703,6 +1799,7 @@ const onggojibCharacterAssets = {
       angry: onggojibRealAngrySprite,
       remorse: onggojibRealRemorseSprite,
       exiled: onggojibRealExiledSprite,
+      pleading: onggojibRealExiledPleadingSprite,
       borrowed: onggojibRealBorrowedSprite,
       resolve: onggojibRealResolveSprite,
     },
@@ -1790,6 +1887,7 @@ const onggojibCharacterAssets = {
     alt: '장작을 패러 온 일꾼',
     variants: {
       default: onggojibWorkerSprite,
+      asking: onggojibWorkerAskingSprite,
     },
   },
 };
@@ -1982,7 +2080,7 @@ function normalizeOnggojibEnding(ending, routeKey, defaults) {
     }),
     bg,
     bgImage: onggojibBackgroundAssets[bg] || onggojibBackgroundAssets[fallbackBg],
-    scenePlace: defaults.scenePlace || onggojibScenePlaceByBg[bg],
+    scenePlace: ending.location || defaults.scenePlace || onggojibScenePlaceByBg[bg],
     sceneTime: defaults.sceneTime || '',
     bgm: ending.bgm || null,
     sfx: ending.sfx || null,
@@ -2008,6 +2106,7 @@ function normalizeOnggojibEnding(ending, routeKey, defaults) {
     location: ending.location,
     label: '마지막 장면',
     text: ending.text,
+    summary: ending.summary || ending.text,
     beats: splitBeatForDisplay(endingBaseBeat),
     bg,
     bgImage: onggojibBackgroundAssets[bg] || onggojibBackgroundAssets[fallbackBg],
@@ -2016,6 +2115,7 @@ function normalizeOnggojibEnding(ending, routeKey, defaults) {
     expression: ending.expression || null,
     characters: endingCharacters,
     reflection: reviewMain003OnggojibSource.endingReflections[routeKey] || null,
+    retryChoice: ending.retryChoice || null,
   };
 }
 

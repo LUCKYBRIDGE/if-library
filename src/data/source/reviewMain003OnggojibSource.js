@@ -1323,7 +1323,7 @@ export const reviewMain003OnggojibSource = {
           text: '저대로 쫓겨나면 어디로 갈까. 걱정이 되었지만, 방금 한 대답을 거둘 수는 없었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: true },
+            { name: '부인', side: 'right', variant: 'concerned', active: true },
           ],
         },
       ],
@@ -1423,7 +1423,7 @@ export const reviewMain003OnggojibSource = {
           text: '그가 어디로 갈지 알 수 없었다. 미안했지만, 아이들이 또 말도 못 하는 집으로 돌아갈 수는 없었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: true },
+            { name: '부인', side: 'right', variant: 'concerned', active: true },
           ],
         },
       ],
@@ -1855,7 +1855,7 @@ export const reviewMain003OnggojibSource = {
           text: '안쪽에서 빗장이 풀렸다. 부인이 문을 열었다. 문밖에는 지친 옹고집 혼자 서 있었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: true },
+            { name: '부인', side: 'right', variant: 'concerned', active: true },
           ],
         },
         {
@@ -1866,7 +1866,7 @@ export const reviewMain003OnggojibSource = {
           text: '서방님! 어디서 이리 다치셨습니까? 어서 들어오십시오.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: true },
+            { name: '부인', side: 'right', variant: 'concerned', active: true },
           ],
         },
         {
@@ -1877,7 +1877,7 @@ export const reviewMain003OnggojibSource = {
           text: '일주일째 소식이 없어 걱정했습니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: true },
+            { name: '부인', side: 'right', variant: 'concerned', active: true },
           ],
         },
         {
@@ -1888,7 +1888,7 @@ export const reviewMain003OnggojibSource = {
           text: '말로 다 못할 일이 있었소. 우선 좀 쉬고 싶소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true },
-            { name: '부인', side: 'right', variant: 'resolved', active: false },
+            { name: '부인', side: 'right', variant: 'concerned', active: false },
           ],
         },
         {
@@ -1899,7 +1899,7 @@ export const reviewMain003OnggojibSource = {
           text: '부인은 더 묻지 않고 옹고집을 안으로 들였다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: true },
+            { name: '부인', side: 'right', variant: 'concerned', active: true },
           ],
         },
         {
@@ -1910,7 +1910,7 @@ export const reviewMain003OnggojibSource = {
           text: '막내가 안방 문 앞까지 달려왔다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: false },
+            { name: '막내', side: 'right', active: true },
           ],
         },
         {
@@ -1921,7 +1921,7 @@ export const reviewMain003OnggojibSource = {
           text: '아버지!',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: false },
+            { name: '막내', side: 'right', active: true },
           ],
         },
         {
@@ -1932,7 +1932,7 @@ export const reviewMain003OnggojibSource = {
           text: '아이는 달려오다 멈췄다. 부인은 아이를 재촉하지 않았다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: false },
+            { name: '막내', side: 'right', variant: 'cautious', active: true },
           ],
         },
         {
@@ -1943,7 +1943,7 @@ export const reviewMain003OnggojibSource = {
           text: '부인은 옹고집을 화로 옆에 앉히고 죽을 데우러 갔다. 막내는 방 안에서 나오지 않았다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: true },
+            { name: '부인', side: 'right', variant: 'concerned', active: true },
           ],
         },
         {
@@ -1954,7 +1954,7 @@ export const reviewMain003OnggojibSource = {
           text: '남은 죽을 데우겠습니다. 조금만 기다리십시오.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: true },
+            { name: '부인', side: 'right', variant: 'concerned', active: true },
           ],
         },
         {
@@ -1965,7 +1965,7 @@ export const reviewMain003OnggojibSource = {
           text: '고맙소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true },
-            { name: '부인', side: 'right', variant: 'resolved', active: false },
+            { name: '부인', side: 'right', variant: 'concerned', active: false },
           ],
         },
         {
@@ -1976,7 +1976,7 @@ export const reviewMain003OnggojibSource = {
           text: '부인은 데운 죽을 옹고집 앞에 놓았다. 아이들도 한 상에 앉았지만, 그날은 누구도 먼저 말을 꺼내지 않았다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: true },
+            { name: '부인', side: 'right', variant: 'concerned', active: true },
           ],
         },
         {
@@ -1987,7 +1987,7 @@ export const reviewMain003OnggojibSource = {
           text: '죽을 먹고 난 뒤, 부인은 대야와 약상자를 가져왔다. 눈길에 상한 발과 손의 상처를 씻고 약을 발라 주었다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: true },
+            { name: '부인', side: 'right', variant: 'concerned', active: true },
           ],
         },
         {
@@ -1998,7 +1998,7 @@ export const reviewMain003OnggojibSource = {
           text: '상처가 깊습니다. 당분간 제대로 쉬셔야 합니다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
-            { name: '부인', side: 'right', variant: 'resolved', active: true },
+            { name: '부인', side: 'right', variant: 'concerned', active: true },
           ],
         },
         {
@@ -2009,7 +2009,7 @@ export const reviewMain003OnggojibSource = {
           text: '그러겠소. 고맙소.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true },
-            { name: '부인', side: 'right', variant: 'resolved', active: false },
+            { name: '부인', side: 'right', variant: 'concerned', active: false },
           ],
         },
       ],
@@ -2087,7 +2087,7 @@ export const reviewMain003OnggojibSource = {
           speaker: '옹고집',
           text: '그런 시시한 일로 사람을 붙잡느냐. 그만해라.',
           characters: [
-            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
+            { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
             { name: '둘째', side: 'right', variant: 'hesitant', active: false },
           ],
         },
@@ -2097,7 +2097,7 @@ export const reviewMain003OnggojibSource = {
           speaker: '해설',
           text: '둘째는 더 말하지 못했다.',
           characters: [
-            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
+            { name: '진짜 옹고집', side: 'left', variant: 'angry', active: false },
             { name: '둘째', side: 'right', variant: 'hesitant', active: false },
           ],
         },
@@ -2137,7 +2137,7 @@ export const reviewMain003OnggojibSource = {
           text: '나리, 장작 스무 단을 모두 팼습니다. 이제 약속한 삯을 받을 수 있겠습니까?',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '일꾼', side: 'right', active: true },
+            { name: '일꾼', side: 'right', variant: 'asking', active: true },
           ],
         },
       ],
@@ -2152,7 +2152,7 @@ export const reviewMain003OnggojibSource = {
         scenePlace: '옹고집 저택 마당',
         characters: [
           { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-          { name: '일꾼', side: 'right', active: false },
+          { name: '일꾼', side: 'right', variant: 'asking', active: false },
         ],
         options: [
           {
@@ -2199,7 +2199,7 @@ export const reviewMain003OnggojibSource = {
           text: '나리, 장작 스무 단을 모두 팼습니다. 이제 약속한 삯을 받을 수 있겠습니까?',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '일꾼', side: 'right', active: true },
+            { name: '일꾼', side: 'right', variant: 'asking', active: true },
           ],
         },
       ],
@@ -2214,7 +2214,7 @@ export const reviewMain003OnggojibSource = {
         scenePlace: '옹고집 저택 마당',
         characters: [
           { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-          { name: '일꾼', side: 'right', active: false },
+          { name: '일꾼', side: 'right', variant: 'asking', active: false },
         ],
         options: [
           {
@@ -2260,7 +2260,7 @@ export const reviewMain003OnggojibSource = {
           text: '일꾼들은 처음 약속한 삯을 모두 받아 돌아갔다.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '일꾼', side: 'right', active: true },
+            { name: '일꾼', side: 'right', variant: 'asking', active: true },
           ],
         },
       ],
@@ -2277,8 +2277,8 @@ export const reviewMain003OnggojibSource = {
           speaker: '옹고집',
           text: '패기만 하면 일인 줄 알았느냐? 쌓은 모양이 엉망이다. 삯은 반만 줘라.',
           characters: [
-            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-            { name: '일꾼', side: 'right', active: false },
+            { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+            { name: '일꾼', side: 'right', variant: 'asking', active: false },
           ],
         },
         {
@@ -2288,7 +2288,7 @@ export const reviewMain003OnggojibSource = {
           text: '잠깐. 방금 말은 내가 잘못했다. 처음 약속한 대로 모두 주어라.',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-            { name: '일꾼', side: 'right', active: false },
+            { name: '일꾼', side: 'right', variant: 'asking', active: false },
           ],
         },
       ],
@@ -2298,18 +2298,18 @@ export const reviewMain003OnggojibSource = {
       title: '갈라진 순간',
       scenePlace: '옹고집 저택 마당',
       defaultBg: 'ong-winter-courtyard',
-      recordSummary: '옹고집은 아이의 말을 끊고, 일꾼의 품삯까지 깎으려 했다. 두 번의 선택 끝에 다른 옹고집이 그의 자리에 서고, 집안 사람들은 그를 옹고집으로 받아들였다.',
+      recordSummary: '옹고집은 아이의 말을 끊고, 일꾼의 품삯까지 깎으려 했다. 두 번의 선택 끝에 가짜 옹고집이 그의 자리를 차지했고, 진짜 옹고집은 대문 밖으로 밀려났다.',
       scenes: [
         {
           id: 'b-fake-warning-1',
           type: 'dialogue',
-          speaker: '옹고집',
+          speaker: '진짜 옹고집',
           text: '패기만 하면 일인 줄 알았느냐? 쌓은 모양이 엉망이다. 삯은 반만 줘라.',
           transition: 'reality-crack',
           screenDirection: '옹고집의 말이 끝나는 순간 화면 전체에 금이 번진다.',
           characters: [
-            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-            { name: '일꾼', side: 'right', active: false },
+            { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+            { name: '일꾼', side: 'right', variant: 'asking', active: false },
           ],
         },
         {
@@ -2318,24 +2318,26 @@ export const reviewMain003OnggojibSource = {
           speaker: '해설',
           bg: 'ong-winter-courtyard',
           scenePlace: '금 간 마당',
-          text: '사람들의 목소리가 끊겼다. 금 간 틈 너머로, 다른 옹고집이 방금까지 그가 서 있던 자리에 서 있었다.',
-          transition: 'reality-crack',
+          text: '말이 끝나자, 풍경이 유리처럼 갈라졌다. 진짜 옹고집은 마당 가장자리로 밀려났고, 방금 그가 서 있던 자리에는 가짜 옹고집이 서 있었다.',
+          transition: 'reality-fractured',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
+            { name: '가짜 옹고집', side: 'center', variant: 'firm', active: true },
+            { name: '일꾼', side: 'right', variant: 'asking', active: false },
           ],
         },
         {
           id: 'b-fake-warning-3',
           type: 'dialogue',
-          speaker: '또 다른 옹고집',
+          speaker: '가짜 옹고집',
           bg: 'ong-winter-courtyard',
           scenePlace: '금 간 마당',
           text: '약속한 대로 모두 주어라.',
-          transition: 'reality-crack',
+          transition: 'reality-fractured',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
+            { name: '가짜 옹고집', side: 'center', variant: 'firm', active: true },
+            { name: '일꾼', side: 'right', variant: 'asking', active: false },
           ],
         },
         {
@@ -2344,102 +2346,166 @@ export const reviewMain003OnggojibSource = {
           speaker: '해설',
           bg: 'ong-winter-courtyard',
           scenePlace: '금 간 마당',
-          text: '일꾼은 고개를 숙여 인사하고 대문 밖으로 나갔다. 아무도 옹고집의 명령을 기다리지 않았다.',
-          transition: 'reality-crack',
+          text: '하인은 가짜 옹고집의 명을 듣고 돈주머니를 가져왔다. 일꾼은 가짜 옹고집에게 고개를 숙이고 삯을 받았다.',
+          transition: 'reality-fractured',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
+            { name: '가짜 옹고집', side: 'center', variant: 'firm', active: true },
+            { name: '일꾼', side: 'right', variant: 'asking', active: false },
           ],
         },
         {
           id: 'b-fake-warning-5',
-          type: 'narration',
-          speaker: '해설',
-          bg: 'ong-warm-room',
-          scenePlace: '금 간 안방',
-          text: '안방에서는 아이가 다른 옹고집 곁에 밥그릇을 놓았다. 부인은 상을 고쳐 앉히며 그를 서방님이라 불렀다.',
-          transition: 'reality-crack',
+          type: 'dialogue',
+          speaker: '진짜 옹고집',
+          bg: 'ong-winter-courtyard',
+          scenePlace: '금 간 마당',
+          text: '뭣들 하느냐. 내가 이 집 주인이다. 내 말을 들어야지!',
+          transition: 'reality-fractured',
           characters: [
-            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
+            { name: '진짜 옹고집', side: 'left', variant: 'angry', active: true },
+            { name: '가짜 옹고집', side: 'right', variant: 'firm', active: false },
           ],
         },
         {
           id: 'b-fake-warning-6',
-          type: 'dialogue',
-          speaker: '옹고집',
-          bg: 'ong-warm-room',
-          scenePlace: '금 간 안방',
-          text: '내가 여기 있소. 내가 옹고집이오.',
-          transition: 'reality-crack',
+          type: 'narration',
+          speaker: '해설',
+          bg: 'ong-winter-courtyard',
+          scenePlace: '금 간 마당',
+          text: '그러나 하인도 일꾼도 진짜 옹고집 쪽으로 몸을 돌리지 않았다. 모두 가짜 옹고집의 다음 말을 기다렸다.',
+          transition: 'reality-fractured',
           characters: [
-            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-            { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
+            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
+            { name: '가짜 옹고집', side: 'right', variant: 'firm', active: true },
           ],
         },
         {
           id: 'b-fake-warning-7',
-          type: 'narration',
-          speaker: '해설',
-          bg: 'ong-warm-room',
-          scenePlace: '금 간 안방',
-          text: '그 말은 방 안으로 들어가지 못했다. 아이는 다른 옹고집을 보며 웃었고, 부인은 그 옆에 국그릇을 내려놓았다.',
-          transition: 'reality-crack',
+          type: 'dialogue',
+          speaker: '가짜 옹고집',
+          bg: 'ong-winter-courtyard',
+          scenePlace: '금 간 마당',
+          text: '아이를 함부로 대하려 했던 것, 기억하오?',
+          transition: 'reality-fractured',
           characters: [
             { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
+            { name: '가짜 옹고집', side: 'right', variant: 'firm', active: true },
+          ],
+        },
+        {
+          id: 'b-fake-warning-7a',
+          type: 'dialogue',
+          speaker: '가짜 옹고집',
+          bg: 'ong-winter-courtyard',
+          scenePlace: '금 간 마당',
+          text: '뒤늦게 바로잡기는 했지. 하지만 방금은 일꾼의 삯을 또 빼앗으려 했소.',
+          transition: 'reality-fractured',
+          characters: [
+            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
+            { name: '가짜 옹고집', side: 'right', variant: 'firm', active: true },
+          ],
+        },
+        {
+          id: 'b-fake-warning-7b',
+          type: 'dialogue',
+          speaker: '가짜 옹고집',
+          bg: 'ong-winter-courtyard',
+          scenePlace: '금 간 마당',
+          text: '정말 바뀔 뜻이 있소?',
+          transition: 'reality-fractured',
+          characters: [
+            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
+            { name: '가짜 옹고집', side: 'right', variant: 'firm', active: true },
+          ],
+        },
+        {
+          id: 'b-fake-warning-7c',
+          type: 'dialogue',
+          speaker: '가짜 옹고집',
+          bg: 'ong-winter-courtyard',
+          scenePlace: '금 간 마당',
+          text: '그렇게 또 되풀이한다면, 당신은 이 집에 남을 자격이 없소.',
+          transition: 'reality-fractured',
+          characters: [
+            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
+            { name: '가짜 옹고집', side: 'right', variant: 'firm', active: true },
           ],
         },
         {
           id: 'b-fake-warning-8',
-          type: 'dialogue',
-          speaker: '또 다른 옹고집',
-          bg: 'ong-warm-room',
-          scenePlace: '금 간 안방',
-          text: '한 번은 오래된 버릇이라 할 수 있소. 두 번은 당신이 고른 것이오.',
-          transition: 'reality-crack',
+          type: 'narration',
+          speaker: '해설',
+          bg: 'ong-winter-courtyard',
+          scenePlace: '금 간 마당',
+          text: '진짜 옹고집은 안방 쪽으로 뛰어가려 했다. 그러나 금 간 틈이 그의 앞을 막았고, 발을 내디딜수록 그는 대문 쪽으로 밀려났다.',
+          transition: 'reality-fractured',
           characters: [
-            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
+            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
+            { name: '가짜 옹고집', side: 'right', variant: 'firm', active: false },
           ],
         },
         {
           id: 'b-fake-warning-9',
-          type: 'dialogue',
-          speaker: '옹고집',
-          bg: 'ong-warm-room',
-          scenePlace: '금 간 안방',
-          text: '내 집이오. 내 처자식이오. 내 이름이오.',
-          transition: 'reality-crack',
+          type: 'narration',
+          speaker: '해설',
+          bg: 'ong-snow-road',
+          scenePlace: '금 간 대문 밖',
+          text: '다시 한 걸음 내디뎠을 때, 진짜 옹고집은 이미 대문 밖에 서 있었다. 안방은 깨진 틈 너머로만 보였다.',
+          transition: 'reality-fractured',
           characters: [
-            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: true },
-            { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: false },
+            { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true },
           ],
         },
         {
           id: 'b-fake-warning-10',
-          type: 'dialogue',
-          speaker: '또 다른 옹고집',
+          type: 'narration',
+          speaker: '해설',
           bg: 'ong-warm-room',
           scenePlace: '금 간 안방',
-          text: '이름만으로 지킬 수 있는 집은 없소.',
-          transition: 'reality-crack',
+          text: '안방에서는 아이들이 가짜 옹고집 곁에서 밥을 먹고 있었다. 부인은 그를 서방님이라 불렀다.',
+          transition: 'reality-fractured',
           characters: [
-            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
+            { name: '가짜 옹고집', side: 'center', variant: 'gentle', active: true },
+            { name: '부인', side: 'right', variant: 'resolved', active: false },
           ],
         },
         {
           id: 'b-fake-warning-11',
           type: 'dialogue',
-          speaker: '또 다른 옹고집',
+          speaker: '진짜 옹고집',
+          bg: 'ong-snow-road',
+          scenePlace: '금 간 대문 밖',
+          text: '여보! 아이들아! 내가 여기 있소!',
+          transition: 'reality-fractured',
+          characters: [
+            { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: true },
+          ],
+        },
+        {
+          id: 'b-fake-warning-12',
+          type: 'narration',
+          speaker: '해설',
           bg: 'ong-warm-room',
           scenePlace: '금 간 안방',
-          text: '오늘부터 저 집에서 당신의 이름은 내가 맡겠소.',
-          transition: 'reality-crack',
+          text: '안방 사람들은 돌아보지 않았다. 막내는 가짜 옹고집에게 그릇을 내밀었고, 부인은 상 위의 반찬을 그쪽으로 밀어 주었다.',
+          transition: 'reality-fractured',
           characters: [
-            { name: '진짜 옹고집', side: 'left', variant: 'remorse', active: false },
-            { name: '가짜 옹고집', side: 'right', variant: 'gentle', active: true },
+            { name: '가짜 옹고집', side: 'center', variant: 'gentle', active: true },
+            { name: '부인', side: 'right', variant: 'resolved', active: false },
+          ],
+        },
+        {
+          id: 'b-fake-warning-13',
+          type: 'dialogue',
+          speaker: '가짜 옹고집',
+          bg: 'ong-warm-room',
+          scenePlace: '금 간 안방',
+          text: '이제 이 집에서 옹고집이라 불릴 사람은 나요.',
+          transition: 'reality-fractured',
+          characters: [
+            { name: '가짜 옹고집', side: 'center', variant: 'gentle', active: true },
+            { name: '부인', side: 'right', variant: 'resolved', active: false },
           ],
         },
       ],
@@ -2447,7 +2513,13 @@ export const reviewMain003OnggojibSource = {
         title: '이름만 남은 사람',
         location: '눈 내리는 대문 밖',
         bg: 'ong-snow-road',
-        text: '대문 안에서 아이가 “아버지” 하고 불렀다. 옹고집은 돌아섰지만, 그 목소리는 문 안의 다른 옹고집에게 닿았다. 하인이 빗장을 걸었고, 안방 불빛은 그의 등 뒤에서 멀어졌다. 옹고집의 이름만 눈발 속에 남았다.',
+        summary: '옹고집은 아이의 말을 끊고 일꾼의 품삯을 깎으려 했다. 가짜 옹고집이 집 안에서 그의 자리를 차지했고, 진짜 옹고집은 대문 밖으로 밀려났다.',
+        text: '대문 안에서 아이가 “아버지” 하고 불렀다. 그 말은 안방의 가짜 옹고집에게 향했다. 진짜 옹고집이 대문을 두드렸지만, 하인은 그를 들이지 않고 빗장을 걸었다. 진짜 옹고집은 눈 내리는 대문 밖에 서 있었다.',
+        retryChoice: {
+          label: '두 번째 선택으로 돌아가기',
+          route: 'b-child-scene',
+          removeHistoryFromId: 'confession-worker-after-harsh-cut-wage',
+        },
         characters: [
           { name: '진짜 옹고집', side: 'left', variant: 'exiled', active: false },
         ],
@@ -2733,6 +2805,7 @@ export const reviewMain003OnggojibSource = {
         title: '함께 여는 대문',
         location: '봄 햇살이 드는 대문 앞',
         bg: 'ong-spring-courtyard',
+        summary: '옹고집은 집으로 돌아온 뒤 아이의 말을 듣고 일꾼에게 약속한 품삯을 주며 달라지려 했다. 봄날 아침에는 가족과 함께 대문 밖에서 밥을 청한 사람을 맞이했다.',
         text: '봄날 아침, 대문 밖에서 밥을 청하는 소리가 났다. 옹고집이 문을 열었고, 부인은 밥 한 그릇을 더 담았다. 아이들은 그릇과 수저를 가져왔다.',
         characters: [
           { name: '진짜 옹고집', side: 'left', variant: 'resolve', active: false },

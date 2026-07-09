@@ -131,6 +131,16 @@ for (const story of stories) {
           errors.push(`${story.id}/${routeKey} ending reflection question ${index + 1} is blank`);
         }
       });
+
+      const retryRouteKey = route.ending.retryChoice?.route;
+      if (retryRouteKey) {
+        const retryRoute = story.routes[retryRouteKey];
+        if (!retryRoute) {
+          errors.push(`${story.id}/${routeKey} ending retryChoice points to missing route ${retryRouteKey}`);
+        } else if (!retryRoute.choice) {
+          errors.push(`${story.id}/${routeKey} ending retryChoice route ${retryRouteKey} has no choice`);
+        }
+      }
     }
   }
 

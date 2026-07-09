@@ -149,7 +149,7 @@ export function EndingCollection({ story, onBack, onStart }) {
                 </p>
                 <p className="ending-card-text">
                   {isUnlocked
-                    ? ending.text
+                    ? ending.summary || ending.text
                     : '이 결말에 도달하면 제목과 마지막 장면이 공개됩니다.'}
                 </p>
                 {!isUnlocked ? (
